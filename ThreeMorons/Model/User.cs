@@ -22,4 +22,5 @@ public partial class User
     public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
 
     public virtual UserClass UserClass { get; set; } = null!;
+    public string Salt { get; set; }
 }

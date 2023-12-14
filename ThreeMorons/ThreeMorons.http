@@ -1,0 +1,19 @@
+﻿@ThreeMorons_HostAddress = https://localhost:7174
+
+GET {{ThreeMorons_HostAddress}}/
+
+###
+
+GET {{ThreeMorons_HostAddress}}/
+
+###
+
+POST {{ThreeMorons_HostAddress}}/register
+Content-Type: application/json
+
+{
+  "login": "sobaka",
+  "password": "hashme123"
+}
+###
+
