@@ -12,11 +12,11 @@ POST {{ThreeMorons_HostAddress}}/register
 Content-Type: application/json
 
 {
-  "login": "sobaka",
+  "login": "s",
   "password": "hashme123",
-  "name": "лёва",
-  "surname": "тигринов",
-  "patronymic": "саваннович",
+  "name": "123",
+  "surname": "s",
+  "patronymic": "ss",
   "UserClassId": 1
 }
 ###
