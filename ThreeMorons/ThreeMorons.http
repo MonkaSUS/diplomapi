@@ -13,7 +13,11 @@ Content-Type: application/json
 
 {
   "login": "sobaka",
-  "password": "hashme123"
+  "password": "hashme123",
+  "name": "лёва",
+  "surname": "тигринов",
+  "patronymic": "саваннович",
+  "UserClassId": 1
 }
 ###
 

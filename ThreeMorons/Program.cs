@@ -1,14 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using ThreeMorons;
 using Microsoft.EntityFrameworkCore;
 using ThreeMorons.Model;
-
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Logging.ClearProviders();
-builder.Services.AddDbContext<ThreeMoronsContext>(o=> o.UseSqlServer() &&);
+builder.Services.AddDbContext<ThreeMoronsContext>(o=> o.UseSqlServer());
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -29,9 +27,8 @@ if (app.Environment.IsDevelopment())
 
 app.MapGet("/", () => "Этот материал создан лицом, которое признано иностранным агентом на терриотрии РФ");
 
-app.MapPost("/register", async ([FromBody]RegistrationInput inp, ThreeMoronsContext db) =>
+app.MapPost("/register", async (RegistrationInput inp, ThreeMoronsContext db) =>
     {
-
         var HashingResult = PasswordMegaHasher.HashPass(inp.password);
         try
         {
@@ -48,7 +45,7 @@ app.MapPost("/register", async ([FromBody]RegistrationInput inp, ThreeMoronsCont
             };
             await db.Users.AddAsync(UserToRegister);
             //await db.SaveChangesAsync();
-            return TypedResults.Created(new JsonResult(UserToRegister).Value.ToString());
+            return Results.Ok(UserToRegister);
         }
         catch (Exception exc)
         {

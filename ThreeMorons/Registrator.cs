@@ -25,19 +25,19 @@ namespace ThreeMorons
     public record RegistrationInput
     {
         [Required(ErrorMessage = "Это поле необходимо заполнить")]
-        [StringLength(20, MinimumLength =5, ErrorMessage = "Длина логина должна составлять от 5 до 20 символов")]
-        public string login;
+        [StringLength(20, MinimumLength = 5, ErrorMessage = "Длина логина должна составлять от 5 до 20 символов")]
+        public string login { get; set; }
         [Required(ErrorMessage = "Это поле необходимо заполнить")]
         [StringLength(20, MinimumLength = 5, ErrorMessage = "Длина пароля должна составлять от 5 до 20 символов")]
         [RegularExpression("[A-Za-z0-9]+\\[\\].*!&\\?\\(\\)@", ErrorMessage = "Пароль должен состоять только из латинских букв, цифр или символов []()!&?@")]
-        public string password;
+        public string password { get; set; }
         [RegularExpression("[\u0401\u0451\u0410-\u044f]", ErrorMessage = "Почему ваше имя не на русском?")]
-        public string name;
+        public string name { get; set; }
         [RegularExpression("[\u0401\u0451\u0410-\u044f]", ErrorMessage = "Почему ваша фамилия не на русском?")]
-        public string surname;
+        public string surname { get; set; }
         [RegularExpression("[\u0401\u0451\u0410-\u044f]", ErrorMessage = "Почему ваше отчество не на русском?")]
-        public string patronymic;
-        public int UserClassId;
+        public string patronymic { get; set; }
+        public int UserClassId { get; set; }
         public RegistrationInput(string login, string password, string name, string surname, string patronymic, int UserClassId)
         {
             this.login = login;
