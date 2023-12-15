@@ -46,7 +46,7 @@ app.MapPost("/register", async (IValidator<RegistrationInput> validator ,Registr
                 Id = Guid.NewGuid(),
                 Login = inp.login,
                 Password = HashingResult.hashpass,
-                Salt = HashingResult.salt.ToString(),
+                Salt = HashingResult.salt,
                 Name = inp.name,
                 Surname = inp.surname,
                 Patronymic = inp.patronymic,
