@@ -2,6 +2,9 @@ using Serilog;
 using ThreeMorons;
 using Microsoft.EntityFrameworkCore;
 using ThreeMorons.Model;
+using FluentValidation;
+using ThreeMorons.Validators;
+using System.ComponentModel.DataAnnotations;
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -15,6 +18,7 @@ var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 
 builder.Logging.AddSerilog(logger);
 
+builder.Services.AddScoped<IValidator<RegistrationInput>, RegistrationValidator>();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -27,8 +31,13 @@ if (app.Environment.IsDevelopment())
 
 app.MapGet("/", () => "Этот материал создан лицом, которое признано иностранным агентом на терриотрии РФ");
 
-app.MapPost("/register", async (RegistrationInput inp, ThreeMoronsContext db) =>
+app.MapPost("/register", async (IValidator<RegistrationInput> validator ,RegistrationInput inp, ThreeMoronsContext db) =>
     {
+        var valres = await validator.ValidateAsync(inp);
+        if (!valres.IsValid)
+        {
+            return Results.ValidationProblem(valres.ToDictionary());
+        }
         var HashingResult = PasswordMegaHasher.HashPass(inp.password);
         try
         {
