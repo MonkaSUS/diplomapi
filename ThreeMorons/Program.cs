@@ -12,12 +12,14 @@ using ThreeMorons.UserInputTypes;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using System.Runtime.InteropServices;
+using ThreeMorons.SecurityThings;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Logging.ClearProviders();
 
-builder.Services.AddDbContext<ThreeMoronsContext>(o=> o.UseSqlServer());
+builder.Services.AddDbContext<ThreeMoronsContext>(o => o.UseSqlServer());
 
 if (builder.Environment.IsDevelopment())
 {
@@ -63,7 +65,7 @@ if (app.Environment.IsDevelopment())
 
 app.MapGet("/", () => "Ётот материал создан лицом, которое признано иностранным агентом на терриотрии –‘");
 
-app.MapPost("/register", [AllowAnonymous] async (IValidator<RegistrationInput> validator ,RegistrationInput inp, ThreeMoronsContext db) =>
+app.MapPost("/register", [AllowAnonymous] async (IValidator<RegistrationInput> validator, RegistrationInput inp, ThreeMoronsContext db) =>
     {
         var valres = await validator.ValidateAsync(inp);
         if (!valres.IsValid)
@@ -94,8 +96,7 @@ app.MapPost("/register", [AllowAnonymous] async (IValidator<RegistrationInput> v
         }
     });
 
-if (app.Environment.IsDevelopment())
-{ 
+
 app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationInput> Validator, AuthorizationInput inp, ThreeMoronsContext db) =>
     {
         var valres = await Validator.ValidateAsync(inp);
@@ -103,37 +104,29 @@ app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationIn
         {
             return Results.ValidationProblem(valres.ToDictionary());
         }
-        if (inp.login == "sobaka123" && inp.password == "Ce[fhbrb2404")
+        if (await db.Users.FirstOrDefaultAsync(user=> user.Login == inp.login) is User authUser)
         {
-            var issuer = builder.Configuration["Jwt:Issuer"];
-            var audience = builder.Configuration["Jwt:Audience"];
-            var key = Encoding.ASCII.GetBytes
-            (builder.Configuration["Jwt:Key"]);
-            var tokenDescriptor = new SecurityTokenDescriptor
+            byte[] userSalt = Encoding.UTF8.GetBytes(authUser.Salt); //кака€-то забориста€ маги€ с кодировками, см PasswordMegaHasher 12-13 строки.
+            var hashedPassword = PasswordMegaHasher.HashPass(authUser.Password, userSalt);
+            if (authUser.Password != hashedPassword)
             {
-                Subject = new ClaimsIdentity(new[]
-                {
-                    new Claim("id", Guid.NewGuid().ToString()),
-                    new Claim(JwtRegisteredClaimNames.Sub, inp.login),
-
-                }),
-                Expires = DateTime.UtcNow.AddMinutes(2),
-                Issuer = issuer,
-                Audience = audience,
-                SigningCredentials = new SigningCredentials
-                (new SymmetricSecurityKey(key),
-                SecurityAlgorithms.HmacSha512Signature)
-            };
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            var jwtToken = tokenHandler.WriteToken(token);
-            var stringToken = tokenHandler.WriteToken(token);
+                return Results.Unauthorized();
+            }
+            var stringToken = JwtIssuer.IssueJwtForUser(builder.Configuration, authUser);
             return Results.Ok(stringToken);
+
         }
-        return Results.Unauthorized();
+        else
+        {
+            return Results.Unauthorized();
+        }
+     
     });
-    app.MapGet("/SecretInfoTest", () => "among us").RequireAuthorization();
-}
+
+
+
+app.MapGet("/SecretInfoTest", () => "among us").RequireAuthorization();
+
 
 app.UseAuthentication();
 app.UseAuthorization();

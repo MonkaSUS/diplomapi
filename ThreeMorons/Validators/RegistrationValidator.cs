@@ -3,8 +3,14 @@ using Microsoft.AspNetCore.Http.Connections;
 using ThreeMorons.Model;
 using ThreeMorons.UserInputTypes;
 
+
 namespace ThreeMorons.Validators
 {
+    /// <summary>
+    /// Валидатор для данных, которые пользователь предоставялет при регистрации, содержит в себе
+    /// ОТВРАТИТЕЛЬНОЕ, ГРЯЗНОЕ, ИЗВРАЩЕНСКОЕ, ОТТАЛКИВАЮЩЕЕ, ВЫЗЫВАЮЩЕЕ РВОТУ, ОТВРАЩАЮЩЕЕ, ПУГАЮЩЕЕ, НАПРЯГАЮЩЕЕ ПОРНО С ИСПОЛЬЗОВАНИЕМ REGEX. 
+    /// ОСТАВЬ НАДЕЖДУ ВСЯК СЮДА ВХОДЯЩИЙ
+    /// </summary>
     public class RegistrationValidator : AbstractValidator<RegistrationInput>
     {
         public RegistrationValidator() 
@@ -18,6 +24,11 @@ namespace ThreeMorons.Validators
             RuleFor(u => u.patronymic).Matches("[\\p{IsCyrillic}]").WithMessage("Отчество должно быть написано кириллицой");
         }
     }
+    /// <summary>
+    /// Валидатор для данных, которые пользователь предоставялет при авторизации, содержит в себе
+    /// ОТВРАТИТЕЛЬНОЕ, ГРЯЗНОЕ, ИЗВРАЩЕНСКОЕ, ОТТАЛКИВАЮЩЕЕ, ВЫЗЫВАЮЩЕЕ РВОТУ, ОТВРАЩАЮЩЕЕ, ПУГАЮЩЕЕ, НАПРЯГАЮЩЕЕ ПОРНО С ИСПОЛЬЗОВАНИЕМ REGEX. 
+    /// ОСТАВЬ НАДЕЖДУ ВСЯК СЮДА ВХОДЯЩИЙ
+    /// </summary>
     public class AuthorizationValidator : AbstractValidator<AuthorizationInput> 
     {
         public AuthorizationValidator() 
