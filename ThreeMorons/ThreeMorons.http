@@ -21,3 +21,16 @@ Content-Type: application/json
 }
 ###
 
+
+GET {{ThreeMorons_HostAddress}}/SecretInfoTest 
+
+###
+
+POST {{ThreeMorons_HostAddress}}/authorizeTest
+Content-Type: application/json
+
+{
+    "login": "sobaka123",
+    "password": "Ce[fhbrb2404"
+}
+###

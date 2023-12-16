@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 
-namespace ThreeMorons
+namespace ThreeMorons.UserInputTypes
 {
     public static class PasswordMegaHasher
     {
@@ -19,10 +18,5 @@ namespace ThreeMorons
             return (hashed, StringSalt);
         }
     }
-    /// <summary>
-    /// Рекорд, содержащий все поля, необходимые для регистрации нового пользователя и соответствующую валидацию для них.
-    /// </summary>
-    public record RegistrationInput(string login, string password, string name, string surname, string patronymic, int UserClassId)
-    { }
-    
+
 }
