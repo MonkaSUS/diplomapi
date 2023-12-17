@@ -6,6 +6,9 @@ using ThreeMorons.Model;
 
 namespace ThreeMorons.SecurityThings
 {
+    /// <summary>
+    /// Класс, ответственный за выдачу JWT-токенов для пользователя.
+    /// </summary>
     public static class JwtIssuer
     {
         /// <summary>
@@ -24,6 +27,7 @@ namespace ThreeMorons.SecurityThings
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim(JwtRegisteredClaimNames.Jti, authUser.Id.ToString()),
+                    new Claim("userClass", authUser.UserClassId.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(5),
                 Issuer = issuer,

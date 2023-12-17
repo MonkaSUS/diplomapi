@@ -125,7 +125,7 @@ app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationIn
 
 
 
-app.MapGet("/SecretInfoTest", () => "among us").RequireAuthorization();
+app.MapGet("/SecretInfoTest", () => "among us").RequireAuthorization(o=> o.RequireClaim("userClass", "2"));
 
 
 app.UseAuthentication();
