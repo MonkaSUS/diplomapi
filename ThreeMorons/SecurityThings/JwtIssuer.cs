@@ -8,6 +8,12 @@ namespace ThreeMorons.SecurityThings
 {
     public static class JwtIssuer
     {
+        /// <summary>
+        /// Метод, выдающий JWT для авторизующегося пользователя. Claim пока один - по guid пользователя.
+        /// </summary>
+        /// <param name="config">builder.Config текущего приложения</param>
+        /// <param name="authUser">Пользователь, который авторизуется</param>
+        /// <returns>Строковую версию JWT токена для текущего пользователя. Identity содержит определение для jti, который устанавливается на основе guid пользователя</returns>
         public static string IssueJwtForUser(ConfigurationManager config, User authUser)
         {
             var issuer = config["Jwt:issuer"];
@@ -17,7 +23,7 @@ namespace ThreeMorons.SecurityThings
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim("id", authUser.Id.ToString()),
+                    new Claim(JwtRegisteredClaimNames.Jti, authUser.Id.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(5),
                 Issuer = issuer,
