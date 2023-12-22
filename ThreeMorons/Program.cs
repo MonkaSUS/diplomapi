@@ -13,6 +13,7 @@ using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using System.Runtime.InteropServices;
 using ThreeMorons.SecurityThings;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +32,7 @@ builder.Logging.AddSerilog(logger);
 
 builder.Services.AddScoped<IValidator<RegistrationInput>, RegistrationValidator>();
 builder.Services.AddScoped<IValidator<AuthorizationInput>, AuthorizationValidator>();
+builder.Services.AddScoped<IValidator<Group>, GroupValidator>();
 builder.Services.AddAuthentication(o =>
     {
         o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -45,7 +47,7 @@ builder.Services.AddAuthentication(o =>
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
                 ValidateIssuer = true,
                 ValidateAudience = true,
-                ValidateLifetime = false,
+                ValidateLifetime = true,
                 ValidateIssuerSigningKey = true
             };
         });
@@ -87,8 +89,8 @@ app.MapPost("/register", [AllowAnonymous] async (IValidator<RegistrationInput> v
                 UserClassId = inp.UserClassId
             };
             await db.Users.AddAsync(UserToRegister);
-            //await db.SaveChangesAsync();
-            return Results.Ok(UserToRegister);
+            await db.SaveChangesAsync();
+            return Results.Created("",UserToRegister);
         }
         catch (Exception exc)
         {
@@ -127,7 +129,69 @@ app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationIn
 
 app.MapGet("/SecretInfoTest", () => "among us").RequireAuthorization(o=> o.RequireClaim("userClass", "2"));
 
+var groupsGroup = app.MapGroup("/group").RequireAuthorization();
 
+groupsGroup.MapGet("/all", async(ThreeMoronsContext db)=> await db.Groups.ToListAsync());
+groupsGroup.MapGet("/", async ([FromQuery(Name = "groupName")] string Name, ThreeMoronsContext db) => await db.Groups.FirstOrDefaultAsync(x=> x.GroupName==Name));
+groupsGroup.MapPost("/create", async (ThreeMoronsContext db, Group created, IValidator<Group> validator) =>
+{
+    var valres = await validator.ValidateAsync(created);
+    if (!valres.IsValid)
+    {
+        return Results.ValidationProblem(valres.ToDictionary());
+    }
+    try
+    {
+        await db.Groups.AddAsync(created);
+        await db.SaveChangesAsync();
+        return Results.Created("group",created);
+    }
+    catch (Exception excep)
+    {
+        return Results.Problem(excep.ToString());
+    }
+}).RequireAuthorization(r=> r.RequireClaim("userClass", "2"));
+groupsGroup.MapPut("/update", async (Group toUpdate, IValidator<Group> validator, ThreeMoronsContext db) =>
+{
+    var valres = await validator.ValidateAsync(toUpdate);
+    if (!valres.IsValid)
+    {
+        return Results.ValidationProblem(valres.ToDictionary());
+    }
+    try
+    {
+        var entity = await db.Groups.FindAsync(toUpdate.GroupName);
+        entity = toUpdate;
+        await db.SaveChangesAsync();
+        return Results.Ok("very good ok nice");
+    }
+    catch (Exception exc)
+    {
+        return Results.Problem(exc.ToString());
+    }
+}).RequireAuthorization(r=> r.RequireClaim("userClass","2"));
+groupsGroup.MapDelete("remove", async (ThreeMoronsContext db, Group toDelete) =>
+{
+    try
+    {
+        db.Groups.Remove(toDelete);
+        await db.SaveChangesAsync();
+        return Results.Ok("deleted cool");
+    }
+    catch (Exception exc)
+    {
+        return Results.Problem(exc.ToString());
+    }
+}).RequireAuthorization(r=> r.RequireClaim("userClass", "2"));
+
+app.MapGet("/periods", async (ThreeMoronsContext db) => db.Periods.ToListAsync());
+
+
+var SkippedClassGroup = app.MapGroup("/skippedClass").RequireAuthorization();
+
+SkippedClassGroup.MapGet("/all", async (ThreeMoronsContext db)=> await db.SkippedClasses.ToListAsync());
+
+SkippedClassGroup.MapGet("/", async ([FromQuery(Name = "id")] Guid id, ThreeMoronsContext db) => await db.SkippedClasses.FirstOrDefaultAsync(x => x.Id == id));
 app.UseAuthentication();
 app.UseAuthorization();
 
