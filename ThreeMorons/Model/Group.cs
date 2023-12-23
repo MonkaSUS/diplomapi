@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace ThreeMorons.Model;
 
@@ -13,5 +14,6 @@ public partial class Group
 
     public virtual User GroupCuratorNavigation { get; set; } = null!;
 
+    [JsonIgnore]
     public virtual ICollection<Student> Students { get; set; } = new List<Student>();
 }

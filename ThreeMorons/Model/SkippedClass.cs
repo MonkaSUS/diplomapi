@@ -15,3 +15,5 @@ public partial class SkippedClass
 
     public virtual Student StudNumberNavigation { get; set; } = null!;
 }
+
+;

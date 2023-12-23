@@ -14,6 +14,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Runtime.InteropServices;
 using ThreeMorons.SecurityThings;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection.Metadata.Ecma335;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,7 +33,7 @@ builder.Logging.AddSerilog(logger);
 
 builder.Services.AddScoped<IValidator<RegistrationInput>, RegistrationValidator>();
 builder.Services.AddScoped<IValidator<AuthorizationInput>, AuthorizationValidator>();
-builder.Services.AddScoped<IValidator<Group>, GroupValidator>();
+builder.Services.AddScoped<IValidator<GroupInput>, GroupValidator>();
 builder.Services.AddAuthentication(o =>
     {
         o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -97,8 +98,6 @@ app.MapPost("/register", [AllowAnonymous] async (IValidator<RegistrationInput> v
             return TypedResults.BadRequest(exc.Message);
         }
     });
-
-
 app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationInput> Validator, AuthorizationInput inp, ThreeMoronsContext db) =>
     {
         var valres = await Validator.ValidateAsync(inp);
@@ -108,7 +107,7 @@ app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationIn
         }
         if (await db.Users.FirstOrDefaultAsync(user=> user.Login == inp.login) is User authUser)
         {
-            byte[] userSalt = Encoding.UTF8.GetBytes(authUser.Salt); //какая-то забористая магия с кодировками, см PasswordMegaHasher 12-13 строки.
+            byte[] userSalt = Encoding.UTF8.GetBytes(authUser.Salt); //какая-то забористая магия с кодировками, см PasswordMegaHasher 17-18 строки.
             var hashedPassword = PasswordMegaHasher.HashPass(authUser.Password, userSalt);
             if (authUser.Password != hashedPassword)
             {
@@ -127,71 +126,194 @@ app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationIn
 
 
 
-app.MapGet("/SecretInfoTest", () => "among us").RequireAuthorization(o=> o.RequireClaim("userClass", "2"));
+
+
+
+
+
 
 var groupsGroup = app.MapGroup("/group").RequireAuthorization();
 
 groupsGroup.MapGet("/all", async(ThreeMoronsContext db)=> await db.Groups.ToListAsync());
 groupsGroup.MapGet("/", async ([FromQuery(Name = "groupName")] string Name, ThreeMoronsContext db) => await db.Groups.FirstOrDefaultAsync(x=> x.GroupName==Name));
-groupsGroup.MapPost("/create", async (ThreeMoronsContext db, Group created, IValidator<Group> validator) =>
-{
-    var valres = await validator.ValidateAsync(created);
-    if (!valres.IsValid)
+groupsGroup.MapPost("/", async (ThreeMoronsContext db, GroupInput created, IValidator<GroupInput> validator) =>
     {
-        return Results.ValidationProblem(valres.ToDictionary());
-    }
-    try
+        var valres = await validator.ValidateAsync(created);
+        if (!valres.IsValid)
+        {
+            return Results.ValidationProblem(valres.ToDictionary());
+        }
+        try
+        {
+            Group toCreate = new() { Building = created.Building, GroupCurator = created.groupCurator, GroupName = created.GroupName };
+            await db.Groups.AddAsync(toCreate);
+            await db.SaveChangesAsync();
+            return Results.Created("group",toCreate);
+        }
+        catch (Exception excep)
+        {
+            return Results.Problem(excep.ToString());
+        }
+    }).RequireAuthorization(r=> r.RequireClaim("userClass", "2"));
+groupsGroup.MapPut("/", async (Group toUpdate, IValidator<Group> validator, ThreeMoronsContext db) =>
     {
-        await db.Groups.AddAsync(created);
-        await db.SaveChangesAsync();
-        return Results.Created("group",created);
-    }
-    catch (Exception excep)
+        var valres = await validator.ValidateAsync(toUpdate);
+        if (!valres.IsValid)
+        {
+            return Results.ValidationProblem(valres.ToDictionary());
+        }
+        try
+        {
+            var entity = await db.Groups.FindAsync(toUpdate.GroupName);
+            entity = toUpdate;
+            await db.SaveChangesAsync();
+            return Results.Ok("very good ok nice");
+        }
+        catch (Exception exc)
+        {
+            return Results.Problem(exc.ToString());
+        }
+    }).RequireAuthorization(r=> r.RequireClaim("userClass","2"));
+groupsGroup.MapDelete("", async (ThreeMoronsContext db, Group toDelete) =>
     {
-        return Results.Problem(excep.ToString());
-    }
-}).RequireAuthorization(r=> r.RequireClaim("userClass", "2"));
-groupsGroup.MapPut("/update", async (Group toUpdate, IValidator<Group> validator, ThreeMoronsContext db) =>
-{
-    var valres = await validator.ValidateAsync(toUpdate);
-    if (!valres.IsValid)
-    {
-        return Results.ValidationProblem(valres.ToDictionary());
-    }
-    try
-    {
-        var entity = await db.Groups.FindAsync(toUpdate.GroupName);
-        entity = toUpdate;
-        await db.SaveChangesAsync();
-        return Results.Ok("very good ok nice");
-    }
-    catch (Exception exc)
-    {
-        return Results.Problem(exc.ToString());
-    }
-}).RequireAuthorization(r=> r.RequireClaim("userClass","2"));
-groupsGroup.MapDelete("remove", async (ThreeMoronsContext db, Group toDelete) =>
-{
-    try
-    {
-        db.Groups.Remove(toDelete);
-        await db.SaveChangesAsync();
-        return Results.Ok("deleted cool");
-    }
-    catch (Exception exc)
-    {
-        return Results.Problem(exc.ToString());
-    }
-}).RequireAuthorization(r=> r.RequireClaim("userClass", "2"));
+        try
+        {
+            db.Groups.Remove(toDelete);
+            await db.SaveChangesAsync();
+            return Results.Ok("deleted cool");
+        }
+        catch (Exception exc)
+        {
+            return Results.Problem(exc.ToString());
+        }
+    }).RequireAuthorization(r=> r.RequireClaim("userClass", "2"));
 
-app.MapGet("/periods", async (ThreeMoronsContext db) => db.Periods.ToListAsync());
+app.MapGet("/periods", async (ThreeMoronsContext db) => await db.Periods.ToListAsync());
 
 
-var SkippedClassGroup = app.MapGroup("/skippedClass").RequireAuthorization();
 
-SkippedClassGroup.MapGet("/all", async (ThreeMoronsContext db)=> await db.SkippedClasses.ToListAsync());
 
-SkippedClassGroup.MapGet("/", async ([FromQuery(Name = "id")] Guid id, ThreeMoronsContext db) => await db.SkippedClasses.FirstOrDefaultAsync(x => x.Id == id));
+
+
+
+
+
+var SkippedClassGroup = app.MapGroup("/skippedClass").RequireAuthorization(); //возможно добавлю валидацию
+
+SkippedClassGroup.MapGet("", async (ThreeMoronsContext db)=> await db.SkippedClasses.ToListAsync());
+
+SkippedClassGroup.MapGet("", async ([FromQuery(Name = "id")] Guid id, ThreeMoronsContext db) => await db.SkippedClasses.FirstOrDefaultAsync(x => x.Id == id));
+
+SkippedClassGroup.MapPost("", async (SkippedClassInput input, ThreeMoronsContext db) =>
+    {
+        try
+        {
+            SkippedClass SkipToAdd = new() { Id = input.Id, ClassName = input.className, DateOfSkip = input.DateOfSkip, StudNumber = input.StudNumber };
+            await db.AddAsync(SkipToAdd);
+            await db.SaveChangesAsync();
+            return Results.Created("/skippedClass", SkipToAdd);
+        }
+        catch (Exception exc)
+        {
+            return Results.Problem(exc.ToString());
+        }
+    });
+SkippedClassGroup.MapDelete("", async([FromQuery] Guid id, ThreeMoronsContext db)=>
+    {
+        try
+        {
+            var toDelete = await db.SkippedClasses.FindAsync(id);
+            db.SkippedClasses.Remove(toDelete);
+            await db.SaveChangesAsync();
+            return Results.Ok();
+        }
+        catch (Exception exc)
+        {
+            return Results.Problem(exc.ToString());
+        }
+    }).RequireAuthorization(o=> o.RequireClaim("userClassId", "2"));
+
+
+
+
+
+
+
+
+
+var StudentGroup = app.MapGroup("/student").RequireAuthorization();
+
+StudentGroup.MapGet("", async(ThreeMoronsContext db) => await db.Students.ToListAsync());
+StudentGroup.MapGet("", async([FromQuery(Name="id")]string studId, ThreeMoronsContext db)=> await db.Students.FindAsync(studId));
+
+StudentGroup.MapPost("", async(StudentInput inp, ThreeMoronsContext db)=>
+    {
+        try
+        {
+            Student StudentToCreate = new()
+            {
+                StudNumber = inp.StudNumber,
+                GroupName = inp.GroupName,
+                Name = inp.Name,
+                Surname = inp.Surname,
+                Patronymic = inp.Patronymic,
+                PhoneNumber = inp.PhoneNumber,
+            };
+            await db.Students.AddAsync(StudentToCreate);
+            await db.SaveChangesAsync();
+            return Results.Created("/student", StudentToCreate);
+        }
+        catch (Exception exc)
+        {
+            return Results.Problem(exc.ToString());
+        }
+    });
+StudentGroup.MapPut("", async(StudentInput inp, ThreeMoronsContext db)=>
+    {
+        try //12 часов ночи, я знаю, что можно сделать элегантнее. оставлю так до первого рефакторинга
+        {
+            var StudentToUpdate = await db.Students.FindAsync(inp.StudNumber);
+            StudentToUpdate.Name = inp.Name;
+            StudentToUpdate.Surname = inp.Surname;
+            StudentToUpdate.PhoneNumber = inp.PhoneNumber;
+            db.Students.Update(StudentToUpdate);
+            await db.SaveChangesAsync();
+            return Results.Ok();
+        }
+        catch (Exception exc)
+        {
+            return Results.Problem(exc.ToString());
+        }
+    });
+//ОТЧИСЛЯЕМ ПИДОРАСА
+StudentGroup.MapDelete("", async([FromQuery(Name ="studNumber")] string StudNumber, ThreeMoronsContext db)=> 
+    {
+        try
+        {
+            //ТЕБЕ НЕ СБЕЖАТЬ
+            var StudentToDelete = await db.Students.FindAsync(StudNumber);
+            //ПОЛУУЧАЙ СУКА
+            db.Students.Remove(StudentToDelete);
+
+            await db.SaveChangesAsync();
+            return Results.Ok(); //ВСЁ ПРОСТО ЗАЕБИСЬ ОК
+        }
+        catch (Exception exc)
+        {
+            return Results.Problem(exc.ToString()); //ахуеть мы даже отчислить человека не можем нормально
+        }
+        
+    });
+
+
+
+
+
+
+
+
+
+var StudentDelayGroup = app.MapGroup("/studentDelay");
 app.UseAuthentication();
 app.UseAuthorization();
 

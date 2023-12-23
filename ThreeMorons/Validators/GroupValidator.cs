@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
 using ThreeMorons.Model;
+using ThreeMorons.UserInputTypes;
 
 namespace ThreeMorons.Validators
 {
-    public class GroupValidator : AbstractValidator<Group>
+    public class GroupValidator : AbstractValidator<GroupInput>
     {
         public GroupValidator() 
         {
