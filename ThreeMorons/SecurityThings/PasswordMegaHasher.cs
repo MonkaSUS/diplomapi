@@ -12,17 +12,16 @@ namespace ThreeMorons.SecurityThings
         /// </summary>
         /// <param name="inp">Пароль, который необходимо хешировать</param>
         /// <returns>Кортеж(хз), первый элемент - хешированный пароль, второй - строковая версия соли в UTF8, которая к нему была применена</returns>
-        public static (string hashpass, string salt) HashPass(string inp)
+        public static (string hashpass, byte[] salt) HashPass(string inp)
         {
             byte[] salt = RandomNumberGenerator.GetBytes(128 / 8);
-            string StringSalt = Encoding.UTF8.GetString(salt);
             string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: inp,
                 salt: salt,
                 prf: KeyDerivationPrf.HMACSHA256,
                 iterationCount: 100000,
                 numBytesRequested: 256 / 8));
-            return (hashed, StringSalt);
+            return (hashed, salt);
         }
         /// <summary>
         /// Метод, используемый при авторизации пользователя. На основе существующей соли хеширует пароль тем же алгоритмом, что использовался при регистрации.
@@ -35,11 +34,12 @@ namespace ThreeMorons.SecurityThings
             string hashedPass = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: inp,
                 salt: salt,
-                prf: KeyDerivationPrf.HMACSHA256,
+                prf: KeyDerivationPrf.HMACSHA256, //Этот пидор всё портит
                 iterationCount: 100000,
                 numBytesRequested: 256 / 8));
             return hashedPass;
         }
+
     }
 
 }

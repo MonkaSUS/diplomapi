@@ -117,7 +117,7 @@ public partial class ThreeMoronsContext : DbContext
                 .HasColumnName("id");
             entity.Property(e => e.Login).HasMaxLength(20);
             entity.Property(e => e.Name).HasMaxLength(40);
-            entity.Property(e => e.Password).HasMaxLength(20);
+            entity.Property(e => e.Password).HasMaxLength(50);
             entity.Property(e => e.Patronymic).HasMaxLength(40);
             entity.Property(e => e.Surname).HasMaxLength(40);
             entity.Property(e => e.Salt).HasMaxLength(20);

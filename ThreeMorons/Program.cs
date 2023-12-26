@@ -54,7 +54,6 @@ builder.Services.AddAuthentication(o =>
         });
 builder.Services.AddAuthorization();
 
-
 var app = builder.Build();
 
 
@@ -62,9 +61,6 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
-
-
-
 
 app.MapGet("/", () => "Этот материал создан лицом, которое признано иностранным агентом на терриотрии РФ");
 
@@ -105,13 +101,14 @@ app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationIn
         {
             return Results.ValidationProblem(valres.ToDictionary());
         }
-        if (await db.Users.FirstOrDefaultAsync(user=> user.Login == inp.login) is User authUser)
+        User authUser = await db.Users.FirstOrDefaultAsync(user => user.Login == inp.login);
+        if (authUser is not null)
         {
-            byte[] userSalt = Encoding.UTF8.GetBytes(authUser.Salt); //какая-то забористая магия с кодировками, см PasswordMegaHasher 17-18 строки.
+            byte[] userSalt = authUser.Salt;
             var hashedPassword = PasswordMegaHasher.HashPass(authUser.Password, userSalt);
             if (authUser.Password != hashedPassword)
             {
-                return Results.Unauthorized();
+                return Results.Created(hashedPassword , authUser);
             }
             var stringToken = JwtIssuer.IssueJwtForUser(builder.Configuration, authUser);
             return Results.Ok(stringToken);
@@ -119,7 +116,7 @@ app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationIn
         }
         else
         {
-            return Results.Unauthorized();
+            return Results.Problem("пользователь в целом конча");
         }
      
     });
@@ -155,26 +152,26 @@ groupsGroup.MapPost("/", async (ThreeMoronsContext db, GroupInput created, IVali
             return Results.Problem(excep.ToString());
         }
     }).RequireAuthorization(r=> r.RequireClaim("userClass", "2"));
-groupsGroup.MapPut("/", async (Group toUpdate, IValidator<Group> validator, ThreeMoronsContext db) =>
-    {
-        var valres = await validator.ValidateAsync(toUpdate);
-        if (!valres.IsValid)
-        {
-            return Results.ValidationProblem(valres.ToDictionary());
-        }
-        try
-        {
-            var entity = await db.Groups.FindAsync(toUpdate.GroupName);
-            entity = toUpdate;
-            await db.SaveChangesAsync();
-            return Results.Ok("very good ok nice");
-        }
-        catch (Exception exc)
-        {
-            return Results.Problem(exc.ToString());
-        }
-    }).RequireAuthorization(r=> r.RequireClaim("userClass","2"));
-groupsGroup.MapDelete("", async (ThreeMoronsContext db, Group toDelete) =>
+//groupsGroup.MapPut("/", async (Group toUpdate, IValidator<GroupInput> validator, ThreeMoronsContext db) =>
+//    {
+//        var valres = await validator.ValidateAsync(toUpdate);
+//        if (!valres.IsValid)
+//        {
+//            return Results.ValidationProblem(valres.ToDictionary());
+//        }
+//        try
+//        {
+//            var entity = await db.Groups.FindAsync(toUpdate.GroupName);
+//            entity = toUpdate;
+//            await db.SaveChangesAsync();
+//            return Results.Ok("very good ok nice");
+//        }
+//        catch (Exception exc)
+//        {
+//            return Results.Problem(exc.ToString());
+//        }
+//    }).RequireAuthorization(r => r.RequireClaim("userClass", "2"));
+groupsGroup.MapDelete("", async (ThreeMoronsContext db, [FromBody]Group toDelete) =>
     {
         try
         {
