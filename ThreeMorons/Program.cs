@@ -3,18 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using ThreeMorons.Model;
 using FluentValidation;
 using ThreeMorons.Validators;
-using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using ThreeMorons.UserInputTypes;
-using System.Security.Claims;
-using System.IdentityModel.Tokens.Jwt;
-using System.Runtime.InteropServices;
 using ThreeMorons.SecurityThings;
 using Microsoft.AspNetCore.Mvc;
-using System.Reflection.Metadata.Ecma335;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +29,7 @@ builder.Logging.AddSerilog(logger);
 builder.Services.AddScoped<IValidator<RegistrationInput>, RegistrationValidator>();
 builder.Services.AddScoped<IValidator<AuthorizationInput>, AuthorizationValidator>();
 builder.Services.AddScoped<IValidator<GroupInput>, GroupValidator>();
+builder.Services.AddSingleton<PasswordMegaHasher>();
 builder.Services.AddAuthentication(o =>
     {
         o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -64,14 +60,18 @@ if (app.Environment.IsDevelopment())
 
 app.MapGet("/", () => "Этот материал создан лицом, которое признано иностранным агентом на терриотрии РФ");
 
-app.MapPost("/register", [AllowAnonymous] async (IValidator<RegistrationInput> validator, RegistrationInput inp, ThreeMoronsContext db) =>
+app.MapPost("/register", [AllowAnonymous] async (IValidator<RegistrationInput> validator, RegistrationInput inp, ThreeMoronsContext db, PasswordMegaHasher pmh) =>
     {
         var valres = await validator.ValidateAsync(inp);
         if (!valres.IsValid)
         {
             return Results.ValidationProblem(valres.ToDictionary());
         }
-        var HashingResult = PasswordMegaHasher.HashPass(inp.password);
+        if (await db.Users.AnyAsync(x=> x.Login == inp.login))
+        {
+            return Results.Conflict("Пользователь с таким логином уже существует");
+        }
+        var HashingResult = pmh.HashPass(inp.password);
         try
         {
             User UserToRegister = new()
@@ -94,7 +94,7 @@ app.MapPost("/register", [AllowAnonymous] async (IValidator<RegistrationInput> v
             return TypedResults.BadRequest(exc.Message);
         }
     });
-app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationInput> Validator, AuthorizationInput inp, ThreeMoronsContext db) =>
+app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationInput> Validator, AuthorizationInput inp, ThreeMoronsContext db, PasswordMegaHasher pmh) =>
     {
         var valres = await Validator.ValidateAsync(inp);
         if (!valres.IsValid)
@@ -105,10 +105,10 @@ app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationIn
         if (authUser is not null)
         {
             byte[] userSalt = authUser.Salt;
-            var hashedPassword = PasswordMegaHasher.HashPass(authUser.Password, userSalt);
+            var hashedPassword = pmh.HashPass(authUser.Password, userSalt);
             if (authUser.Password != hashedPassword)
             {
-                return Results.Created(hashedPassword , authUser);
+                return Results.Created(hashedPassword , authUser.Password + " " + authUser.Salt);
             }
             var stringToken = JwtIssuer.IssueJwtForUser(builder.Configuration, authUser);
             return Results.Ok(stringToken);

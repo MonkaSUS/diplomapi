@@ -12,8 +12,8 @@ POST {{ThreeMorons_HostAddress}}/register
 Content-Type: application/json
 
 {
-  "login": "testpidor",
-  "password": "TestoviyPidor22!",
+  "login": "sobaka12345",
+  "password": "Ce[fhbrb2404",
   "name": "Амонгус",
   "surname": "тигрилов",
   "patronymic": "саваннович",
@@ -30,7 +30,7 @@ POST {{ThreeMorons_HostAddress}}/authorizeTest
 Content-Type: application/json
 
 {
-    "login": "sobaka123",
+    "login": "sobaka12345",
     "password": "Ce[fhbrb2404"
 }
 ###
