@@ -29,7 +29,6 @@ builder.Logging.AddSerilog(logger);
 builder.Services.AddScoped<IValidator<RegistrationInput>, RegistrationValidator>();
 builder.Services.AddScoped<IValidator<AuthorizationInput>, AuthorizationValidator>();
 builder.Services.AddScoped<IValidator<GroupInput>, GroupValidator>();
-builder.Services.AddSingleton<PasswordMegaHasher>();
 builder.Services.AddAuthentication(o =>
     {
         o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -71,7 +70,7 @@ app.MapPost("/register", [AllowAnonymous] async (IValidator<RegistrationInput> v
         {
             return Results.Conflict("Пользователь с таким логином уже существует");
         }
-        var HashingResult = pmh.HashPass(inp.password);
+        var HashingResult = PasswordMegaHasher.HashPass(inp.password);
         try
         {
             User UserToRegister = new()
@@ -101,24 +100,21 @@ app.MapPost("/authorizeTest", [AllowAnonymous] async (IValidator<AuthorizationIn
         {
             return Results.ValidationProblem(valres.ToDictionary());
         }
-        User authUser = await db.Users.FirstOrDefaultAsync(user => user.Login == inp.login);
-        if (authUser is not null)
-        {
-            byte[] userSalt = authUser.Salt;
-            var hashedPassword = pmh.HashPass(authUser.Password, userSalt);
-            if (authUser.Password != hashedPassword)
-            {
-                return Results.Created(hashedPassword , authUser.Password + " " + authUser.Salt);
-            }
-            var stringToken = JwtIssuer.IssueJwtForUser(builder.Configuration, authUser);
-            return Results.Ok(stringToken);
-
-        }
-        else
+        User UserToAuthorizeInDb = await db.Users.FirstOrDefaultAsync(user => user.Login == inp.login);
+        if (UserToAuthorizeInDb is  null)
         {
             return Results.Problem("пользователь в целом конча");
         }
-     
+        byte[] userSalt = UserToAuthorizeInDb.Salt;
+        var hashedPassword = PasswordMegaHasher.HashPass(inp.password, userSalt);
+        if (UserToAuthorizeInDb.Password != hashedPassword)
+        {
+            return Results.Unauthorized();
+        }
+        var stringToken = JwtIssuer.IssueJwtForUser(builder.Configuration, UserToAuthorizeInDb);
+        return Results.Ok(stringToken);
+
+
     });
 
 

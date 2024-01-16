@@ -6,20 +6,18 @@ using System.Text;
 
 namespace ThreeMorons.SecurityThings
 {
-    public class PasswordMegaHasher
+    public static class PasswordMegaHasher
     {
-        private const KeyDerivationPrf pRandomFunction = KeyDerivationPrf.HMACSHA256;
+        private static KeyDerivationPrf pRandomFunction = KeyDerivationPrf.HMACSHA256;
 
-        public PasswordMegaHasher()
-        {
-        }
+        
 
         /// <summary>
         /// Метод, используемый для создания новой пары пароль+соль при регистрации.
         /// </summary>
         /// <param name="inp">Пароль, который необходимо хешировать</param>
-        /// <returns>Кортеж(хз), первый элемент - хешированный пароль, второй - строковая версия соли в UTF8, которая к нему была применена</returns>
-        public (string hashpass, byte[] salt) HashPass(string inp)
+        /// <returns>Кортеж(хз), первый элемент - хешированный пароль, второй - соль которая к нему была применена</returns>
+        public static (string hashpass, byte[] salt) HashPass(string inp)
         {
             byte[] salt = RandomNumberGenerator.GetBytes(128 / 8);
             string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
@@ -36,15 +34,16 @@ namespace ThreeMorons.SecurityThings
         /// <param name="inp">Пароль пользователя</param>
         /// <param name="salt">Соль, которую пользователь получил при регистриации в формате UTF8.</param>
         /// <returns>Пароль, хешированный с использованием существующей соли</returns>
-        public string HashPass(string inp, byte[] salt)
+        public static string HashPass(string inp, byte[] Salt)
         {
-            string hashedPass = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+            byte[] salt = Salt;
+            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: inp,
                 salt: salt,
-                prf: pRandomFunction, //Этот пидор всё портит
+                prf: pRandomFunction,
                 iterationCount: 100000,
                 numBytesRequested: 256 / 8));
-            return hashedPass;
+            return hashed;
         }
 
     }
