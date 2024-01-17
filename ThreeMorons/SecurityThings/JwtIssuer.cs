@@ -1,9 +1,4 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using ThreeMorons.Model;
-
+﻿
 namespace ThreeMorons.SecurityThings
 {
     /// <summary>

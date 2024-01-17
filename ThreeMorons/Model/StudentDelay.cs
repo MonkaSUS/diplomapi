@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace ThreeMorons.Model;
 
+/// <summary>
+/// ОПОЗДАНИЕ
+/// </summary>
 public partial class StudentDelay
 {
     public Guid Id { get; set; }

@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
-using System.Buffers.Text;
-using System.Security.Cryptography;
-using System.Text;
-
-namespace ThreeMorons.SecurityThings
+﻿namespace ThreeMorons.SecurityThings
 {
     public static class PasswordMegaHasher
     {

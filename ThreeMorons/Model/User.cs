@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
-
-namespace ThreeMorons.Model;
-
+﻿namespace ThreeMorons.Model;
 public partial class User
 {
     public Guid Id { get; set; }

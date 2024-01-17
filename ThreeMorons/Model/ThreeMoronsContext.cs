@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-
-namespace ThreeMorons.Model;
+﻿namespace ThreeMorons.Model;
 
 public partial class ThreeMoronsContext : DbContext
 {
@@ -30,8 +26,10 @@ public partial class ThreeMoronsContext : DbContext
     public virtual DbSet<UserClass> UserClasses { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#pragma warning disable CS1030 // Директива #warning
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=K29-01\\SQLEXPRESS; Database=ThreeMorons; User Id=sa; Password=111; Trusted_Connection=True; TrustServerCertificate=true");
+#pragma warning restore CS1030 // Директива #warning
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

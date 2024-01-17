@@ -1,8 +1,4 @@
-﻿using FluentValidation;
-using ThreeMorons.UserInputTypes;
-
-
-namespace ThreeMorons.Validators
+﻿namespace ThreeMorons.Validators
 {
     /// <summary>
     /// Валидатор для данных, которые пользователь предоставялет при авторизации, содержит в себе

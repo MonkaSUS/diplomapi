@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
-
-namespace ThreeMorons.Model;
-
+﻿namespace ThreeMorons.Model;
 public partial class UserClass
 {
     public int Id { get; set; }

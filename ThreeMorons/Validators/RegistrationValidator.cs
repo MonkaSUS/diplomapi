@@ -1,10 +1,4 @@
-﻿using FluentValidation;
-using Microsoft.AspNetCore.Http.Connections;
-using ThreeMorons.Model;
-using ThreeMorons.UserInputTypes;
-
-
-namespace ThreeMorons.Validators
+﻿namespace ThreeMorons.Validators
 {
     /// <summary>
     /// Валидатор для данных, которые пользователь предоставялет при регистрации, содержит в себе

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace ThreeMorons.Model;
 
+/// <summary>
+/// ПРОПУСК
+/// </summary>
 public partial class SkippedClass
 {
     public Guid Id { get; set; }

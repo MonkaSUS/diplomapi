@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ThreeMorons.UserInputTypes
+﻿namespace ThreeMorons.UserInputTypes
 {
     /// <summary>
     /// Рекорд, содержащий все поля, необходимые для регистрации нового пользователя и соответствующую валидацию для них.
