@@ -1,4 +1,5 @@
-﻿namespace ThreeMorons.Initialization
+﻿
+namespace ThreeMorons.Initialization
 {
     public static partial class Initializer
     {
@@ -41,5 +42,7 @@
             builder.Services.AddAuthorization();
             return builder.Build();
         }
+
+
     }
 }
