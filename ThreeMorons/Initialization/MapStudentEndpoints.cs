@@ -66,6 +66,20 @@
 
             });
 
+            StudentGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery(Name = "searchTerm")] string searchTerm, [FromQuery(Name = "groupName")] string groupName) =>
+            {
+
+                if (string.IsNullOrEmpty(groupName))
+                {
+                    if (await db.Groups.FindAsync(groupName) is null)
+                    {
+                        return Results.BadRequest("Такой группы не существует");
+                    }
+                }
+                var searchFilterResult = await db.Students.Where(x => x.GroupName == groupName).Where(x => x.SerachTerm.Contains(searchTerm)).ToListAsync();
+                return Results.Ok(searchFilterResult);
+            });
+
         }
     }
 }

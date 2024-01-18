@@ -1,6 +1,7 @@
 ﻿using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace ThreeMorons.Model;
@@ -25,5 +26,7 @@ public partial class Student
     public virtual ICollection<SkippedClass> SkippedClasses { get; set; } = new List<SkippedClass>();
     [JsonIgnore]
     public virtual ICollection<StudentDelay> StudentDelays { get; set; } = new List<StudentDelay>();
+    [NotMapped]
+    public string SerachTerm => String.Join(" ", Name, Surname, Patronymic, StudNumber);
 }
 

@@ -1,4 +1,6 @@
-﻿namespace ThreeMorons.Model;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ThreeMorons.Model;
 public partial class User
 {
     public Guid Id { get; set; }
@@ -17,4 +19,5 @@ public partial class User
 
     public virtual UserClass UserClass { get; set; } = null!;
     public byte[] Salt { get; set; } = null!;
+
 }

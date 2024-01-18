@@ -2,10 +2,15 @@
 {
     public partial class Initializer
     {
-        public void MapStatistics(WebApplication app)
+        public static void MapStatistics(WebApplication app)
         {
             var StatsGroup = app.MapGroup("/stats");
-            
+
+
+            StatsGroup.MapGet("/poorAttendanceStudents", async (ThreeMoronsContext db, [FromQuery(Name="count")]int count)=>
+                {
+                    
+                });
         }
     }
 }

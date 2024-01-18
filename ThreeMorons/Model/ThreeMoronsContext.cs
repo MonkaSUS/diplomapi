@@ -63,7 +63,6 @@ public partial class ThreeMoronsContext : DbContext
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("id");
-            entity.Property(e => e.ClassName).HasMaxLength(20);
             entity.Property(e => e.StudNumber).HasMaxLength(5);
 
             entity.HasOne(d => d.StudNumberNavigation).WithMany(p => p.SkippedClasses)

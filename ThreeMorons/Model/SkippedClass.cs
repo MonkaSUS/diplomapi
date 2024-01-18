@@ -12,7 +12,6 @@ public partial class SkippedClass
 
     public string StudNumber { get; set; } = null!;
 
-    public string ClassName { get; set; } = null!;
 
     public DateOnly DateOfSkip { get; set; }
 
