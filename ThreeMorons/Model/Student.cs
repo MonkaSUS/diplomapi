@@ -22,6 +22,7 @@ public partial class Student
 
     public virtual Group GroupNameNavigation { get; set; } = null!;
 
+    public bool IsDeleted { get; set; }
     [JsonIgnore]
     public virtual ICollection<SkippedClass> SkippedClasses { get; set; } = new List<SkippedClass>();
     [JsonIgnore]

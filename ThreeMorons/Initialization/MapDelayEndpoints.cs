@@ -5,8 +5,8 @@
         public static void MapDelayEndpoints(WebApplication app)
         {
             var StudentDelayGroup = app.MapGroup("/studentDelay").RequireAuthorization();
-            StudentDelayGroup.MapGet("/all", async (ThreeMoronsContext db) => await db.StudentDelays.ToListAsync());
-            StudentDelayGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id) => await db.StudentDelays.FindAsync(id));
+            StudentDelayGroup.MapGet("/all", async (ThreeMoronsContext db) => await db.StudentDelays.Where(x=> x.IsDeleted==false).ToListAsync());
+            StudentDelayGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id) => db.StudentDelays.Where(x=>x.IsDeleted==false).FirstOrDefaultAsync(x=>x.Id==id));
             StudentDelayGroup.MapPost("/", async (ThreeMoronsContext db, StudentDelayInput inp, IValidator<StudentDelayInput> val) =>
             {
                 var ValidationResult = val.Validate(inp);
@@ -14,7 +14,7 @@
                 {
                     return Results.ValidationProblem((IDictionary<string, string[]>)ValidationResult.Errors);
                 }
-                StudentDelay delay = new StudentDelay()
+                StudentDelay delay = new()
                 {
                     Id = Guid.NewGuid(),
                     ClassName = inp.className,
@@ -36,7 +36,8 @@
             {
                 try
                 {
-                    db.StudentDelays.Remove(await db.StudentDelays.FindAsync(id));
+                    var delay = await db.StudentDelays.FindAsync(id);
+                    delay.IsDeleted = true;
                     await db.SaveChangesAsync();
                     return Results.NoContent();
                 }
@@ -45,6 +46,8 @@
                     return Results.Problem(exc.Message);
                 }
             });
+            StudentDelayGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery(Name = "student")]string studNum ) =>await db.StudentDelays.Where(x => x.StudNumber == studNum && x.IsDeleted==false).ToListAsync());
+
         }
     } 
 }

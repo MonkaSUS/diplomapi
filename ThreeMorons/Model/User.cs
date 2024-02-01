@@ -14,10 +14,14 @@ public partial class User
 
     public int UserClassId { get; set; }
 
+    public byte[] Salt { get; set; } = null!;
+    public bool IsDeleted { get; set; }
     [JsonIgnore]
     public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
 
     public virtual UserClass UserClass { get; set; } = null!;
-    public byte[] Salt { get; set; } = null!;
+    [NotMapped]
+    public string SearchTerm => String.Join(' ', Name, Surname, Patronymic);
+
 
 }

@@ -5,8 +5,8 @@
         public static void MapStudentEndpoints(WebApplication app)
         {
             var StudentGroup = app.MapGroup("/student").RequireAuthorization();
-            StudentGroup.MapGet("", async (ThreeMoronsContext db) => await db.Students.ToListAsync());
-            StudentGroup.MapGet("", async ([FromQuery(Name = "id")] string studId, ThreeMoronsContext db) => await db.Students.FindAsync(studId));
+            StudentGroup.MapGet("", async (ThreeMoronsContext db) => await db.Students.Where(x=> x.IsDeleted==false).ToListAsync());
+            StudentGroup.MapGet("", async ([FromQuery(Name = "id")] string studId, ThreeMoronsContext db) => await db.Students.Where(x=> x.IsDeleted == false).FirstOrDefaultAsync(x=> x.StudNumber == studId));
             StudentGroup.MapPost("", async (StudentInput inp, ThreeMoronsContext db) =>
             {
                 try
@@ -46,22 +46,19 @@
                     return Results.Problem(exc.ToString());
                 }
             });
-            //ОТЧИСЛЯЕМ ПИДОРАСА
             StudentGroup.MapDelete("", async ([FromQuery(Name = "studNumber")] string StudNumber, ThreeMoronsContext db) =>
             {
                 try
                 {
-                    //ТЕБЕ НЕ СБЕЖАТЬ
                     var StudentToDelete = await db.Students.FindAsync(StudNumber);
-                    //ПОЛУУЧАЙ СУКА
-                    db.Students.Remove(StudentToDelete);
+                    StudentToDelete.IsDeleted = true;
 
                     await db.SaveChangesAsync();
-                    return Results.Ok(); //ВСЁ ПРОСТО ЗАЕБИСЬ ОК
+                    return Results.Ok(); //ВСЁ ПРОСТО ОК
                 }
                 catch (Exception exc)
                 {
-                    return Results.Problem(exc.ToString()); //ахуеть мы даже отчислить человека не можем нормально
+                    return Results.Problem(exc.ToString()); //мы даже отчислить человека не можем нормально
                 }
 
             });
@@ -76,7 +73,7 @@
                         return Results.BadRequest("Такой группы не существует");
                     }
                 }
-                var searchFilterResult = await db.Students.Where(x => x.GroupName == groupName).Where(x => x.SerachTerm.Contains(searchTerm)).ToListAsync();
+                var searchFilterResult = await db.Students.Where(x => x.GroupName == groupName && x.IsDeleted == false).Where(x => x.SerachTerm.Contains(searchTerm)).ToListAsync();
                 return Results.Ok(searchFilterResult);
             });
 

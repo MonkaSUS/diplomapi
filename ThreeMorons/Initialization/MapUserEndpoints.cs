@@ -1,4 +1,6 @@
-﻿namespace ThreeMorons.Initialization
+﻿using System.Linq.Expressions;
+
+namespace ThreeMorons.Initialization
 {
     public static partial class Initializer
     {
@@ -88,13 +90,20 @@
             {
                 try
                 {
-                    db.Users.Remove(await db.Users.FindAsync(id));
+                    var deletme = await db.Users.FindAsync(id);
+                    deletme.IsDeleted = true;
                     return Results.NoContent();
                 }
                 catch (Exception exc)
                 {
                     return Results.Problem(exc.Message);
                 }
+            });
+            UserGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery(Name = "name")]string searchTerm) =>
+            {
+                var usersFound = await db.Users.Where(x => x.SearchTerm.Contains(searchTerm) && x.IsDeleted == false).ToListAsync();
+                return Results.Ok(usersFound);
+
             });
 
         }

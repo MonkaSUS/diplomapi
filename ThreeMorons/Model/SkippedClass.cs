@@ -16,6 +16,7 @@ public partial class SkippedClass
     public DateOnly DateOfSkip { get; set; }
 
     public virtual Student StudNumberNavigation { get; set; } = null!;
+    public bool IsDeleted { get; set; }
 }
 
 ;

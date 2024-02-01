@@ -17,4 +17,6 @@ public partial class StudentDelay
     public TimeOnly Delay { get; set; }
 
     public virtual Student StudNumberNavigation { get; set; } = null!;
+
+    public bool IsDeleted { get; set; } 
 }

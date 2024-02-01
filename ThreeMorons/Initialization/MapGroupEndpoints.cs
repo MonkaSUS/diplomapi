@@ -39,7 +39,7 @@
                     return Results.Problem(exc.ToString());
                 }
             }).RequireAuthorization(r => r.RequireClaim("userClass", "2"));
-
+            groupsGroup.MapGet("search", async (ThreeMoronsContext db, [FromQuery(Name = "searchTerm")] string searchTerm) => await db.Groups.Where(x=> x.GroupName.Contains(searchTerm)).ToListAsync());
         }
     }
 }
