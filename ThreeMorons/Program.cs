@@ -6,8 +6,11 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+app.UseHttpsRedirection();
 
-app.MapGet("/", () => "Этот материал создан лицом, которое признано иностранным агентом на терриотрии РФ");
+app.MapGet("/", () => 
+{
+});
 
 
 Initializer.MapGroupEndpoints(app);
