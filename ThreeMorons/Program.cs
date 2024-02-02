@@ -8,9 +8,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseHttpsRedirection();
 
-app.MapGet("/", () => 
-{
-});
+app.MapGet("/", () => Results.Content(File.ReadAllText("C:\\Users\\Admin\\source\\repos\\ThreeMorons\\ThreeMorons\\wwwroot\\index.html"), contentType: "text/html"));
 
 
 Initializer.MapGroupEndpoints(app);
