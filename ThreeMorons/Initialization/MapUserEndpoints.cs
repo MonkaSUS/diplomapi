@@ -62,31 +62,9 @@ namespace ThreeMorons.Initialization
                 var stringToken = JwtIssuer.IssueJwtForUser(builder.Configuration, UserToAuthorizeInDb);
                 return Results.Ok(stringToken);
             });
-            UserGroup.MapGet("/all", async (ThreeMoronsContext db) => await db.Users.ToListAsync());
+            UserGroup.MapGet("/", async (ThreeMoronsContext db) => await db.Users.ToListAsync());
             UserGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id) => await db.Users.FindAsync(id));
-            UserGroup.MapPut("/update", async (ThreeMoronsContext db, User newUser) =>
-            {
-                if (newUser is null)
-                {
-                    return Results.BadRequest();
-                }
-                try
-                {
-                    var oldUser = await db.Users.FindAsync(newUser.Id);
-                    if (oldUser is null)
-                    {
-                        return Results.BadRequest();
-                    }
-                    oldUser = newUser;
-                    await db.SaveChangesAsync();
-                    return Results.Ok();
-                }
-                catch (Exception exc)
-                {
-                    return Results.Problem(exc.Message);
-                }
-            });
-            UserGroup.MapDelete("/delete", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id) =>
+            UserGroup.MapDelete("/", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id) =>
             {
                 try
                 {
@@ -99,9 +77,9 @@ namespace ThreeMorons.Initialization
                     return Results.Problem(exc.Message);
                 }
             });
-            UserGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery(Name = "name")]string searchTerm) =>
+            UserGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery(Name = "name")]string term) =>
             {
-                var usersFound = await db.Users.Where(x => x.SearchTerm.Contains(searchTerm) && x.IsDeleted == false).ToListAsync();
+                var usersFound = await db.Users.Where(x => x.SearchTerm.Contains(term) && x.IsDeleted == false).ToListAsync();
                 return Results.Ok(usersFound);
 
             });

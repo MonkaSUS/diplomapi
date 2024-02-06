@@ -38,3 +38,7 @@ Content-Type: application/json
 GET {{ThreeMorons_HostAddress}}/group/all
 
 ###
+
+GET {{ThreeMorons_HostAddress}}/group/search
+
+###

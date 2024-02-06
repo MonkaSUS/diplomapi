@@ -4,9 +4,9 @@
     {
         public static void MapDelayEndpoints(WebApplication app)
         {
-            var StudentDelayGroup = app.MapGroup("/studentDelay").RequireAuthorization();
-            StudentDelayGroup.MapGet("/all", async (ThreeMoronsContext db) => await db.StudentDelays.Where(x=> x.IsDeleted==false).ToListAsync());
-            StudentDelayGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id) => db.StudentDelays.Where(x=>x.IsDeleted==false).FirstOrDefaultAsync(x=>x.Id==id));
+            var StudentDelayGroup = app.MapGroup("/delay").RequireAuthorization();
+            StudentDelayGroup.MapGet("/", async (ThreeMoronsContext db) => await db.StudentDelays.Where(x=> x.IsDeleted==false).ToListAsync());
+            StudentDelayGroup.MapGet("/", async (ThreeMoronsContext db,Guid id) => db.StudentDelays.Where(x=>x.IsDeleted==false).FirstOrDefaultAsync(x=>x.Id==id));
             StudentDelayGroup.MapPost("/", async (ThreeMoronsContext db, StudentDelayInput inp, IValidator<StudentDelayInput> val) =>
             {
                 var ValidationResult = val.Validate(inp);
@@ -32,7 +32,7 @@
                     return Results.Problem(exc.Message);
                 }
             }).RequireAuthorization(x => x.RequireClaim("userClassId", "2"));
-            StudentDelayGroup.MapDelete("/", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id) =>
+            StudentDelayGroup.MapDelete("/", async (ThreeMoronsContext db, Guid id) =>
             {
                 try
                 {

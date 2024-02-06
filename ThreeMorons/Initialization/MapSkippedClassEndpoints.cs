@@ -9,7 +9,7 @@ namespace ThreeMorons.Initialization
         {
             var SkippedClassGroup = app.MapGroup("/skippedClass").RequireAuthorization(); //возможно добавлю валидацию
             SkippedClassGroup.MapGet("", async (ThreeMoronsContext db) => await db.SkippedClasses.Where(x=> x.IsDeleted==false).ToListAsync());
-            SkippedClassGroup.MapGet("", async ([FromQuery(Name = "id")] Guid id, ThreeMoronsContext db) => await db.SkippedClasses.FirstOrDefaultAsync(x => x.Id == id&& x.IsDeleted == false));
+            SkippedClassGroup.MapGet("", async (Guid id, ThreeMoronsContext db) => await db.SkippedClasses.FirstOrDefaultAsync(x => x.Id == id&& x.IsDeleted == false));
             SkippedClassGroup.MapPost("", async (SkippedClassInput input, ThreeMoronsContext db) =>
             {
                 try
@@ -29,7 +29,7 @@ namespace ThreeMorons.Initialization
                 try
                 {
                     var toDelete = await db.SkippedClasses.FindAsync(id);
-                    toDelete.IsDeleted = false;
+                    toDelete.IsDeleted = true;
                     await db.SaveChangesAsync();
                     return Results.Ok();
                 }

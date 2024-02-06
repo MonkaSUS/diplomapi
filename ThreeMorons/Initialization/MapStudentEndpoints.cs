@@ -6,7 +6,7 @@
         {
             var StudentGroup = app.MapGroup("/student").RequireAuthorization();
             StudentGroup.MapGet("", async (ThreeMoronsContext db) => await db.Students.Where(x=> x.IsDeleted==false).ToListAsync());
-            StudentGroup.MapGet("", async ([FromQuery(Name = "id")] string studId, ThreeMoronsContext db) => await db.Students.Where(x=> x.IsDeleted == false).FirstOrDefaultAsync(x=> x.StudNumber == studId));
+            StudentGroup.MapGet("", async (string studId, ThreeMoronsContext db) => await db.Students.Where(x=> x.IsDeleted == false).FirstOrDefaultAsync(x=> x.StudNumber == studId));
             StudentGroup.MapPost("", async (StudentInput inp, ThreeMoronsContext db) =>
             {
                 try
@@ -46,7 +46,7 @@
                     return Results.Problem(exc.ToString());
                 }
             });
-            StudentGroup.MapDelete("", async ([FromQuery(Name = "studNumber")] string StudNumber, ThreeMoronsContext db) =>
+            StudentGroup.MapDelete("", async (string StudNumber, ThreeMoronsContext db) =>
             {
                 try
                 {
@@ -63,10 +63,10 @@
 
             });
 
-            StudentGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery(Name = "searchTerm")] string searchTerm, [FromQuery(Name = "groupName")] string groupName) =>
+            StudentGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery(Name = "term")] string searchTerm, [FromQuery(Name = "group")] string groupName) =>
             {
 
-                if (string.IsNullOrEmpty(groupName))
+                if (!string.IsNullOrEmpty(groupName))
                 {
                     if (await db.Groups.FindAsync(groupName) is null)
                     {

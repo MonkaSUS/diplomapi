@@ -26,20 +26,9 @@
                     return Results.Problem(excep.ToString());
                 }
             }).RequireAuthorization(r => r.RequireClaim("userClass", "2"));
-            groupsGroup.MapDelete("", async (ThreeMoronsContext db, [FromBody] Group toDelete) =>
-            {
-                try
-                {
-                    db.Groups.Remove(toDelete);
-                    await db.SaveChangesAsync();
-                    return Results.Ok("deleted cool");
-                }
-                catch (Exception exc)
-                {
-                    return Results.Problem(exc.ToString());
-                }
-            }).RequireAuthorization(r => r.RequireClaim("userClass", "2"));
-            groupsGroup.MapGet("search", async (ThreeMoronsContext db, [FromQuery(Name = "searchTerm")] string searchTerm) => await db.Groups.Where(x=> x.GroupName.Contains(searchTerm)).ToListAsync());
+
+            groupsGroup.MapGet("search", async (ThreeMoronsContext db, [FromQuery(Name = "searchTerm")]
+            string searchTerm) => await db.Groups.Where(x=> x.GroupName.Contains(searchTerm)).ToListAsync());
         }
     }
 }
