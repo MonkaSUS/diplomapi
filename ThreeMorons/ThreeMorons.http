@@ -4,41 +4,15 @@ GET {{ThreeMorons_HostAddress}}/
 
 ###
 
-GET {{ThreeMorons_HostAddress}}/
+POST {{ThreeMorons_HostAddress}}/user/authorize
 
 ###
 
-POST {{ThreeMorons_HostAddress}}/register
+POST {{ThreeMorons_HostAddress}}/user/register
 Content-Type: application/json
 
 {
-  "login": "sobaka123456",
-  "password": "Ce[fhbrb2404",
-  "name": "Амонгус",
-  "surname": "тигрилов",
-  "patronymic": "саваннович",
-  "UserClassId": 2
+  "login": "olga22",
+  "password": "asd123"
 }
-###
-
-
-GET {{ThreeMorons_HostAddress}}/SecretInfoTest 
-
-###
-
-POST {{ThreeMorons_HostAddress}}/authorizeTest
-Content-Type: application/json
-
-{
-    "login": "sobaka12sobaka345",
-    "password": "Ce[fhbrb2404"
-}
-###
-
-GET {{ThreeMorons_HostAddress}}/group/all
-
-###
-
-GET {{ThreeMorons_HostAddress}}/group/search
-
 ###

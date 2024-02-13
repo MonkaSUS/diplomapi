@@ -46,7 +46,13 @@ public partial class ThreeMoronsContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Group_User");
         });
-
+        modelBuilder.Entity<Session>(entity =>
+        {
+            entity.HasKey(e => e.id);
+            entity.ToTable("Session");
+            entity.Property(e => e.JWTToken).HasMaxLength(150);
+            entity.Property(e => e.RefreshToken).HasMaxLength(150);
+        });
         modelBuilder.Entity<Period>(entity =>
         {
             entity.ToTable("Period");
