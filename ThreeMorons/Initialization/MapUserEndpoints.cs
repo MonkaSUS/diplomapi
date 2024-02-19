@@ -63,7 +63,7 @@ namespace ThreeMorons.Initialization
                 return Results.Ok(stringToken);
             });
             UserGroup.MapGet("/", async (ThreeMoronsContext db) => await db.Users.ToListAsync());
-            UserGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id) => await db.Users.FindAsync(id));
+            UserGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery] Guid id) => await db.Users.FindAsync(id));
             UserGroup.MapDelete("/", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id) =>
             {
                 try
@@ -77,7 +77,7 @@ namespace ThreeMorons.Initialization
                     return Results.Problem(exc.Message);
                 }
             });
-            UserGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery(Name = "name")]string term) =>
+            UserGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery]string term) =>
             {
                 var usersFound = await db.Users.Where(x => x.SearchTerm.Contains(term) && x.IsDeleted == false).ToListAsync();
                 return Results.Ok(usersFound);

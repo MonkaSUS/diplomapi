@@ -16,3 +16,11 @@ Content-Type: application/json
   "password": "asd123"
 }
 ###
+
+GET {{ThreeMorons_HostAddress}}/user/
+
+###
+
+GET {{ThreeMorons_HostAddress}}/user/
+
+###
