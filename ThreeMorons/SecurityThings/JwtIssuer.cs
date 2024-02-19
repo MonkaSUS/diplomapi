@@ -12,7 +12,7 @@ namespace ThreeMorons.SecurityThings
         /// <param name="config">builder.Config текущего приложения</param>
         /// <param name="authUser">Пользователь, который авторизуется</param>
         /// <returns>Строковую версию JWT токена для текущего пользователя. Identity содержит определение для jti, который устанавливается на основе guid пользователя</returns>
-        public static (string, string) IssueJwtForUser(ConfigurationManager config, User authUser)
+        public static (string jwt, string refresh) IssueJwtForUser(ConfigurationManager config, User authUser)
         {
             var issuer = config["Jwt:issuer"];
             var audience = config["Jwt:audience"];
@@ -40,9 +40,10 @@ namespace ThreeMorons.SecurityThings
             ThreeMoronsContext context = new ThreeMoronsContext();
             var handler = new JwtSecurityTokenHandler();
             var decryptedToken = handler.ReadJwtToken(JwtToken);
-            var salt = context.Users.FirstOrDefault(x=> x.Id.ToString() == decryptedToken.Claims.First(c => c.Type == "jti").Value).Salt;
+            var salt = context.Users.FirstOrDefault(x => x.Id.ToString() == decryptedToken.Claims.First(c => c.Type == "jti").Value).Salt;
 
             var refreshString = PasswordMegaHasher.HashPass(JwtToken, salt);
             return refreshString;
+        }
     }
 }

@@ -81,7 +81,6 @@ namespace ThreeMorons.Initialization
             {
                 var usersFound = await db.Users.Where(x => x.SearchTerm.Contains(term) && x.IsDeleted == false).ToListAsync();
                 return Results.Ok(usersFound);
-
             });
 
         }

@@ -1,3 +1,5 @@
+using System.Net;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var app = Initializer.Initialize(builder); 
@@ -27,5 +29,8 @@ Initializer.MapUserEndpoints(app, builder);
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+
+
 
 app.Run();

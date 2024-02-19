@@ -6,3 +6,4 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Usage", "ASP0022:Route conflict detected between route handlers", Justification = "<Ожидание>", Scope = "member", Target = "~M:ThreeMorons.Initialization.Initializer.MapSkippedClassEndpoints(Microsoft.AspNetCore.Builder.WebApplication)")]
+[assembly: SuppressMessage("Usage", "ASP0022:Route conflict detected between route handlers", Justification = "<Ожидание>", Scope = "member", Target = "~M:ThreeMorons.Initialization.Initializer.MapUserEndpoints(Microsoft.AspNetCore.Builder.WebApplication,Microsoft.AspNetCore.Builder.WebApplicationBuilder)")]
