@@ -1,5 +1,4 @@
-﻿using System.Linq.Expressions;
-
+﻿
 namespace ThreeMorons.Initialization
 {
     public static partial class Initializer
@@ -62,7 +61,7 @@ namespace ThreeMorons.Initialization
                 var stringToken = JwtIssuer.IssueJwtForUser(builder.Configuration, UserToAuthorizeInDb);
                 return Results.Ok(stringToken);
             });
-            UserGroup.MapGet("/", async (ThreeMoronsContext db) => await db.Users.ToListAsync());
+            UserGroup.MapGet("/all", async (ThreeMoronsContext db) => await db.Users.ToListAsync());
             UserGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery] Guid id) => await db.Users.FindAsync(id));
             UserGroup.MapDelete("/", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id) =>
             {

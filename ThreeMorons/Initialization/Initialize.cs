@@ -42,7 +42,5 @@ namespace ThreeMorons.Initialization
             builder.Services.AddAuthorization();
             return builder.Build();
         }
-
-
     }
 }

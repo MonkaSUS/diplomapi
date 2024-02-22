@@ -1,4 +1,3 @@
-using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +9,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseHttpsRedirection();
 
-app.MapGet("/", () => Results.Content(File.ReadAllText("C:\\Users\\Student29\\Source\\Repos\\ThreeMorons\\ThreeMorons\\wwwroot\\index.html"), contentType: "text/html"));
+app.MapGet("/", () => Results.Ok("hello"));
 
 
 Initializer.MapGroupEndpoints(app);

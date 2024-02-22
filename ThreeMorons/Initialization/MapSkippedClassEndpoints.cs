@@ -1,6 +1,4 @@
-﻿using ThreeMorons.Model;
-using ThreeMorons.UserInputTypes;
-
+﻿
 namespace ThreeMorons.Initialization
 {
     public static partial class Initializer
@@ -8,7 +6,7 @@ namespace ThreeMorons.Initialization
         public static void MapSkippedClassEndpoints(WebApplication app)
         {
             var SkippedClassGroup = app.MapGroup("/skippedClass").RequireAuthorization(); //возможно добавлю валидацию
-            SkippedClassGroup.MapGet("", async (ThreeMoronsContext db) => await db.SkippedClasses.Where(x=> x.IsDeleted==false).ToListAsync());
+            SkippedClassGroup.MapGet("/all", async (ThreeMoronsContext db) => await db.SkippedClasses.Where(x=> x.IsDeleted==false).ToListAsync());
             SkippedClassGroup.MapGet("", async (Guid id, ThreeMoronsContext db) => await db.SkippedClasses.FirstOrDefaultAsync(x => x.Id == id&& x.IsDeleted == false));
             SkippedClassGroup.MapPost("", async (SkippedClassInput input, ThreeMoronsContext db) =>
             {

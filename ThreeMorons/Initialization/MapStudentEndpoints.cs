@@ -5,7 +5,7 @@
         public static void MapStudentEndpoints(WebApplication app)
         {
             var StudentGroup = app.MapGroup("/student").RequireAuthorization();
-            StudentGroup.MapGet("", async (ThreeMoronsContext db) => await db.Students.Where(x=> x.IsDeleted==false).ToListAsync());
+            StudentGroup.MapGet("/all", async (ThreeMoronsContext db) => await db.Students.Where(x=> x.IsDeleted==false).ToListAsync());
             StudentGroup.MapGet("", async (string studId, ThreeMoronsContext db) => await db.Students.Where(x=> x.IsDeleted == false).FirstOrDefaultAsync(x=> x.StudNumber == studId));
             StudentGroup.MapPost("", async (StudentInput inp, ThreeMoronsContext db) =>
             {
