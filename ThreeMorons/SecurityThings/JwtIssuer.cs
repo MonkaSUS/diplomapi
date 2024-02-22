@@ -40,7 +40,8 @@ namespace ThreeMorons.SecurityThings
             ThreeMoronsContext context = new ThreeMoronsContext();
             var handler = new JwtSecurityTokenHandler();
             var decryptedToken = handler.ReadJwtToken(JwtToken);
-            var salt = context.Users.FirstOrDefault(x => x.Id.ToString() == decryptedToken.Claims.First(c => c.Type == "jti").Value).Salt;
+            var jtiClaim = decryptedToken.Claims.First(c => c.Type == "jti").Value;
+            var salt = context.Users.FirstOrDefault(x => x.Id.ToString() == jtiClaim).Salt;
 
             var refreshString = PasswordMegaHasher.HashPass(JwtToken, salt);
             return refreshString;
