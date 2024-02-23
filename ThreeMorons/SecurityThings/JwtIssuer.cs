@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.Extensions.Primitives;
+
 namespace ThreeMorons.SecurityThings
 {
     /// <summary>
@@ -33,6 +35,7 @@ namespace ThreeMorons.SecurityThings
             var jwtToken = tokenHandler.CreateToken(jwtTokenDescriptor);
             var stringToken = tokenHandler.WriteToken(jwtToken);
             var RefreshToken = IssueRefreshToken(stringToken);
+            
             return (stringToken, RefreshToken);
         }
         public static string IssueRefreshToken(string JwtToken)

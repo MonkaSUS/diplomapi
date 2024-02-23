@@ -1,4 +1,6 @@
 ﻿
+using System.Text.Json;
+
 namespace ThreeMorons.Initialization
 {
     public static partial class Initializer
@@ -59,9 +61,16 @@ namespace ThreeMorons.Initialization
                     return Results.Unauthorized();
                 }
                 var stringToken = JwtIssuer.IssueJwtForUser(builder.Configuration, UserToAuthorizeInDb);
-                return Results.Ok(stringToken);
+                return Results.Json(stringToken, new JsonSerializerOptions() { IncludeFields = true}, "application/json", 200);
             });
-            UserGroup.MapGet("/all", async (ThreeMoronsContext db) => await db.Users.ToListAsync());
+            UserGroup.MapGet("/all", async (ThreeMoronsContext db) =>
+            {   
+                return Results.Json(await db.Users.ToListAsync(), new JsonSerializerOptions() { IncludeFields = true }, "application/json", 200);
+            });
+            UserGroup.MapGet("/allWithAuth", async (ThreeMoronsContext db) =>
+            {
+                return Results.Json(await db.Users.ToListAsync(), new JsonSerializerOptions() { IncludeFields = true }, "application/json", 200);
+            });
             UserGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery] Guid id) => await db.Users.FindAsync(id));
             UserGroup.MapDelete("/", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id) =>
             {
