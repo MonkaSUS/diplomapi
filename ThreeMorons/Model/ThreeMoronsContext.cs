@@ -1,4 +1,7 @@
-﻿namespace ThreeMorons.Model;
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Net.Sockets;
+
+namespace ThreeMorons.Model;
 
 public partial class ThreeMoronsContext : DbContext
 {
@@ -28,7 +31,7 @@ public partial class ThreeMoronsContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #pragma warning disable CS1030 // Директива #warning
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-4LIIN5Q\\ALCOHOLDATABASE; Database=ThreeMoronsNew; User Id=sa; Trusted_Connection=True; TrustServerCertificate=true");
+        => optionsBuilder.UseSqlServer("workstation id = ThreeMoronsNew.mssql.somee.com; packet size = 4096; user id = TigerLion46_SQLLogin_1; pwd=1ymuz53ub9;data source = ThreeMoronsNew.mssql.somee.com; persist security info=False;initial catalog = ThreeMoronsNew; TrustServerCertificate=True");
 #pragma warning restore CS1030 // Директива #warning
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

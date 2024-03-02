@@ -29,4 +29,9 @@ Content-Type: application/json
     "password": "Ce[fhbrb2404"
 }
 
+GET {{ThreeMorons_HostAddress}} /group/all
+Content-Type: application/json
+{
+
+}
 ###
