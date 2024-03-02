@@ -16,7 +16,7 @@ namespace ThreeMorons.Initialization
             var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 
             builder.Logging.AddSerilog(logger);
-
+            //builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             builder.Services.AddScoped<IValidator<RegistrationInput>, RegistrationValidator>();
             builder.Services.AddScoped<IValidator<AuthorizationInput>, AuthorizationValidator>();
             builder.Services.AddScoped<IValidator<GroupInput>, GroupValidator>();

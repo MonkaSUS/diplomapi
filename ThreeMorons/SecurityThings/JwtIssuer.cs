@@ -38,13 +38,38 @@ namespace ThreeMorons.SecurityThings
             
             return (stringToken, RefreshToken);
         }
-        public static string IssueRefreshToken(string JwtToken)
+        public static (string jwt, string refresh) IssueJwtForUser(ConfigurationManager config, string userId, string UserClassId)
+        {
+            var issuer = config["Jwt:issuer"];
+            var audience = config["Jwt:audience"];
+            var key = Encoding.ASCII.GetBytes(config["Jwt:Key"]);
+            var jwtTokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim(JwtRegisteredClaimNames.Jti, userId),
+                    new Claim("userClass", UserClassId)
+                }),
+                Expires = DateTime.UtcNow.AddMinutes(3),
+                Issuer = issuer,
+                Audience = audience,
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha512Signature)
+            };
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var jwtToken = tokenHandler.CreateToken(jwtTokenDescriptor);
+            var stringToken = tokenHandler.WriteToken(jwtToken);
+            var RefreshToken = IssueRefreshToken(stringToken);
+            return (stringToken, RefreshToken);
+        }
+        private static string IssueRefreshToken(string JwtToken)
         {
             ThreeMoronsContext context = new ThreeMoronsContext();
             var handler = new JwtSecurityTokenHandler();
             var decryptedToken = handler.ReadJwtToken(JwtToken);
-            var jtiClaim = decryptedToken.Claims.First(c => c.Type == "jti").Value;
-            var salt = context.Users.FirstOrDefault(x => x.Id.ToString() == jtiClaim).Salt;
+
+
+            var idToSearch = decryptedToken.Claims.First(c => c.Type == "jti").Value; //КОГДА Я ПЫТАЛСЯ СДЕЛАТЬ ЭТО В ОДНУ СТРОКУ, ВСЁ ЛОМАЛОСЬ
+            var salt = context.Users.FirstOrDefault(x => x.Id.ToString() == idToSearch).Salt;
 
             var refreshString = PasswordMegaHasher.HashPass(JwtToken, salt);
             return refreshString;

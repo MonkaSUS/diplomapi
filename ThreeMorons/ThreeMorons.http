@@ -21,6 +21,12 @@ GET {{ThreeMorons_HostAddress}}/user/
 
 ###
 
-GET {{ThreeMorons_HostAddress}}/user/
+POST {{ThreeMorons_HostAddress}}/user/authorize
+Content-Type: application/json
+
+{   
+    "login": "TestLev228",
+    "password": "Ce[fhbrb2404"
+}
 
 ###
