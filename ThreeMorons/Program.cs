@@ -1,16 +1,19 @@
 using System.Net;
-
-var builder = WebApplication.CreateBuilder(args);
-
+using System.Text.Json;
+var builder = WebApplication.CreateBuilder(args); 
+//ашкн днаюбкемн, онрнлс врн детнкрмши яепхюкюигеп фхдйн яп╗р онд яеаъ опх бхде рсокнб
+builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
+{
+    o.SerializerOptions.IncludeFields = true;
+});
 var app = Initializer.Initialize(builder); 
-
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
 app.UseHttpsRedirection();
 
-app.MapGet("/", () => Results.Content(File.ReadAllText("C:\\Users\\Student29\\Source\\Repos\\ThreeMorons\\ThreeMorons\\wwwroot\\index.html"), contentType: "text/html"));
+app.MapGet("/", () => Results.Content("amogus"));
 
 
 Initializer.MapGroupEndpoints(app);

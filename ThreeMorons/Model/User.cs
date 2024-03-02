@@ -15,7 +15,8 @@ public partial class User
     public int UserClassId { get; set; }
 
     public byte[] Salt { get; set; } = null!;
-    public bool IsDeleted { get; set; }
+
+    public bool IsDeleted { get; set; } = false;
     [JsonIgnore]
     public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
 
