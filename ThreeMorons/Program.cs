@@ -1,20 +1,23 @@
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Net;
 using System.Text.Json;
+using ThreeMorons.HealthCheck;
 var builder = WebApplication.CreateBuilder(args); 
 //ашкн днаюбкемн, онрнлс врн детнкрмши яепхюкюигеп фхдйн яп╗р онд яеаъ опх бхде рсокнб
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 {
     o.SerializerOptions.IncludeFields = true;
 });
+
 var app = Initializer.Initialize(builder); 
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+//TODO уект вейя
 app.UseHttpsRedirection();
 
 app.MapGet("/", () => Results.Content("amogus"));
-
 
 Initializer.MapGroupEndpoints(app);
 
