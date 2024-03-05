@@ -6,6 +6,7 @@ GET /group/search/?searchTerm= - принимает в адресе поиско
 
 GET /skippedClass - Возвращает все записи о пропусках
 GET /skippedClass/{Guid записи} - возвращает запись о пропуске по айди
+GET /skippedClass/?groupName - в строке запроса принимает название группы, возвращает List<SkippedClass>, который содержит все пропуски для данной группы
 POST /skippedClass - в теле принимает SkippedClassInput, создаёт его в базе
 DELETE /skippedClass/{Guid записи} - помечает запись удалённой в базе данных, возвращает OK
 

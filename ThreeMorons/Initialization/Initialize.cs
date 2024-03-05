@@ -1,8 +1,20 @@
 ﻿
+using System.Text.Json;
+
 namespace ThreeMorons.Initialization
 {
     public static partial class Initializer
     {
+        private static JsonSerializerOptions opt = new JsonSerializerOptions()
+        {
+            IncludeFields = true,
+            AllowTrailingCommas = false,
+            UnmappedMemberHandling = JsonUnmappedMemberHandling.Skip,
+            ReadCommentHandling = JsonCommentHandling.Skip,
+            IgnoreReadOnlyFields = false,
+            IgnoreReadOnlyProperties = false,
+            DictionaryKeyPolicy = JsonNamingPolicy.CamelCase
+        };
         public static WebApplication Initialize(WebApplicationBuilder builder)
         {
             builder.Logging.ClearProviders();
