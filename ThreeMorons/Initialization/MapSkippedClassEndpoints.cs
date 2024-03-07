@@ -25,6 +25,10 @@ namespace ThreeMorons.Initialization
             {
                 try
                 {
+                    if (input.DateOfSkip.DayOfWeek == DayOfWeek.Saturday|| input.DateOfSkip.DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        return Results.BadRequest(String.Format($"Ты пизданулся? {0} был выходной", input.DateOfSkip));
+                    }
                     SkippedClass SkipToAdd = new() { Id = input.Id, DateOfSkip = input.DateOfSkip, StudNumber = input.StudNumber };
                     await db.AddAsync(SkipToAdd);
                     await db.SaveChangesAsync();
