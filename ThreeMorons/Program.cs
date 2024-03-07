@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Net;
 using System.Text.Json;
 var builder = WebApplication.CreateBuilder(args); 
@@ -6,12 +7,19 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 {
     o.SerializerOptions.IncludeFields = true;
 });
-var app = Initializer.Initialize(builder); 
+
+
+
+var app = Initializer.Initialize(builder);
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
 app.UseHttpsRedirection();
+
+
+
+
 
 app.MapGet("/", () => Results.Content("amogus"));
 
