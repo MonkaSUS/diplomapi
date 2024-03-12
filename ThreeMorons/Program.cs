@@ -17,12 +17,13 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 var otel = builder.Services.AddOpenTelemetry();
 
 var TotalRequestMeter = new Meter("TotalRequestMeter", "1.0.0");
-var countRequests = TotalRequestMeter.CreateCounter<int>("greetings.count", description: "Counts the total number of request since the last restart of the server");
+var countRequests = TotalRequestMeter.CreateCounter<int>("requests.count", description: "Counts the total number of request since the last restart of the server");
 var TotalActivitySource = new ActivitySource("TotalRequestMeter");
 
 otel.ConfigureResource(r => r.AddService(serviceName: builder.Environment.ApplicationName));
 otel.WithMetrics(m => m
     .AddAspNetCoreInstrumentation()
+    .AddMeter(TotalRequestMeter.Name)
     .AddMeter("Microsoft.AspNetCore.Hosting")
     .AddMeter("Microsoft.AspNetCore.Server.Kestrel")
     .AddPrometheusExporter());
@@ -43,6 +44,7 @@ app.Use(async (context, next) =>
     await next();
     using var activity = TotalActivitySource.StartActivity("RequestMeter");
     countRequests.Add(1);
+    activity?.SetTag("request happened", context.GetEndpoint().ToString());
 });
 app.MapPrometheusScrapingEndpoint();
 if (app.Environment.IsDevelopment())
