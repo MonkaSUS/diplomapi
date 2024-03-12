@@ -1,4 +1,10 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
+using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using System.Net;
 using System.Text.Json;
 using ThreeMorons.HealthCheck;
@@ -8,8 +14,37 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 {
     o.SerializerOptions.IncludeFields = true;
 });
+var otel = builder.Services.AddOpenTelemetry();
 
-var app = Initializer.Initialize(builder); 
+var TotalRequestMeter = new Meter("TotalRequestMeter", "1.0.0");
+var countRequests = TotalRequestMeter.CreateCounter<int>("greetings.count", description: "Counts the total number of request since the last restart of the server");
+var TotalActivitySource = new ActivitySource("TotalRequestMeter");
+
+otel.ConfigureResource(r => r.AddService(serviceName: builder.Environment.ApplicationName));
+otel.WithMetrics(m => m
+    .AddAspNetCoreInstrumentation()
+    .AddMeter("Microsoft.AspNetCore.Hosting")
+    .AddMeter("Microsoft.AspNetCore.Server.Kestrel")
+    .AddPrometheusExporter());
+
+otel.WithTracing(t =>
+{
+    t.AddAspNetCoreInstrumentation();
+    t.AddHttpClientInstrumentation();
+    t.AddOtlpExporter();
+});
+
+
+
+var app = Initializer.Initialize(builder);
+
+app.Use(async (context, next) =>
+{
+    await next();
+    using var activity = TotalActivitySource.StartActivity("RequestMeter");
+    countRequests.Add(1);
+});
+app.MapPrometheusScrapingEndpoint();
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
