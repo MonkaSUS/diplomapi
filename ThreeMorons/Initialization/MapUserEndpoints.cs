@@ -35,7 +35,7 @@ namespace ThreeMorons.Initialization
                     };
                     await db.Users.AddAsync(UserToRegister);
                     await db.SaveChangesAsync();
-                    return Results.Created("", UserToRegister);
+                    return Results.Json(UserToRegister, opt, statusCode: 201);
                 }
                 catch (Exception exc)
                 {
@@ -52,7 +52,7 @@ namespace ThreeMorons.Initialization
                 User UserToAuthorizeInDb = await db.Users.FirstOrDefaultAsync(user => user.Login == inp.login);
                 if (UserToAuthorizeInDb is null)
                 {
-                    return Results.Problem("пользователь в целом конча");
+                    return Results.Problem("пользователь в целом налл");
                 }
                 byte[] userSalt = UserToAuthorizeInDb.Salt;
                 var hashedPassword = PasswordMegaHasher.HashPass(inp.password, userSalt);
@@ -65,10 +65,6 @@ namespace ThreeMorons.Initialization
             });
             UserGroup.MapGet("/all", async (ThreeMoronsContext db) =>
             {   
-                return Results.Json(await db.Users.ToListAsync(), new JsonSerializerOptions() { IncludeFields = true }, "application/json", 200);
-            });
-            UserGroup.MapGet("/allWithAuth", async (ThreeMoronsContext db) =>
-            {
                 return Results.Json(await db.Users.ToListAsync(), new JsonSerializerOptions() { IncludeFields = true }, "application/json", 200);
             });
             UserGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery] Guid id) => await db.Users.FindAsync(id));

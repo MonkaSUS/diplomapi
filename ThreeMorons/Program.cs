@@ -22,11 +22,12 @@ var TotalActivitySource = new ActivitySource("TotalRequestMeter");
 
 otel.ConfigureResource(r => r.AddService(serviceName: builder.Environment.ApplicationName));
 otel.WithMetrics(m => m
+    .AddPrometheusExporter()
     .AddAspNetCoreInstrumentation()
     .AddMeter(TotalRequestMeter.Name)
     .AddMeter("Microsoft.AspNetCore.Hosting")
     .AddMeter("Microsoft.AspNetCore.Server.Kestrel")
-    .AddPrometheusExporter());
+    .AddPrometheusExporter()) ;
 
 otel.WithTracing(t =>
 {
