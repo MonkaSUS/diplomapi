@@ -19,7 +19,7 @@ namespace ThreeMorons.Initialization
                         skippedClasses.Add(x);
                     }
                 });
-                return Results.Json(skippedClasses, opt, "application/json", 200);
+                return Results.Json(skippedClasses, _opt, "application/json", 200);
             });
             SkippedClassGroup.MapPost("", async (SkippedClassInput input, ThreeMoronsContext db) =>
             {

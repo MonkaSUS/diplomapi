@@ -1,4 +1,6 @@
-﻿namespace ThreeMorons.Initialization
+﻿using System.Net;
+
+namespace ThreeMorons.Initialization
 {
     public static partial class Initializer
     {
@@ -22,7 +24,7 @@
                     };
                     await db.Students.AddAsync(StudentToCreate);
                     await db.SaveChangesAsync();
-                    return Results.Created("/student", StudentToCreate);
+                    return Results.Json(StudentToCreate,_opt, statusCode:201);
                 }
                 catch (Exception exc)
                 {

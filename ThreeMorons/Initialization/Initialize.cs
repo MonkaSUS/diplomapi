@@ -5,7 +5,7 @@ namespace ThreeMorons.Initialization
 {
     public static partial class Initializer
     {
-        private static JsonSerializerOptions opt = new JsonSerializerOptions()
+        private static JsonSerializerOptions _opt = new JsonSerializerOptions()
         {
             IncludeFields = true,
             AllowTrailingCommas = false,

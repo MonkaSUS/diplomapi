@@ -35,7 +35,7 @@ namespace ThreeMorons.Initialization
                     };
                     await db.Users.AddAsync(UserToRegister);
                     await db.SaveChangesAsync();
-                    return Results.Json(UserToRegister, opt, statusCode: 201);
+                    return Results.Json(UserToRegister, _opt, statusCode: 201);
                 }
                 catch (Exception exc)
                 {
