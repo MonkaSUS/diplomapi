@@ -1,5 +1,6 @@
 ﻿
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace ThreeMorons.Initialization
 {
@@ -50,6 +51,22 @@ namespace ThreeMorons.Initialization
                     return Results.ValidationProblem(valres.ToDictionary());
                 }
                 User UserToAuthorizeInDb = await db.Users.FirstOrDefaultAsync(user => user.Login == inp.login);
+
+                var uid = UserToAuthorizeInDb.Id;
+                var handler = new JwtSecurityTokenHandler();
+                foreach (var session in db.Sessions) //ЕСЛИ ДЛЯ ЭТОГО ПОЛЬЗОВАТЕЛЯ УЖЕ СУЩЕСТВУЕТ ОТКРЫТАЯ СЕССИЯ, ТО МЫ ЕЁ ЗАКРЫВАЕМ
+                {
+                    if (session.SessionEnd !<= DateTime.Now)
+                    {
+                        var jwt = handler.ReadToken(session.JwtToken) as JwtSecurityToken;
+                        var jti = jwt.Id;
+                        if (jti == UserToAuthorizeInDb.Id.ToString())
+                        {
+                            session.SessionEnd = DateTime.Now;
+                            session.IsValid = false;
+                        }
+                    }
+                }
                 if (UserToAuthorizeInDb is null)
                 {
                     return Results.Problem("пользователь в целом налл");
@@ -61,6 +78,16 @@ namespace ThreeMorons.Initialization
                     return Results.Unauthorized();
                 }
                 var stringToken = JwtIssuer.IssueJwtForUser(builder.Configuration, UserToAuthorizeInDb);
+                Session newSession = new()
+                {
+                    id = Guid.NewGuid(),
+                    JwtToken = stringToken.jwt,
+                    RefreshToken = stringToken.refresh,
+                    IsValid = true,
+                    SessionStart = DateTime.Now
+                };
+                db.Sessions.Add(newSession);
+                db.SaveChanges();
                 return Results.Json(stringToken, new JsonSerializerOptions() { IncludeFields = true}, "application/json", 200);
             });
             UserGroup.MapGet("/all", async (ThreeMoronsContext db) =>

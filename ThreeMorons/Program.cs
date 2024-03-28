@@ -64,18 +64,32 @@ app.MapGet("/", () => Results.Content("amogus"));
 Initializer.MapGroupEndpoints(app);
 
 app.MapGet("/periods", async (ThreeMoronsContext db) => await db.Periods.ToListAsync());
-app.MapGet("/refresh", async(ThreeMoronsContext db, HttpContext c)=>
-{
-    c.Request.Headers.TryGetValue("Authorization", out var jwt);
-    c.Request.Headers.TryGetValue("Refresh", out var rft);
-    //ÇÄÅÑÁ ÍÓÆÍÎ ÍÀÏÈÑÀÒÜ ÏÐÎÂÅÐÊÓ ÑÓÙÅÑÒÎÂÀÂÍÈß ÒÀÊÎÉ ÏÀÐÛ Â ÁÄ
-    //ÂÀÆÍÎ
-    var iden = c.User.Identity as ClaimsIdentity;
-    var id = iden.FindFirst("jti").Value;
-    var uclass = iden.FindFirst("UserClass").Value;
-    var newTokens = JwtIssuer.IssueJwtForUser(builder.Configuration, id, uclass);
-    return Results.Ok(newTokens);
 
+app.MapPost("/refresh", async (ThreeMoronsContext db, RefreshInput inp) =>
+{
+    var existingSession =
+        await db.Sessions.FirstOrDefaultAsync(x => x.JwtToken == inp.JwtToken && x.RefreshToken == inp.RefreshToken)!;
+    if (existingSession is null)
+    {
+        return Results.Text("Àâòîðèçóéòåñü çàíîâî", statusCode:403);
+    }
+    existingSession.SessionEnd = DateTime.Now;
+    var handler = new JwtSecurityTokenHandler();
+    var jwt = handler.ReadToken(inp.JwtToken) as JwtSecurityToken;
+    var jti = jwt.Id;
+    var userClass = jwt.Claims.FirstOrDefault(x => x.Type == "userClass").Value;
+    var newPair = JwtIssuer.IssueJwtForUser(builder.Configuration, jti, userClass);
+    var newSession = new Session()
+    {
+        id = Guid.NewGuid(),
+        IsValid = true, 
+        JwtToken = newPair.jwt,
+        RefreshToken = newPair.refresh,
+        SessionStart = DateTime.Now
+    };
+    db.Sessions.Add(newSession);
+    db.SaveChanges();
+    return Results.Json(newPair, statusCode: 200, contentType: "application/json");
 });
 
 Initializer.MapSkippedClassEndpoints(app);

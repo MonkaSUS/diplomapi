@@ -25,7 +25,7 @@ public partial class ThreeMoronsContext : DbContext
     public virtual DbSet<StudentDelay> StudentDelays { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
-
+    public virtual DbSet<Session> Sessions { get; set; }
     public virtual DbSet<UserClass> UserClasses { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -53,7 +53,7 @@ public partial class ThreeMoronsContext : DbContext
         {
             entity.HasKey(e => e.id);
             entity.ToTable("Session");
-            entity.Property(e => e.JWTToken).HasMaxLength(150);
+            entity.Property(e => e.JwtToken).HasMaxLength(150);
             entity.Property(e => e.RefreshToken).HasMaxLength(150);
         });
         modelBuilder.Entity<Period>(entity =>
