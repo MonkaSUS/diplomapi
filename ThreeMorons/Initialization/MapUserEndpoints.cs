@@ -52,11 +52,15 @@ namespace ThreeMorons.Initialization
                 }
                 User UserToAuthorizeInDb = await db.Users.FirstOrDefaultAsync(user => user.Login == inp.login);
 
-                var uid = UserToAuthorizeInDb.Id;
                 var handler = new JwtSecurityTokenHandler();
+
+                if (UserToAuthorizeInDb is null)
+                {
+                    return Results.Problem("пользователь в целом налл");
+                }
                 foreach (var session in db.Sessions) //ЕСЛИ ДЛЯ ЭТОГО ПОЛЬЗОВАТЕЛЯ УЖЕ СУЩЕСТВУЕТ ОТКРЫТАЯ СЕССИЯ, ТО МЫ ЕЁ ЗАКРЫВАЕМ
                 {
-                    if (session.SessionEnd !<= DateTime.Now)
+                    if (session.SessionEnd is not null && session.SessionEnd <= DateTime.Now)
                     {
                         var jwt = handler.ReadToken(session.JwtToken) as JwtSecurityToken;
                         var jti = jwt.Id;
@@ -66,10 +70,6 @@ namespace ThreeMorons.Initialization
                             session.IsValid = false;
                         }
                     }
-                }
-                if (UserToAuthorizeInDb is null)
-                {
-                    return Results.Problem("пользователь в целом налл");
                 }
                 byte[] userSalt = UserToAuthorizeInDb.Salt;
                 var hashedPassword = PasswordMegaHasher.HashPass(inp.password, userSalt);
