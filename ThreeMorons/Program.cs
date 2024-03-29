@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Http;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
@@ -6,6 +7,7 @@ using OpenTelemetry.Trace;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 using ThreeMorons.HealthCheck;
 var builder = WebApplication.CreateBuilder(args); 
@@ -71,26 +73,41 @@ app.MapPost("/refresh", async (ThreeMoronsContext db, RefreshInput inp) =>
         await db.Sessions.FirstOrDefaultAsync(x => x.JwtToken == inp.JwtToken && x.RefreshToken == inp.RefreshToken)!;
     if (existingSession is null)
     {
-        return Results.Text("Авторизуйтесь заново", statusCode:403);
+        return Results.Text("Авторизуйтесь заново", statusCode:401);
     }
-    existingSession.SessionEnd = DateTime.Now;
+    if (existingSession.SessionStart.AddDays(2) == DateTime.Now)
+    {
+        return Results.Text("Ваша сессия устарела. Авторизуйтесь заново", statusCode: 401);
+    }
+    //existingSession.SessionEnd = DateTime.Now; - я, видимо
+    //хотел закрывать сессию на каждый рефреш - но сессия это что-то долгое, а сам жвт токен должен мало жить
     var handler = new JwtSecurityTokenHandler();
     var jwt = handler.ReadToken(inp.JwtToken) as JwtSecurityToken;
+    //считываем клэймы из старого токена, чтобы сделать такой же новый
     var jti = jwt.Id;
     var userClass = jwt.Claims.FirstOrDefault(x => x.Type == "userClass").Value;
     var newPair = JwtIssuer.IssueJwtForUser(builder.Configuration, jti, userClass);
     var newSession = new Session()
     {
         id = Guid.NewGuid(),
-        IsValid = true, 
+        IsValid = true,
         JwtToken = newPair.jwt,
         RefreshToken = newPair.refresh,
-        SessionStart = DateTime.Now
+        SessionStart = DateTime.Now,
+        //экскременты ой эксперименты
+        SessionEnd = DateTime.Now.AddDays(2) //Сессия закрывается через 2 дня неактивности
     };
     db.Sessions.Add(newSession);
     db.SaveChanges();
     return Results.Json(newPair, statusCode: 200, contentType: "application/json");
 });
+
+//app.MapGet("/harakiri", (ThreeMoronsContext db, [FromQuery(Name ="sqlQ")] string query) =>
+//{
+//    var queryf = FormattableStringFactory.Create(query);
+//    var res = db.Database.ExecuteSql(queryf);
+//    return Results.Ok("Заебись!");
+//});
 
 Initializer.MapSkippedClassEndpoints(app);
 
