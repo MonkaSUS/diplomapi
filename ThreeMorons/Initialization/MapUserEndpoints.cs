@@ -51,7 +51,6 @@ namespace ThreeMorons.Initialization
                     return Results.ValidationProblem(valres.ToDictionary());
                 }
                 User UserToAuthorizeInDb = await db.Users.FirstOrDefaultAsync(user => user.Login == inp.login);
-
                 var handler = new JwtSecurityTokenHandler();
 
                 if (UserToAuthorizeInDb is null)
@@ -78,13 +77,14 @@ namespace ThreeMorons.Initialization
                     return Results.Unauthorized();
                 }
                 var stringToken = JwtIssuer.IssueJwtForUser(builder.Configuration, UserToAuthorizeInDb);
-                Session newSession = new()
+                Session newSession = new() //ДЛИТЕЛЬНОСТЬ СЕССИИ СОСТАВЛЯЕТ ДВА ДНЯ. ПРИ СОЗДАНИИ СЕССИИ В ПОЛЕ SessionEnd ЗАПИСЫВАЕТСЯ МАКСИМАЛЬНОЕ ВРЕМЯ ОКОНЧАНИЯ СЕССИИ, А ПРИ ДОСРОЧНОМ ЗАКРЫТИИ В ДБ ЗАПИСЫВАЕТСЯ НАСТОЯЩЕЕ ВРЕМЯ ЗАКРЫТИЯ СЕССИИ
                 {
                     id = Guid.NewGuid(),
                     JwtToken = stringToken.jwt,
                     RefreshToken = stringToken.refresh,
                     IsValid = true,
-                    SessionStart = DateTime.Now
+                    SessionStart = DateTime.Now,
+                    SessionEnd = DateTime.Now.AddDays(2)
                 };
                 db.Sessions.Add(newSession);
                 db.SaveChanges();
