@@ -51,12 +51,12 @@ namespace ThreeMorons.Initialization
                     return Results.ValidationProblem(valres.ToDictionary());
                 }
                 User UserToAuthorizeInDb = await db.Users.FirstOrDefaultAsync(user => user.Login == inp.login);
-                var handler = new JwtSecurityTokenHandler();
 
                 if (UserToAuthorizeInDb is null)
                 {
                     return Results.Problem("пользователь в целом налл");
                 }
+                var handler = new JwtSecurityTokenHandler();
                 foreach (var session in db.Sessions) //ЕСЛИ ДЛЯ ЭТОГО ПОЛЬЗОВАТЕЛЯ УЖЕ СУЩЕСТВУЕТ ОТКРЫТАЯ СЕССИЯ, ТО МЫ ЕЁ ЗАКРЫВАЕМ
                 {
                     if (session.SessionEnd is not null && session.SessionEnd <= DateTime.Now)
@@ -70,6 +70,7 @@ namespace ThreeMorons.Initialization
                         }
                     }
                 }
+                db.SaveChanges();
                 byte[] userSalt = UserToAuthorizeInDb.Salt;
                 var hashedPassword = PasswordMegaHasher.HashPass(inp.password, userSalt);
                 if (UserToAuthorizeInDb.Password != hashedPassword)
@@ -83,8 +84,8 @@ namespace ThreeMorons.Initialization
                     JwtToken = stringToken.jwt,
                     RefreshToken = stringToken.refresh,
                     IsValid = true,
-                    SessionStart = DateTime.Now,
-                    SessionEnd = DateTime.Now.AddDays(2)
+                    SessionStart = DateTime.Now.ToUniversalTime(),
+                    SessionEnd = DateTime.Now.AddDays(2).ToUniversalTime()
                 };
                 db.Sessions.Add(newSession);
                 db.SaveChanges();

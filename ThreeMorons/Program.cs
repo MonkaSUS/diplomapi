@@ -70,20 +70,19 @@ app.MapGet("/periods", async (ThreeMoronsContext db) => await db.Periods.ToListA
 app.MapPost("/refresh", async (ThreeMoronsContext db, RefreshInput inp) =>
 {
     var existingSession =
-        await db.Sessions.FirstOrDefaultAsync(x => x.JwtToken == inp.JwtToken && x.RefreshToken == inp.RefreshToken)!;
+        await db.Sessions.FirstAsync(x => x.JwtToken == inp.JwtToken && x.RefreshToken == inp.RefreshToken)!;
     if (existingSession is null)
     {
-        return Results.Text("Авторизуйтесь заново", statusCode:401);
+        return Results.Text("Авторизуйтесь заново", statusCode:403);
     }
-    if (existingSession.SessionStart.AddDays(2) == DateTime.Now)
+    if (existingSession.SessionStart.AddDays(2) <= DateTime.Now)
     {
-        return Results.Text("Ваша сессия устарела. Авторизуйтесь заново", statusCode: 401);
+        existingSession.IsValid = false;
+        db.SaveChanges();
+        return Results.Text("Ваша сессия устарела. Авторизуйтесь заново", statusCode: 403);
     }
-    //existingSession.SessionEnd = DateTime.Now; - я, видимо
-    //хотел закрывать сессию на каждый рефреш - но сессия это что-то долгое, а сам жвт токен должен мало жить
     var handler = new JwtSecurityTokenHandler();
     var jwt = handler.ReadToken(inp.JwtToken) as JwtSecurityToken;
-    //считываем клэймы из старого токена, чтобы сделать такой же новый
     var jti = jwt.Id;
     var userClass = jwt.Claims.FirstOrDefault(x => x.Type == "userClass").Value;
     var newPair = JwtIssuer.IssueJwtForUser(builder.Configuration, jti, userClass);
