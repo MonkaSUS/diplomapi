@@ -7,7 +7,7 @@ namespace ThreeMorons.Initialization
         public static void MapStudentEndpoints(WebApplication app)
         {
             var StudentGroup = app.MapGroup("/student").RequireAuthorization();
-            StudentGroup.MapGet("/all", async (ThreeMoronsContext db) => await db.Students.Where(x=> x.IsDeleted==false).ToListAsync());
+            StudentGroup.MapGet("/all", async (ThreeMoronsContext db) => await db.Students.Where(x=> x.IsDeleted==false).ToListAsync()).CacheOutput();
             StudentGroup.MapGet("", async (string studId, ThreeMoronsContext db) => await db.Students.Where(x=> x.IsDeleted == false).FirstOrDefaultAsync(x=> x.StudNumber == studId));
             StudentGroup.MapPost("", async (StudentInput inp, ThreeMoronsContext db) =>
             {
@@ -24,7 +24,7 @@ namespace ThreeMorons.Initialization
                     };
                     await db.Students.AddAsync(StudentToCreate);
                     await db.SaveChangesAsync();
-                    return Results.Json(StudentToCreate,_opt, statusCode:201);
+                    return Results.Json(StudentToCreate,_opt, statusCode:200, contentType:"application/json");
                 }
                 catch (Exception exc)
                 {

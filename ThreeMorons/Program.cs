@@ -10,6 +10,7 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
 using ThreeMorons.HealthCheck;
+using ThreeMorons.Services;
 var builder = WebApplication.CreateBuilder(args); 
 //ашкн днаюбкемн, онрнлс врн детнкрмши яепхюкюигеп фхдйн яп╗р онд яеаъ опх бхде рсокнб
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
@@ -38,9 +39,22 @@ otel.WithTracing(t =>
     t.AddOtlpExporter();
 });
 
-
+builder.Services.AddHttpClient();
+builder.Services.AddOutputCache(o=>
+{
+    o.DefaultExpirationTimeSpan = TimeSpan.FromDays(1);
+    o.SizeLimit = 3076;
+    o.MaximumBodySize = 300;
+    o.AddBasePolicy(p => p.Expire(TimeSpan.FromHours(12)));
+    o.AddPolicy("Quick", p=> p.Expire(TimeSpan.FromMinutes(5)));
+    o.AddPolicy("Medium", p => p.Expire(TimeSpan.FromHours(6)));
+    
+});
 
 var app = Initializer.Initialize(builder);
+app.UseCors();
+app.UseResponseCaching();
+
 
 app.Use(async (context, next) =>
 {

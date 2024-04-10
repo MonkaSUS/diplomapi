@@ -19,7 +19,7 @@
                     Group toCreate = new() { Building = created.Building, GroupCurator = created.groupCurator, GroupName = created.GroupName };
                     await db.Groups.AddAsync(toCreate);
                     await db.SaveChangesAsync();
-                    return Results.Created("group", toCreate);
+                    return Results.Json(toCreate, options: _opt, statusCode:200, contentType:"application/json");
                 }
                 catch (Exception excep)
                 {
