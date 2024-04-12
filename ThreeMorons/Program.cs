@@ -10,7 +10,9 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
 using ThreeMorons.HealthCheck;
-using ThreeMorons.Services;
+using FirebaseAdmin;
+using FirebaseAdmin.Messaging;
+using Google.Apis.Auth.OAuth2;
 var builder = WebApplication.CreateBuilder(args); 
 //ашкн днаюбкемн, онрнлс врн детнкрмши яепхюкюигеп фхдйн яп╗р онд яеаъ опх бхде рсокнб
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
@@ -52,7 +54,6 @@ builder.Services.AddOutputCache(o=>
 });
 
 var app = Initializer.Initialize(builder);
-app.UseCors();
 app.UseResponseCaching();
 
 
@@ -130,7 +131,41 @@ Initializer.MapDelayEndpoints(app);
 
 Initializer.MapUserEndpoints(app, builder);
 
-
+app.MapGet("testnotif", async(IWebHostEnvironment env)=>
+{
+    var path = env.ContentRootPath;
+    path += "\\GoogleAuth.json";
+    FirebaseApp fapp = null;
+    try
+    {
+        fapp = FirebaseApp.Create(new AppOptions()
+        {
+            Credential = GoogleCredential.FromFile(path)
+        }, "kgpknotif");
+    }
+    catch (Exception ex)
+    {
+        fapp = FirebaseApp.GetInstance("kgpknotif");
+    }
+    var fcm = FirebaseAdmin.Messaging.FirebaseMessaging.GetMessaging(fapp);
+    
+    Message msg = new Message()
+    {
+        Notification = new Notification
+        {
+            Title = "ОПНБЩПНВЙЮ",
+            Body = "РЕКН ОПНБЩПНВЙХ"
+        },
+        Data = new Dictionary<string, string>()
+        {
+            { "amogus", "amogus" },
+            { "sussy", "wussy" }
+        },
+        //рнйемш яхкэмн. лнфмн онкэгнбюрекч кхвмн оняшкюрэ
+        Token = "eH1Syxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    };
+    string result = await fcm.SendAsync(msg);
+});
 
 app.UseAuthentication();
 app.UseAuthorization();

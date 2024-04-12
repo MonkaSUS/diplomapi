@@ -25,4 +25,5 @@ public partial class User
     public string SearchTerm => String.Join(' ', Name, Surname, Patronymic);
 
 
+
 }
