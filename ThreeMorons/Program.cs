@@ -13,6 +13,7 @@ using ThreeMorons.HealthCheck;
 using FirebaseAdmin;
 using FirebaseAdmin.Messaging;
 using Google.Apis.Auth.OAuth2;
+using ThreeMorons.Services;
 var builder = WebApplication.CreateBuilder(args); 
 //ашкн днаюбкемн, онрнлс врн детнкрмши яепхюкюигеп фхдйн яп╗р онд яеаъ опх бхде рсокнб
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
@@ -52,6 +53,7 @@ builder.Services.AddOutputCache(o=>
     o.AddPolicy("Medium", p => p.Expire(TimeSpan.FromHours(6)));
     
 });
+builder.Services.AddScoped<INotificationService, FcmNotificationService>();
 
 var app = Initializer.Initialize(builder);
 app.UseResponseCaching();
@@ -131,24 +133,8 @@ Initializer.MapDelayEndpoints(app);
 
 Initializer.MapUserEndpoints(app, builder);
 
-app.MapGet("testnotif", async(IWebHostEnvironment env)=>
+app.MapGet("testnotif", async(IWebHostEnvironment env, INotificationService notifs)=>
 {
-    var path = env.ContentRootPath;
-    path += "\\GoogleAuth.json";
-    FirebaseApp fapp = null;
-    try
-    {
-        fapp = FirebaseApp.Create(new AppOptions()
-        {
-            Credential = GoogleCredential.FromFile(path)
-        }, "kgpknotif");
-    }
-    catch (Exception ex)
-    {
-        fapp = FirebaseApp.GetInstance("kgpknotif");
-    }
-    var fcm = FirebaseAdmin.Messaging.FirebaseMessaging.GetMessaging(fapp);
-    
     Message msg = new Message()
     {
         Notification = new Notification
@@ -162,9 +148,10 @@ app.MapGet("testnotif", async(IWebHostEnvironment env)=>
             { "sussy", "wussy" }
         },
         //рнйемш яхкэмн. лнфмн онкэгнбюрекч кхвмн оняшкюрэ
-        Token = "eH1Syxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        Topic = "announcements"
     };
-    string result = await fcm.SendAsync(msg);
+    string result = await notifs.SendAsync(msg);
+    return Results.Ok(result);
 });
 
 app.UseAuthentication();
