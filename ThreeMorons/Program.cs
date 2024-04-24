@@ -14,6 +14,7 @@ using FirebaseAdmin;
 using FirebaseAdmin.Messaging;
 using Google.Apis.Auth.OAuth2;
 using ThreeMorons.Services;
+using Volo.Abp.Uow;
 var builder = WebApplication.CreateBuilder(args); 
 //ашкн днаюбкемн, онрнлс врн детнкрмши яепхюкюигеп фхдйн яп╗р онд яеаъ опх бхде рсокнб
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
@@ -135,12 +136,20 @@ Initializer.MapUserEndpoints(app, builder);
 
 app.MapGet("testnotif", async(IWebHostEnvironment env, INotificationService notifs)=>
 {
+
     Message msg = new Message()
     {
         Notification = new Notification
         {
             Title = "ОПНБЩПНВЙЮ",
             Body = "РЕКН ОПНБЩПНВЙХ"
+        },
+        Android = new AndroidConfig
+        {
+            Notification = new AndroidNotification
+            {
+                ChannelId = "public_announcements"
+            }
         },
         Data = new Dictionary<string, string>()
         {

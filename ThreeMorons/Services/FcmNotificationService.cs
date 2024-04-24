@@ -12,11 +12,12 @@ namespace ThreeMorons.Services
             FirebaseApp firebaseApp = null;
             try
             {
+
                 firebaseApp = FirebaseApp.Create(new AppOptions()
                 {
                     Credential = GoogleCredential.FromFile(_configpath),
                     ProjectId = "kgpknotif"
-                }, "Kgpknotif"); ;
+                }, "Kgpknotif"); 
             }
             catch (Exception)
             {
