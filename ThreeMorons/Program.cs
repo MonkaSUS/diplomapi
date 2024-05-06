@@ -149,7 +149,9 @@ app.MapGet("testnotif", async(IWebHostEnvironment env, INotificationService noti
             Notification = new AndroidNotification
             {
                 ChannelId = "public_announcements"
-            }
+            },
+            Priority = Priority.Normal,
+            RestrictedPackageName = "com.kgpk.collegeapp"
         },
         Data = new Dictionary<string, string>()
         {

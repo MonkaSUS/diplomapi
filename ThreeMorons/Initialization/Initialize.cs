@@ -1,5 +1,6 @@
 ﻿
 using System.Text.Json;
+using ThreeMorons.DTOs;
 
 namespace ThreeMorons.Initialization
 {
@@ -33,6 +34,7 @@ namespace ThreeMorons.Initialization
             builder.Services.AddScoped<IValidator<AuthorizationInput>, AuthorizationValidator>();
             builder.Services.AddScoped<IValidator<GroupInput>, GroupValidator>();
             builder.Services.AddScoped<IValidator<StudentDelayInput>, StudentDelayValidator>();
+            builder.Services.AddScoped<IValidator<AnnouncementDTO>, AnnouncementValidator>();
             builder.Services.AddAuthentication(o =>
             {
                 o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
