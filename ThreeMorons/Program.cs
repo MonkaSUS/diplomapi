@@ -15,7 +15,7 @@ using FirebaseAdmin.Messaging;
 using Google.Apis.Auth.OAuth2;
 using ThreeMorons.Services;
 using Volo.Abp.Uow;
-var builder = WebApplication.CreateBuilder(args); 
+var builder = WebApplication.CreateBuilder(args);
 //БЫЛО ДОБАВЛЕНО, ПОТОМУ ЧТО ДЕФОЛТНЫЙ СЕРИАЛАЙЗЕР ЖИДКО СРЁТ ПОД СЕБЯ ПРИ ВИДЕ ТУПЛОВ
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 {
@@ -23,36 +23,18 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 });
 var otel = builder.Services.AddOpenTelemetry();
 
-var TotalRequestMeter = new Meter("TotalRequestMeter", "1.0.0");
-var countRequests = TotalRequestMeter.CreateCounter<int>("requests.count", description: "Counts the total number of request since the last restart of the server");
-var TotalActivitySource = new ActivitySource("TotalRequestMeter");
 
-otel.ConfigureResource(r => r.AddService(serviceName: builder.Environment.ApplicationName));
-otel.WithMetrics(m => m
-    .AddPrometheusExporter()
-    .AddAspNetCoreInstrumentation()
-    .AddMeter(TotalRequestMeter.Name)
-    .AddMeter("Microsoft.AspNetCore.Hosting")
-    .AddMeter("Microsoft.AspNetCore.Server.Kestrel")
-    .AddPrometheusExporter()) ;
-
-otel.WithTracing(t =>
-{
-    t.AddAspNetCoreInstrumentation();
-    t.AddHttpClientInstrumentation();
-    t.AddOtlpExporter();
-});
 
 builder.Services.AddHttpClient();
-builder.Services.AddOutputCache(o=>
+builder.Services.AddOutputCache(o =>
 {
     o.DefaultExpirationTimeSpan = TimeSpan.FromDays(1);
     o.SizeLimit = 3076;
     o.MaximumBodySize = 300;
     o.AddBasePolicy(p => p.Expire(TimeSpan.FromHours(12)));
-    o.AddPolicy("Quick", p=> p.Expire(TimeSpan.FromMinutes(5)));
+    o.AddPolicy("Quick", p => p.Expire(TimeSpan.FromMinutes(5)));
     o.AddPolicy("Medium", p => p.Expire(TimeSpan.FromHours(6)));
-    
+
 });
 builder.Services.AddScoped<INotificationService, FcmNotificationService>();
 
@@ -60,18 +42,7 @@ var app = Initializer.Initialize(builder);
 app.UseResponseCaching();
 
 
-app.Use(async (context, next) =>
-{
-    await next();
-    using var activity = TotalActivitySource.StartActivity("RequestMeter");
-    countRequests.Add(1);
-    activity?.SetTag("request happened", context.GetEndpoint().ToString());
-});
-app.MapPrometheusScrapingEndpoint();
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
+
 //TODO ХЕЛФ ЧЕКС
 app.UseHttpsRedirection();
 
@@ -91,7 +62,7 @@ app.MapPost("/refresh", async (ThreeMoronsContext db, RefreshInput inp) =>
         await db.Sessions.FirstAsync(x => x.JwtToken == inp.JwtToken && x.RefreshToken == inp.RefreshToken)!;
     if (existingSession is null)
     {
-        return Results.Text("Авторизуйтесь заново", statusCode:403);
+        return Results.Text("Авторизуйтесь заново", statusCode: 403);
     }
     if (existingSession.SessionStart.AddDays(2) <= DateTime.Now)
     {
@@ -134,9 +105,9 @@ Initializer.MapDelayEndpoints(app);
 
 Initializer.MapUserEndpoints(app, builder);
 
-app.MapGet("testnotif", async(IWebHostEnvironment env, INotificationService notifs)=>
+app.MapGet("testnotif", async (IWebHostEnvironment env, INotificationService notifs, ILoggerFactory fac) =>
 {
-
+    var logger = fac.CreateLogger("testnotif");
     Message msg = new Message()
     {
         Notification = new Notification
@@ -162,6 +133,7 @@ app.MapGet("testnotif", async(IWebHostEnvironment env, INotificationService noti
         Topic = "announcements"
     };
     string result = await notifs.SendAsync(msg);
+    logger.LogInformation($"Создал сообщение и отправил уведомление пользователям {result}");
     return Results.Ok(result);
 });
 

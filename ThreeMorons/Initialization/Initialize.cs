@@ -1,4 +1,5 @@
 ﻿
+using Serilog.Core;
 using System.Text.Json;
 using ThreeMorons.DTOs;
 
@@ -19,8 +20,9 @@ namespace ThreeMorons.Initialization
         public static WebApplication Initialize(WebApplicationBuilder builder)
         {
             builder.Logging.ClearProviders();
+            LoggingLevelSwitch logsw = new();
             var logger = new LoggerConfiguration()
-                .WriteTo.File("logs.txt", rollingInterval: RollingInterval.Day).CreateLogger();
+                .WriteTo.File("logs.txt", rollingInterval: RollingInterval.Day).WriteTo.Console().CreateLogger();
             Log.Logger = logger;
             builder.Logging.AddSerilog(logger);
             builder.Services.AddDbContext<ThreeMoronsContext>(o => o.UseSqlServer());

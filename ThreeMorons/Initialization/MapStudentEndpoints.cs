@@ -38,7 +38,7 @@ namespace ThreeMorons.Initialization
                     await db.Students.AddAsync(StudentToCreate);
                     await db.SaveChangesAsync();
                     logger.LogInformation("Студент создан успешно");
-                    return Results.Json(StudentToCreate,_opt, statusCode:200, contentType:"application/json");
+                    return Results.Json(StudentToCreate, _opt, statusCode: 200, contentType: "application/json");
                 }
                 catch (Exception exc)
                 {
@@ -98,7 +98,7 @@ namespace ThreeMorons.Initialization
                     }
                 }
                 var searchFilterResult = await db.Students.Where(x => x.GroupName == groupName && x.IsDeleted == false).Where(x => x.SerachTerm.Contains(searchTerm)).ToListAsync();
-                logger.LogInformation($"По запросу {searchTerm} в группе {groupName} было найдено {searchFilterResult.Count} студентов")
+                logger.LogInformation($"По запросу {searchTerm} в группе {groupName} было найдено {searchFilterResult.Count} студентов");
                 return Results.Ok(searchFilterResult);
             });
 

@@ -107,7 +107,7 @@ namespace ThreeMorons.Initialization
                     return Results.Problem("Ошибка при сохранении");
                 }
                 logger.LogInformation($"Успешная авторизация{inp.login}");
-                return Results.Json(stringToken, new JsonSerializerOptions() { IncludeFields = true}, "application/json", 200);
+                return Results.Json(stringToken, new JsonSerializerOptions() { IncludeFields = true }, "application/json", 200);
             });
             UserGroup.MapGet("/all", async (ThreeMoronsContext db, ILoggerFactory fac) =>
             {
@@ -132,11 +132,11 @@ namespace ThreeMorons.Initialization
                     return Results.Problem(exc.Message);
                 }
             });
-            UserGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery]string term, ILoggerFactory fac) =>
+            UserGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery] string term, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("user");
                 var usersFound = await db.Users.Where(x => x.SearchTerm.Contains(term) && x.IsDeleted == false).ToListAsync();
-                logger.LogInformation($"По запросу {term} найдено {usersFound.Count} пользователей")
+                logger.LogInformation($"По запросу {term} найдено {usersFound.Count} пользователей");
                 return Results.Ok(usersFound);
             });
 
