@@ -19,16 +19,17 @@ namespace ThreeMorons.Initialization
         public static WebApplication Initialize(WebApplicationBuilder builder)
         {
             builder.Logging.ClearProviders();
-
+            var logger = new LoggerConfiguration()
+                .WriteTo.File("logs.txt", rollingInterval: RollingInterval.Day).CreateLogger();
+            Log.Logger = logger;
+            builder.Logging.AddSerilog(logger);
             builder.Services.AddDbContext<ThreeMoronsContext>(o => o.UseSqlServer());
 
             if (builder.Environment.IsDevelopment())
             {
                 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
             }
-            var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 
-            builder.Logging.AddSerilog(logger);
             //builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             builder.Services.AddScoped<IValidator<RegistrationInput>, RegistrationValidator>();
             builder.Services.AddScoped<IValidator<AuthorizationInput>, AuthorizationValidator>();

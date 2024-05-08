@@ -5,10 +5,22 @@
         public static void MapGroupEndpoints(WebApplication app)
         {
             var groupsGroup = app.MapGroup("/group").RequireAuthorization();
-            groupsGroup.MapGet("/all", async (ThreeMoronsContext db) => await db.Groups.ToListAsync());
-            groupsGroup.MapGet("/", async ([FromQuery(Name = "groupName")] string Name, ThreeMoronsContext db) => await db.Groups.FirstOrDefaultAsync(x => x.GroupName == Name));
-            groupsGroup.MapPost("/", async (ThreeMoronsContext db, GroupInput created, IValidator<GroupInput> validator) =>
+            groupsGroup.MapGet("/all", async (ThreeMoronsContext db, ILoggerFactory logfac) =>
             {
+                var logger = logfac.CreateLogger("group");
+                logger.LogInformation("All groups retrieved");
+                return await db.Groups.ToListAsync();
+            });
+            groupsGroup.MapGet("/", async ([FromQuery(Name = "groupName")] string Name, ThreeMoronsContext db, ILoggerFactory fac) =>
+            {
+                var logger = fac.CreateLogger("group");
+                logger.LogInformation($"Запрос информации по группе {Name}");
+                return await db.Groups.FirstOrDefaultAsync(x => x.GroupName == Name);
+            });
+            groupsGroup.MapPost("/", async (ThreeMoronsContext db, GroupInput created, IValidator<GroupInput> validator, ILoggerFactory fac) =>
+            {
+                var logger = fac.CreateLogger("group");
+                logger.LogInformation($"Попытка создать группу {created.GroupName}");
                 var valres = await validator.ValidateAsync(created);
                 if (!valres.IsValid)
                 {
@@ -23,6 +35,7 @@
                 }
                 catch (Exception excep)
                 {
+                    logger.Log(LogLevel.Error, excep, "Ошибка при сохранении группы");
                     return Results.Problem(excep.ToString());
                 }
             }).RequireAuthorization(r => r.RequireClaim("userClass", "2"));

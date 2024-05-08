@@ -9,8 +9,10 @@ namespace ThreeMorons.Initialization
     {
         public static void MapSpecialEndpoints(WebApplication app)
         {
-            app.MapPost("/announcement", async (AnnouncementDTO annc, IValidator<AnnouncementDTO> val, IWebHostEnvironment env, INotificationService notifs) =>
+            app.MapPost("/announcement", async (AnnouncementDTO annc, IValidator<AnnouncementDTO> val, IWebHostEnvironment env, INotificationService notifs, ILoggerFactory fac) =>
             {
+                var logger = fac.CreateLogger("announcement");
+                logger.LogInformation("Попытка создать и отправить оповещение");
                 var localPath = env.ContentRootPath;
                 var valres = val.Validate(annc);
                 if (!valres.IsValid) 
@@ -37,6 +39,7 @@ namespace ThreeMorons.Initialization
                     byte[] jsondata = new UTF8Encoding(true).GetBytes(serializedAnnouncement);
                     fs.Write(jsondata, 0, jsondata.Length);
                 }
+                logger.LogInformation($"Создал и сериализовал оповещение {announcement.Id}");
 
                 Message fcmMessage = new Message()
                 {
@@ -57,6 +60,7 @@ namespace ThreeMorons.Initialization
                     Topic = "announcements"
                 };
                 string result = await notifs.SendAsync(fcmMessage);
+                logger.LogInformation($"Отправил уведомление {result} пользователям");
                 return Results.Ok(result);
             }).RequireAuthorization(r=> r.RequireClaim("userClass", "2"));
             app.MapGet("/announcement", async (IWebHostEnvironment env) =>

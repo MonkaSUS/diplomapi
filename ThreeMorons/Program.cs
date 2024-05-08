@@ -172,3 +172,4 @@ app.UseAuthorization();
 
 
 app.Run();
+app.Logger.LogInformation($"Application started at {DateTime.Now}");
