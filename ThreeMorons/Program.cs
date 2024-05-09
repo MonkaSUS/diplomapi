@@ -21,7 +21,6 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 {
     o.SerializerOptions.IncludeFields = true;
 });
-var otel = builder.Services.AddOpenTelemetry();
 
 
 
@@ -105,7 +104,7 @@ Initializer.MapDelayEndpoints(app);
 
 Initializer.MapUserEndpoints(app, builder);
 
-app.MapGet("testnotif", async (IWebHostEnvironment env, INotificationService notifs, ILoggerFactory fac) =>
+app.MapGet("testnotif", async(IWebHostEnvironment env, INotificationService notifs)=>
 {
     var logger = fac.CreateLogger("testnotif");
     Message msg = new Message()
