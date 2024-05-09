@@ -31,17 +31,17 @@
                     Group toCreate = new() { Building = created.Building, GroupCurator = created.groupCurator, GroupName = created.GroupName };
                     await db.Groups.AddAsync(toCreate);
                     await db.SaveChangesAsync();
-                    return Results.Json(toCreate, options: _opt, statusCode:200, contentType:"application/json");
+                    return Results.Json(toCreate, options: _opt, statusCode: 200, contentType: "application/json");
                 }
                 catch (Exception excep)
                 {
-                    logger.Log(LogLevel.Error, excep, "Ошибка при сохранении группы");
+                    logger.LogError(excep, "Ошибка при сохранении группы");
                     return Results.Problem(excep.ToString());
                 }
             }).RequireAuthorization(r => r.RequireClaim("userClass", "2"));
 
             groupsGroup.MapGet("search", async (ThreeMoronsContext db, [FromQuery(Name = "searchTerm")]
-            string searchTerm) => await db.Groups.Where(x=> x.GroupName.Contains(searchTerm)).ToListAsync());
+            string searchTerm) => await db.Groups.Where(x => x.GroupName.Contains(searchTerm)).ToListAsync());
         }
     }
 }

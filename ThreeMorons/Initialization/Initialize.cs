@@ -22,7 +22,7 @@ namespace ThreeMorons.Initialization
             builder.Logging.ClearProviders();
             LoggingLevelSwitch logsw = new();
             var logger = new LoggerConfiguration()
-                .WriteTo.File("logs.txt", rollingInterval: RollingInterval.Day, shared: true).WriteTo.Console().CreateLogger();
+                .WriteTo.File("logs.txt", rollingInterval: RollingInterval.Day, shared: true, flushToDiskInterval: TimeSpan.FromSeconds(10)).WriteTo.Console().CreateLogger();
             Log.Logger = logger;
             builder.Logging.AddSerilog(logger);
             builder.Services.AddDbContext<ThreeMoronsContext>(o => o.UseSqlServer());

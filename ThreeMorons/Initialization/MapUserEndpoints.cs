@@ -44,7 +44,7 @@ namespace ThreeMorons.Initialization
                 }
                 catch (Exception exc)
                 {
-                    logger.LogException(exc);
+                    logger.LogError(exc, "Ошибка при регистрации");
                     return TypedResults.BadRequest(exc.Message);
                 }
             });
@@ -103,7 +103,7 @@ namespace ThreeMorons.Initialization
                 }
                 catch (Exception exc)
                 {
-                    logger.LogException(exc);
+                    logger.LogError(exc, "Ошибка при авторизации");
                     return Results.Problem("Ошибка при сохранении");
                 }
                 logger.LogInformation($"Успешная авторизация{inp.login}");
@@ -128,7 +128,8 @@ namespace ThreeMorons.Initialization
                 }
                 catch (Exception exc)
                 {
-                    logger.LogException(exc);
+
+                    logger.LogError(exc, "Ошибка при удалении пользователя");
                     return Results.Problem(exc.Message);
                 }
             });

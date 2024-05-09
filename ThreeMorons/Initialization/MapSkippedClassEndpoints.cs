@@ -1,4 +1,4 @@
-﻿
+﻿using Microsoft.Extensions.Logging.Debug;
 namespace ThreeMorons.Initialization
 {
     public static partial class Initializer
@@ -21,9 +21,9 @@ namespace ThreeMorons.Initialization
             SkippedClassGroup.MapGet("/forGroup", async ([FromQuery(Name = "groupName")] string groupName, ThreeMoronsContext db, ILoggerFactory fac) =>  //https://api.../skippedClass/forGroup/?groupName=ис-44К
             {
                 var logger = fac.CreateLogger("group");
-                var studNumbers = db.Students.Where(x => x.GroupName.ToLower().Trim() == groupName.ToLower().Trim()).Select(x=> x.StudNumber);
+                var studNumbers = db.Students.Where(x => x.GroupName.ToLower().Trim() == groupName.ToLower().Trim()).Select(x => x.StudNumber);
                 List<SkippedClass> skippedClasses = new();
-                await db.SkippedClasses.ForEachAsync(x=>
+                await db.SkippedClasses.ForEachAsync(x =>
                 {
                     if (studNumbers.Contains(x.StudNumber))
                     {
@@ -69,7 +69,8 @@ namespace ThreeMorons.Initialization
                 }
                 catch (Exception exc)
                 {
-                    logger.LogException(exc);
+                    logger.LogError(exc, "Ошибка при удалении пропуска");
+
                     return Results.Problem(exc.ToString());
                 }
             }).RequireAuthorization(o => o.RequireClaim("userClassId", "2"));

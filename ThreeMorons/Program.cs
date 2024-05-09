@@ -1,9 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using OpenTelemetry.Metrics;
-using OpenTelemetry.Resources;
-using OpenTelemetry.Trace;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
 using System.Net;
@@ -14,7 +11,6 @@ using FirebaseAdmin;
 using FirebaseAdmin.Messaging;
 using Google.Apis.Auth.OAuth2;
 using ThreeMorons.Services;
-using Volo.Abp.Uow;
 var builder = WebApplication.CreateBuilder(args);
 //ашкн днаюбкемн, онрнлс врн детнкрмши яепхюкюигеп фхдйн яп╗р онд яеаъ опх бхде рсокнб
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
