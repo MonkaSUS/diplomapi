@@ -104,7 +104,7 @@ Initializer.MapDelayEndpoints(app);
 
 Initializer.MapUserEndpoints(app, builder);
 
-app.MapGet("testnotif", async(IWebHostEnvironment env, INotificationService notifs)=>
+app.MapGet("testnotif", async (IWebHostEnvironment env, INotificationService notifs, ILoggerFactory fac) =>
 {
     var logger = fac.CreateLogger("testnotif");
     Message msg = new Message()
