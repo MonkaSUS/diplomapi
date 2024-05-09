@@ -8,7 +8,7 @@ namespace ThreeMorons.Initialization
     {
         public static void MapUserEndpoints(WebApplication app, WebApplicationBuilder builder)
         {
-            var UserGroup = app.MapGroup("/userreg");
+            var UserGroup = app.MapGroup("/user");
             UserGroup.MapPost("/register", [AllowAnonymous] async (IValidator<RegistrationInput> validator, RegistrationInput inp, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("user");

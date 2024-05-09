@@ -20,6 +20,7 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 
 
 
+
 builder.Services.AddHttpClient();
 builder.Services.AddOutputCache(o =>
 {
@@ -34,6 +35,19 @@ builder.Services.AddOutputCache(o =>
 builder.Services.AddScoped<INotificationService, FcmNotificationService>();
 
 var app = Initializer.Initialize(builder);
+
+Initializer.MapSkippedClassEndpoints(app);
+
+Initializer.MapStudentEndpoints(app);
+
+Initializer.MapDelayEndpoints(app);
+
+Initializer.MapUserEndpoints(app, builder);
+
+Initializer.MapGroupEndpoints(app);
+
+
+
 app.UseResponseCaching();
 
 
@@ -47,7 +61,6 @@ app.UseHttpsRedirection();
 
 app.MapGet("/", () => Results.Content("amogus"));
 
-Initializer.MapGroupEndpoints(app);
 
 app.MapGet("/periods", async (ThreeMoronsContext db) => await db.Periods.ToListAsync());
 
@@ -92,13 +105,6 @@ app.MapPost("/refresh", async (ThreeMoronsContext db, RefreshInput inp) =>
 //    return Results.Ok("Заебись!");
 //});
 
-Initializer.MapSkippedClassEndpoints(app);
-
-Initializer.MapStudentEndpoints(app);
-
-Initializer.MapDelayEndpoints(app);
-
-Initializer.MapUserEndpoints(app, builder);
 
 app.MapGet("testnotif", async (IWebHostEnvironment env, INotificationService notifs, ILoggerFactory fac) =>
 {
