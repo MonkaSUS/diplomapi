@@ -42,7 +42,7 @@ namespace ThreeMorons.Initialization
                 }
                 catch (Exception exc)
                 {
-                    logger.LogException(exc);
+                    logger.LogError(exc, "Ошибка при создании студента");
                     return Results.Problem(exc.ToString());
                 }
             });
@@ -63,7 +63,7 @@ namespace ThreeMorons.Initialization
                 }
                 catch (Exception exc)
                 {
-                    logger.LogException(exc);
+                    logger.LogError(exc, "Ошибка при обновлении информации о студенте");
                     return Results.Problem(exc.ToString());
                 }
             });
@@ -80,7 +80,7 @@ namespace ThreeMorons.Initialization
                 }
                 catch (Exception exc)
                 {
-                    logger.LogException(exc);
+                    logger.LogError(exc, "Ошибка при удалении студента");
                     return Results.Problem(exc.ToString()); //мы даже отчислить человека не можем нормально
                 }
 

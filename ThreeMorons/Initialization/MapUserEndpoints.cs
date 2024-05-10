@@ -8,7 +8,7 @@ namespace ThreeMorons.Initialization
     {
         public static void MapUserEndpoints(WebApplication app, WebApplicationBuilder builder)
         {
-            var UserGroup = app.MapGroup("/userreg");
+            var UserGroup = app.MapGroup("/user");
             UserGroup.MapPost("/register", [AllowAnonymous] async (IValidator<RegistrationInput> validator, RegistrationInput inp, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("user");
@@ -44,7 +44,7 @@ namespace ThreeMorons.Initialization
                 }
                 catch (Exception exc)
                 {
-                    logger.LogException(exc);
+                    logger.LogError(exc, "Ошибка при регистрации");
                     return TypedResults.BadRequest(exc.Message);
                 }
             });
@@ -103,7 +103,7 @@ namespace ThreeMorons.Initialization
                 }
                 catch (Exception exc)
                 {
-                    logger.LogException(exc);
+                    logger.LogError(exc, "Ошибка при авторизации");
                     return Results.Problem("Ошибка при сохранении");
                 }
                 logger.LogInformation($"Успешная авторизация{inp.login}");
@@ -128,7 +128,8 @@ namespace ThreeMorons.Initialization
                 }
                 catch (Exception exc)
                 {
-                    logger.LogException(exc);
+
+                    logger.LogError(exc, "Ошибка при удалении пользователя");
                     return Results.Problem(exc.Message);
                 }
             });
