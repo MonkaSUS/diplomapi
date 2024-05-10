@@ -21,9 +21,8 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 {
     o.SerializerOptions.IncludeFields = true;
 });
-var otel = builder.Services.AddOpenTelemetry();
 
-
+//TODO днаюбхрэ EasyCache
 
 builder.Services.AddHttpClient();
 builder.Services.AddOutputCache(o =>

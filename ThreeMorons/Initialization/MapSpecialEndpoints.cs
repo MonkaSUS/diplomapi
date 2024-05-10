@@ -15,11 +15,11 @@ namespace ThreeMorons.Initialization
                 logger.LogInformation("Попытка создать и отправить оповещение");
                 var localPath = env.ContentRootPath;
                 var valres = val.Validate(annc);
-                if (!valres.IsValid) 
+                if (!valres.IsValid)
                 {
                     return Results.ValidationProblem((IDictionary<string, string[]>)valres.Errors);
                 }
-                if (!Directory.Exists(localPath+"/announcements"))
+                if (!Directory.Exists(localPath + "/announcements"))
                 {
                     Directory.CreateDirectory(localPath + "/announcements");
                 }
@@ -62,7 +62,7 @@ namespace ThreeMorons.Initialization
                 string result = await notifs.SendAsync(fcmMessage);
                 logger.LogInformation($"Отправил уведомление {result} пользователям");
                 return Results.Ok(result);
-            }).RequireAuthorization(r=> r.RequireClaim("userClass", "2"));
+            }).RequireAuthorization(r => r.RequireClaim("userClass", "2"));
             app.MapGet("/announcement", async (IWebHostEnvironment env) =>
             {
                 List<PublicAnnouncement> allAnnc = new List<PublicAnnouncement>();
@@ -72,7 +72,20 @@ namespace ThreeMorons.Initialization
                     var annc = JsonSerializer.Deserialize<PublicAnnouncement>(File.ReadAllText(file));
                     allAnnc.Add(annc);
                 }
-                return Results.Json(allAnnc, _opt, contentType: "application/json", statusCode:200);
+                return Results.Json(allAnnc, _opt, contentType: "application/json", statusCode: 200);
+            });
+            app.MapGet("/schedule", async ([FromQuery(Name = "forGroup")] string forGroup, IHttpClientFactory clientFactory) =>
+            {
+                var client = clientFactory.CreateClient();
+                var res = await client.GetAsync($"kgpkschedule.somee.com/schedule?forGroup={forGroup}");
+                if (res.IsSuccessStatusCode)
+                {
+                    return Results.Ok(await res.Content.ReadAsStringAsync());
+                }
+                else
+                {
+                    return Results.Problem(statusCode: (int)res.StatusCode, detail: await res.Content.ReadAsStringAsync());
+                }
             });
         }
     }
