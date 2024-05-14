@@ -87,6 +87,62 @@ namespace ThreeMorons.Initialization
                     return Results.Problem(statusCode: (int)res.StatusCode, detail: await res.Content.ReadAsStringAsync());
                 }
             });
+            app.MapPost("/createDbUser", async (ThreeMoronsContext db, [FromBody] DbServiceUser user, ILoggerFactory fac) =>
+            {
+                var logger = fac.CreateLogger("DbServiceUser");
+                try
+                {
+                    db.DbServiceUsers.Add(user);
+                    await db.SaveChangesAsync();
+                    logger.LogInformation($"Создан новый пользователь бд сервиса {user.user_login}");
+                    return Results.Ok();
+                }
+                catch (Exception exc)
+                {
+                    logger.LogError(exc, " отстрел произошёл");
+                    throw;
+                }
+            });
+            app.MapPost("/getDbConnectionString", async (ThreeMoronsContext db, [FromBody] DbServiceUserDTO user, IHttpClientFactory clientFac, ILoggerFactory loggerFac) =>
+            {
+                var logger = loggerFac.CreateLogger("GetDbConnectionString");
+                try
+                {
+                    var fullUser = await db.DbServiceUsers.FirstOrDefaultAsync(x => x.user_login == user.user_login && x.user_password == user.user_password);
+                    var client = clientFac.CreateClient();
+                    var sendContent = new StringContent(JsonSerializer.Serialize(fullUser));
+                    logger.LogInformation($"Найден пользователь бд сервиса {fullUser}");
+                    HttpResponseMessage res = new();
+                    logger.LogInformation($"Попытка найти бд {fullUser.db_type}");
+                    switch (fullUser.db_type)
+                    {
+                        case PostgreSqlName:
+                            res = await client.PostAsync($"{DbServiceHostAdress}/postgresql/database/get-connection-string", sendContent);
+                            break;
+                        case MariaDbName:
+                            res = await client.PostAsync($"{DbServiceHostAdress}/mariadb/database/get-connection-string", sendContent);
+                            break;
+                        case MsSqlName:
+                            res = await client.PostAsync($"{DbServiceHostAdress}/mssql/database/get-connection-string", sendContent);
+                            break;
+                        default:
+                            return Results.Problem("название бд не было найдено");
+                    }
+                    if (!res.IsSuccessStatusCode)
+                    {
+                        logger.LogError($"{res.StatusCode} при попытке получить строку подключения. {await res.Content.ReadAsStringAsync()}");
+                        return Results.Problem(statusCode: (int)res.StatusCode, detail: await res.Content.ReadAsStringAsync());
+                    }
+                    string connectionString = await res.Content.ReadAsStringAsync();
+                    logger.LogInformation($"{connectionString} получена успешно");
+                    return Results.Ok(connectionString);
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex, "случился отстрел");
+                    throw;
+                }
+            });
         }
     }
 }
