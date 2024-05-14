@@ -27,7 +27,7 @@ public partial class ThreeMoronsContext : DbContext
     public virtual DbSet<User> Users { get; set; }
     public virtual DbSet<Session> Sessions { get; set; }
     public virtual DbSet<UserClass> UserClasses { get; set; }
-    public virtual DbSet<DbServiceUser> DbServiceUsers { get; set; }
+    public virtual DbSet<DbServiceUser> DbServiceUser { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #pragma warning disable CS1030 // Директива #warning
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -38,10 +38,12 @@ public partial class ThreeMoronsContext : DbContext
     {
         modelBuilder.Entity<DbServiceUser>(e =>
         {
+            e.HasKey(e => e.user_login);
             e.Property(p => p.user_login).HasMaxLength(50);
             e.Property(p => p.user_password).HasMaxLength(50);
             e.Property(p => p.telegram_id).HasMaxLength(50);
-            e.Property(p=> p.db_type).HasMaxLength(50);
+            e.Property(p => p.db_type).HasMaxLength(50);
+            e.Property(p => p.db_name).HasMaxLength(50);
         });
         modelBuilder.Entity<Group>(entity =>
         {

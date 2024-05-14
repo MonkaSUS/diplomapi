@@ -46,14 +46,17 @@ Initializer.MapUserEndpoints(app, builder);
 
 Initializer.MapGroupEndpoints(app);
 
-
+Initializer.MapSpecialEndpoints(app);
 
 app.UseResponseCaching();
 
 
 
 //TODO уект вейя
-app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 
 

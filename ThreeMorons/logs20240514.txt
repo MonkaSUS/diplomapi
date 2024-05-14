@@ -1,0 +1,1174 @@
+2024-05-14 22:17:34.714 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:17:36.165 +03:00 [INF] Now listening on: https://localhost:7174
+2024-05-14 22:17:36.176 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:17:36.365 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:17:36.367 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:17:36.368 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:17:37.301 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/ - null null
+2024-05-14 22:17:37.705 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:17:38.020 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:17:38.025 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:17:38.034 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:17:38.036 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:17:38.041 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/ - 200 6 text/plain; charset=utf-8 746.0161ms
+2024-05-14 22:17:38.194 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/favicon.ico - null null
+2024-05-14 22:17:38.203 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:17:38.205 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:17:38.209 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/favicon.ico - 404 0 null 16.7517ms
+2024-05-14 22:17:38.216 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7174/favicon.ico, Response status code: 404
+2024-05-14 22:18:22.951 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:18:23.950 +03:00 [INF] Now listening on: https://localhost:7174
+2024-05-14 22:18:23.964 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:18:24.076 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:18:24.086 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:18:24.089 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:18:24.970 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/ - null null
+2024-05-14 22:18:25.347 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:18:25.504 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:18:25.509 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:18:25.523 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:18:25.525 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:18:25.533 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/ - 200 6 text/plain; charset=utf-8 575.6267ms
+2024-05-14 22:19:34.328 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:19:35.232 +03:00 [INF] Now listening on: https://localhost:7174
+2024-05-14 22:19:35.247 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:19:35.340 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:19:35.343 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:19:35.345 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:19:35.985 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/ - null null
+2024-05-14 22:19:36.172 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:19:36.250 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:19:36.253 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:19:36.260 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:19:36.262 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:19:36.267 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/ - 200 6 text/plain; charset=utf-8 290.5168ms
+2024-05-14 22:22:40.155 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:22:41.103 +03:00 [INF] Now listening on: https://25.64.51.236:7174
+2024-05-14 22:22:41.113 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:22:41.194 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:22:41.196 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:22:41.197 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:22:46.249 +03:00 [INF] Request starting HTTP/2 GET https://25.64.51.236:7174/ - null null
+2024-05-14 22:22:46.446 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:22:46.520 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:22:46.523 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:22:46.528 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:22:46.530 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:22:46.534 +03:00 [INF] Request finished HTTP/2 GET https://25.64.51.236:7174/ - 200 6 text/plain; charset=utf-8 295.7407ms
+2024-05-14 22:22:46.748 +03:00 [INF] Request starting HTTP/2 GET https://25.64.51.236:7174/favicon.ico - null null
+2024-05-14 22:22:46.757 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:22:46.762 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:22:46.772 +03:00 [INF] Request finished HTTP/2 GET https://25.64.51.236:7174/favicon.ico - 404 0 null 24.273ms
+2024-05-14 22:22:46.780 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://25.64.51.236:7174/favicon.ico, Response status code: 404
+2024-05-14 22:22:58.995 +03:00 [INF] Request starting HTTP/2 GET https://25.64.51.236:7174/ - null null
+2024-05-14 22:22:59.002 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:22:59.005 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:22:59.007 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:22:59.008 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:22:59.010 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:22:59.011 +03:00 [INF] Request finished HTTP/2 GET https://25.64.51.236:7174/ - 200 6 text/plain; charset=utf-8 15.8378ms
+2024-05-14 22:22:59.127 +03:00 [INF] Request starting HTTP/2 GET https://25.64.51.236:7174/favicon.ico - null null
+2024-05-14 22:22:59.131 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:22:59.132 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:22:59.134 +03:00 [INF] Request finished HTTP/2 GET https://25.64.51.236:7174/favicon.ico - 404 0 null 7.3757ms
+2024-05-14 22:22:59.137 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://25.64.51.236:7174/favicon.ico, Response status code: 404
+2024-05-14 22:23:04.906 +03:00 [INF] Request starting HTTP/2 GET https://25.64.51.236:7174/docs - null null
+2024-05-14 22:23:04.912 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:23:04.913 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:23:04.914 +03:00 [INF] Request finished HTTP/2 GET https://25.64.51.236:7174/docs - 404 0 null 8.2329ms
+2024-05-14 22:23:04.917 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://25.64.51.236:7174/docs, Response status code: 404
+2024-05-14 22:23:08.361 +03:00 [INF] Request starting HTTP/2 GET https://25.64.51.236:7174/ - null null
+2024-05-14 22:23:08.366 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:23:08.367 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:23:08.367 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:23:08.368 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:23:08.370 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:23:08.371 +03:00 [INF] Request finished HTTP/2 GET https://25.64.51.236:7174/ - 200 6 text/plain; charset=utf-8 10.5575ms
+2024-05-14 22:25:36.886 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:25:37.640 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 22:25:37.658 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:25:37.787 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:25:37.796 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:25:37.801 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:25:38.896 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 22:25:39.383 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:25:39.485 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:25:39.488 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:25:39.496 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:25:39.498 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:25:39.507 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 624.4846ms
+2024-05-14 22:25:39.669 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/favicon.ico - null null
+2024-05-14 22:25:39.681 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:25:39.686 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:25:39.688 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/favicon.ico - 404 0 null 19.8694ms
+2024-05-14 22:25:39.696 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://25.64.51.236:5132/favicon.ico, Response status code: 404
+2024-05-14 22:26:12.603 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 22:26:12.616 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:26:12.619 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:26:12.620 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:26:12.621 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:26:12.623 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:26:12.624 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 24.334ms
+2024-05-14 22:26:12.789 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/favicon.ico - null null
+2024-05-14 22:26:12.793 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:26:12.794 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:26:12.795 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/favicon.ico - 404 0 null 6.15ms
+2024-05-14 22:26:12.798 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://25.64.51.236:5132/favicon.ico, Response status code: 404
+2024-05-14 22:30:40.663 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/x-www-form-urlencoded 103
+2024-05-14 22:30:40.666 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 404 0 null 3.1616ms
+2024-05-14 22:30:40.669 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://25.64.51.236:5132/createDbUser, Response status code: 404
+2024-05-14 22:31:47.473 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 22:31:47.486 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:31:47.487 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:31:47.489 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:31:47.490 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:31:47.491 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:31:47.492 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 19.4476ms
+2024-05-14 22:33:43.912 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:33:44.780 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 22:33:44.794 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:33:44.870 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:33:44.873 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:33:44.875 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:33:45.777 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 22:33:46.102 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:33:46.242 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:33:46.246 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:33:46.269 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:33:46.272 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:33:46.280 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 519.9495ms
+2024-05-14 22:33:49.340 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/x-www-form-urlencoded 103
+2024-05-14 22:33:49.365 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 404 0 null 22.5404ms
+2024-05-14 22:33:49.372 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://25.64.51.236:5132/createDbUser, Response status code: 404
+2024-05-14 22:34:59.361 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/json 66
+2024-05-14 22:34:59.467 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:34:59'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 22:34:59.618 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:34:59'.
+2024-05-14 22:34:59.620 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 404 0 null 258.9909ms
+2024-05-14 22:34:59.622 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://25.64.51.236:5132/createDbUser, Response status code: 404
+2024-05-14 22:36:08.909 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:36:09.763 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 22:36:09.786 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:36:09.928 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:36:09.948 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:36:09.951 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:36:10.518 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 22:36:10.845 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:36:10.939 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:36:10.943 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:36:10.968 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:36:10.973 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:36:10.980 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 466.9952ms
+2024-05-14 22:36:14.772 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/x-www-form-urlencoded 103
+2024-05-14 22:36:14.780 +03:00 [INF] Executing endpoint '415 HTTP Unsupported Media Type'
+2024-05-14 22:36:14.795 +03:00 [INF] Executed endpoint '415 HTTP Unsupported Media Type'
+2024-05-14 22:36:14.797 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 415 0 null 25.0724ms
+2024-05-14 22:38:02.667 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:38:03.601 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 22:38:03.627 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:38:03.744 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:38:03.748 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:38:03.750 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:38:04.339 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 22:38:04.813 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:38:04.953 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:38:04.962 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:38:04.986 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:38:04.988 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:38:04.997 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 673.755ms
+2024-05-14 22:38:12.848 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/json 103
+2024-05-14 22:38:12.856 +03:00 [INF] Executing endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:38:12.915 +03:00 [INF] Executed endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:38:12.918 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Http.BadHttpRequestException: Failed to read parameter "DbServiceUser user" from the request body as JSON.
+ ---> System.Text.Json.JsonException: 'new_user=user_login%3D%27test4%27+user_password%3D%27Mil6QdEt%27&user_telegram_id=test4&dbms_name=mssql' is an invalid JSON literal. Expected the literal 'null'. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+ ---> System.Text.Json.JsonReaderException: 'new_user=user_login%3D%27test4%27+user_password%3D%27Mil6QdEt%27&user_telegram_id=test4&dbms_name=mssql' is an invalid JSON literal. Expected the literal 'null'. LineNumber: 0 | BytePositionInLine: 1.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ThrowInvalidLiteral(ReadOnlySpan`1 span)
+   at System.Text.Json.Utf8JsonReader.CheckLiteral(ReadOnlySpan`1 span, ReadOnlySpan`1 literal)
+   at System.Text.Json.Utf8JsonReader.ConsumeLiteral(ReadOnlySpan`1 literal, JsonTokenType tokenType)
+   at System.Text.Json.Utf8JsonReader.ConsumeValue(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsObjectAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<HandleRequestBodyAndCompileRequestDelegateForJson>g__TryReadBodyAsync|102_0(HttpContext httpContext, Type bodyType, String parameterTypeName, String parameterName, Boolean allowEmptyRequestBody, Boolean throwOnBadRequest, JsonTypeInfo jsonTypeInfo)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.Log.InvalidJsonRequestBody(HttpContext httpContext, String parameterTypeName, String parameterName, Exception exception, Boolean shouldThrow)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<HandleRequestBodyAndCompileRequestDelegateForJson>g__TryReadBodyAsync|102_0(HttpContext httpContext, Type bodyType, String parameterTypeName, String parameterName, Boolean allowEmptyRequestBody, Boolean throwOnBadRequest, JsonTypeInfo jsonTypeInfo)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-14 22:38:13.072 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 400 null text/plain; charset=utf-8 224.255ms
+2024-05-14 22:41:03.465 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:41:04.428 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 22:41:04.443 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:41:04.569 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:41:04.575 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:41:04.579 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:41:04.839 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 22:41:05.376 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:41:05.467 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:41:05.470 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:41:05.485 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:41:05.488 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:41:05.496 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 670.9546ms
+2024-05-14 22:41:10.444 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/json 71
+2024-05-14 22:41:10.451 +03:00 [INF] Executing endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:41:10.477 +03:00 [INF] Executed endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:41:10.480 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Http.BadHttpRequestException: Failed to read parameter "DbServiceUser user" from the request body as JSON.
+ ---> System.Text.Json.JsonException: 'u' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+ ---> System.Text.Json.JsonReaderException: 'u' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ConsumeValue(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsObjectAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<HandleRequestBodyAndCompileRequestDelegateForJson>g__TryReadBodyAsync|102_0(HttpContext httpContext, Type bodyType, String parameterTypeName, String parameterName, Boolean allowEmptyRequestBody, Boolean throwOnBadRequest, JsonTypeInfo jsonTypeInfo)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.Log.InvalidJsonRequestBody(HttpContext httpContext, String parameterTypeName, String parameterName, Exception exception, Boolean shouldThrow)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<HandleRequestBodyAndCompileRequestDelegateForJson>g__TryReadBodyAsync|102_0(HttpContext httpContext, Type bodyType, String parameterTypeName, String parameterName, Boolean allowEmptyRequestBody, Boolean throwOnBadRequest, JsonTypeInfo jsonTypeInfo)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-14 22:41:10.540 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 400 null text/plain; charset=utf-8 95.954ms
+2024-05-14 22:41:53.016 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/json 71
+2024-05-14 22:41:53.029 +03:00 [INF] Executing endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:41:53.032 +03:00 [INF] Executed endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:41:53.034 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Http.BadHttpRequestException: Failed to read parameter "DbServiceUser user" from the request body as JSON.
+ ---> System.Text.Json.JsonException: 'u' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+ ---> System.Text.Json.JsonReaderException: 'u' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ConsumeValue(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsObjectAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<HandleRequestBodyAndCompileRequestDelegateForJson>g__TryReadBodyAsync|102_0(HttpContext httpContext, Type bodyType, String parameterTypeName, String parameterName, Boolean allowEmptyRequestBody, Boolean throwOnBadRequest, JsonTypeInfo jsonTypeInfo)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.Log.InvalidJsonRequestBody(HttpContext httpContext, String parameterTypeName, String parameterName, Exception exception, Boolean shouldThrow)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<HandleRequestBodyAndCompileRequestDelegateForJson>g__TryReadBodyAsync|102_0(HttpContext httpContext, Type bodyType, String parameterTypeName, String parameterName, Boolean allowEmptyRequestBody, Boolean throwOnBadRequest, JsonTypeInfo jsonTypeInfo)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-14 22:41:53.055 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 400 null text/plain; charset=utf-8 42.184ms
+2024-05-14 22:44:08.273 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/json 134
+2024-05-14 22:44:08.348 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:44:08'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 22:44:08.362 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:44:08'.
+2024-05-14 22:44:08.364 +03:00 [INF] Executing endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:44:09.580 +03:00 [ERR]  отстрел произошёл
+System.InvalidOperationException: The entity type 'DbServiceUser' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.EntryWithoutDetectChanges(TEntity entity)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Add(TEntity entity)
+   at ThreeMorons.Initialization.Initializer.<>c.<<MapSpecialEndpoints>b__9_4>d.MoveNext() in C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons\Initialization\MapSpecialEndpoints.cs:line 95
+2024-05-14 22:44:09.661 +03:00 [INF] Executed endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:44:09.663 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The entity type 'DbServiceUser' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.EntryWithoutDetectChanges(TEntity entity)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Add(TEntity entity)
+   at ThreeMorons.Initialization.Initializer.<>c.<<MapSpecialEndpoints>b__9_4>d.MoveNext() in C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons\Initialization\MapSpecialEndpoints.cs:line 95
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-14 22:44:09.870 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 500 null text/plain; charset=utf-8 1597.2111ms
+2024-05-14 22:45:02.042 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:45:02.965 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 22:45:02.977 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:45:03.102 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:45:03.110 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:45:03.112 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:45:03.769 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 22:45:04.135 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:45:04.245 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:45:04.248 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:45:04.275 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:45:04.276 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:45:04.282 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 531.7848ms
+2024-05-14 22:45:06.707 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/json 96
+2024-05-14 22:45:06.743 +03:00 [INF] Executing endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:45:07.907 +03:00 [ERR]  отстрел произошёл
+System.InvalidOperationException: Unable to track an instance of type 'DbServiceUser' because it does not have a primary key. Only entity types with a primary key may be tracked.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetOrCreateEntry(Object entity, IEntityType entityType)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.EntryWithoutDetectChanges(TEntity entity)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Add(TEntity entity)
+   at ThreeMorons.Initialization.Initializer.<>c.<<MapSpecialEndpoints>b__9_4>d.MoveNext() in C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons\Initialization\MapSpecialEndpoints.cs:line 95
+2024-05-14 22:45:07.943 +03:00 [INF] Executed endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:45:07.945 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to track an instance of type 'DbServiceUser' because it does not have a primary key. Only entity types with a primary key may be tracked.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetOrCreateEntry(Object entity, IEntityType entityType)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.EntryWithoutDetectChanges(TEntity entity)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Add(TEntity entity)
+   at ThreeMorons.Initialization.Initializer.<>c.<<MapSpecialEndpoints>b__9_4>d.MoveNext() in C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons\Initialization\MapSpecialEndpoints.cs:line 95
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-14 22:45:07.976 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 500 null text/plain; charset=utf-8 1269.2838ms
+2024-05-14 22:46:27.018 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:46:27.989 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 22:46:28.009 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:46:28.154 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:46:28.158 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:46:28.161 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:46:29.107 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 22:46:29.673 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:46:29.816 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:46:29.821 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:46:29.864 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:46:29.867 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:46:29.881 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 793.8531ms
+2024-05-14 22:46:41.184 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/json 96
+2024-05-14 22:46:41.191 +03:00 [INF] Executing endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:46:45.038 +03:00 [ERR] Failed executing DbCommand (318ms) [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 50), @p2='?' (Size = 50), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [DbServiceUsers] ([user_login], [db_type], [telegram_id], [user_password])
+VALUES (@p0, @p1, @p2, @p3);
+2024-05-14 22:46:45.111 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'ThreeMorons.Model.ThreeMoronsContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'DbServiceUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:74bfe6d8-9bc6-472b-957b-9284fcb47fc5
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'DbServiceUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:74bfe6d8-9bc6-472b-957b-9284fcb47fc5
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-05-14 22:46:45.174 +03:00 [ERR]  отстрел произошёл
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'DbServiceUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:74bfe6d8-9bc6-472b-957b-9284fcb47fc5
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ThreeMorons.Initialization.Initializer.<>c.<<MapSpecialEndpoints>b__9_4>d.MoveNext() in C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons\Initialization\MapSpecialEndpoints.cs:line 96
+2024-05-14 22:46:45.248 +03:00 [INF] Executed endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:46:45.255 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'DbServiceUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:74bfe6d8-9bc6-472b-957b-9284fcb47fc5
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ThreeMorons.Initialization.Initializer.<>c.<<MapSpecialEndpoints>b__9_4>d.MoveNext() in C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons\Initialization\MapSpecialEndpoints.cs:line 96
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-14 22:46:45.971 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-05-14 22:46:46.131 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-05-14 22:46:46.150 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 500 null text/plain; charset=utf-8 4965.793ms
+2024-05-14 22:49:45.193 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:49:45.741 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 22:49:45.749 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:49:45.815 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:49:45.817 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:49:45.818 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:49:46.374 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 22:49:46.665 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:49:46.840 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:49:46.858 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:49:46.903 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:49:46.905 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:49:46.912 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 549.4033ms
+2024-05-14 22:49:50.155 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/json 96
+2024-05-14 22:49:50.166 +03:00 [INF] Executing endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:49:52.677 +03:00 [INF] Executed DbCommand (210ms) [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 50), @p2='?' (Size = 50), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [DbServiceUser] ([user_login], [db_type], [telegram_id], [user_password])
+VALUES (@p0, @p1, @p2, @p3);
+2024-05-14 22:49:52.715 +03:00 [INF] Создан новый пользователь бд сервиса test9
+2024-05-14 22:49:52.721 +03:00 [INF] Setting HTTP status code 200.
+2024-05-14 22:49:52.723 +03:00 [INF] Executed endpoint 'HTTP: POST /createDbUser'
+2024-05-14 22:49:52.741 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 200 0 null 2585.4967ms
+2024-05-14 22:51:02.410 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 65
+2024-05-14 22:51:02.482 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:51:02'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 22:51:02.533 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:51:02'.
+2024-05-14 22:51:02.539 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 22:51:03.308 +03:00 [INF] Executed DbCommand (159ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 22:51:03.352 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 22:51:03.354 +03:00 [INF] Попытка найти бд mssql
+2024-05-14 22:51:03.367 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 22:51:03.375 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 22:51:03.474 +03:00 [INF] Received HTTP response headers after 92.9856ms - 422
+2024-05-14 22:51:03.478 +03:00 [INF] End processing HTTP request after 119.1013ms - 422
+2024-05-14 22:51:03.543 +03:00 [ERR] UnprocessableEntity при попытке получить строку подключения. {"detail":[{"type":"model_attributes_type","loc":["body"],"msg":"Input should be a valid dictionary or object to extract fields from","input":"{\"user_login\":\"test9\",\"user_password\":\"Wzny2nud\",\"telegram_id\":\"test9\",\"db_type\":\"mssql\"}"}]}
+2024-05-14 22:51:03.549 +03:00 [INF] Setting HTTP status code 422.
+2024-05-14 22:51:03.561 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 22:51:03.569 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 22:51:03.571 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 422 null application/problem+json 1160.7006ms
+2024-05-14 22:56:38.550 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:56:39.372 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 22:56:39.385 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:56:39.500 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:56:39.504 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:56:39.505 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:56:39.994 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 22:56:40.269 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:56:40.355 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:56:40.367 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:56:40.385 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:56:40.387 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:56:40.391 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 406.6152ms
+2024-05-14 22:56:45.044 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 65
+2024-05-14 22:56:45.153 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:56:45'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 22:56:45.199 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:56:45'.
+2024-05-14 22:56:45.201 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 22:56:48.312 +03:00 [INF] Executed DbCommand (217ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 22:56:48.412 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 22:56:48.414 +03:00 [INF] Попытка найти бд mssql
+2024-05-14 22:56:48.419 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 22:56:48.425 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 22:56:48.501 +03:00 [INF] Received HTTP response headers after 71.5288ms - 422
+2024-05-14 22:56:48.504 +03:00 [INF] End processing HTTP request after 87.5255ms - 422
+2024-05-14 22:56:48.573 +03:00 [ERR] UnprocessableEntity при попытке получить строку подключения. {"detail":[{"type":"model_attributes_type","loc":["body"],"msg":"Input should be a valid dictionary or object to extract fields from","input":"{\"user_login\":\"test9\",\"user_password\":\"Wzny2nud\",\"telegram_id\":\"test9\",\"database_name\":\"mssql\"}"}]}
+2024-05-14 22:56:48.582 +03:00 [INF] Setting HTTP status code 422.
+2024-05-14 22:56:48.595 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 22:56:48.605 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 22:56:48.618 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 422 null application/problem+json 3574.3964ms
+2024-05-14 22:57:35.463 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 22:57:36.225 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 22:57:36.235 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 22:57:36.315 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 22:57:36.317 +03:00 [INF] Hosting environment: Development
+2024-05-14 22:57:36.319 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 22:57:37.035 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 22:57:37.299 +03:00 [INF] No cached response available for this request.
+2024-05-14 22:57:37.383 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 22:57:37.396 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 22:57:37.415 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 22:57:37.418 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 22:57:37.432 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 409.4148ms
+2024-05-14 22:57:41.816 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 65
+2024-05-14 22:57:41.974 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:57:41'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 22:57:42.019 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:57:41'.
+2024-05-14 22:57:42.022 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 22:57:45.703 +03:00 [INF] Executed DbCommand (215ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 22:57:45.804 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 22:57:45.806 +03:00 [INF] Попытка найти бд mssql
+2024-05-14 22:57:45.811 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 22:57:45.815 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 22:57:45.884 +03:00 [INF] Received HTTP response headers after 63.231ms - 422
+2024-05-14 22:57:45.886 +03:00 [INF] End processing HTTP request after 77.742ms - 422
+2024-05-14 22:57:45.968 +03:00 [ERR] UnprocessableEntity при попытке получить строку подключения. {"detail":[{"type":"model_attributes_type","loc":["body"],"msg":"Input should be a valid dictionary or object to extract fields from","input":"{\"user_login\":\"test9\",\"user_password\":\"Wzny2nud\",\"telegram_id\":\"test9\",\"database_name\":\"mssql\"}"}]}
+2024-05-14 22:57:45.978 +03:00 [INF] Setting HTTP status code 422.
+2024-05-14 22:57:45.991 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 22:57:46.002 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 22:57:46.029 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 422 null application/problem+json 4213.2469ms
+2024-05-14 22:58:36.360 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 65
+2024-05-14 22:58:36.375 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:58:36'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 22:58:36.380 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:58:36'.
+2024-05-14 22:58:36.382 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 22:58:36.582 +03:00 [INF] Executed DbCommand (150ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 22:58:36.625 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 22:58:36.632 +03:00 [INF] Попытка найти бд mssql
+2024-05-14 22:58:36.645 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 22:58:36.650 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 22:58:36.847 +03:00 [INF] Received HTTP response headers after 189.0342ms - 422
+2024-05-14 22:58:36.848 +03:00 [INF] End processing HTTP request after 203.4036ms - 422
+2024-05-14 22:58:36.955 +03:00 [ERR] UnprocessableEntity при попытке получить строку подключения. {"detail":[{"type":"model_attributes_type","loc":["body"],"msg":"Input should be a valid dictionary or object to extract fields from","input":"{\"user_login\":\"test9\",\"user_password\":\"Wzny2nud\",\"telegram_id\":\"test9\",\"database_name\":\"mssql\"}"}]}
+2024-05-14 22:58:36.969 +03:00 [INF] Setting HTTP status code 422.
+2024-05-14 22:58:36.973 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 22:58:36.979 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 22:58:36.984 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 422 null application/problem+json 624.7462ms
+2024-05-14 22:59:18.975 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 65
+2024-05-14 22:59:18.983 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:59:18'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 22:59:18.986 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 19:59:18'.
+2024-05-14 22:59:18.988 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 22:59:19.232 +03:00 [INF] Executed DbCommand (147ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 22:59:19.236 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:00:23.883 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 23:00:24.617 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 23:00:24.630 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 23:00:24.706 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 23:00:24.709 +03:00 [INF] Hosting environment: Development
+2024-05-14 23:00:24.711 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 23:00:25.048 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 23:00:25.320 +03:00 [INF] No cached response available for this request.
+2024-05-14 23:00:25.423 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 23:00:25.441 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 23:00:25.482 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 23:00:25.487 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 23:00:25.508 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 470.0293ms
+2024-05-14 23:00:36.913 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 65
+2024-05-14 23:00:36.997 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:00:36'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:00:37.032 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:00:36'.
+2024-05-14 23:00:37.035 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:00:40.269 +03:00 [INF] Executed DbCommand (253ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:00:40.377 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:00:40.378 +03:00 [INF] Попытка найти бд mssql
+2024-05-14 23:00:40.383 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:00:40.387 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:00:40.456 +03:00 [INF] Received HTTP response headers after 63.7258ms - 422
+2024-05-14 23:00:40.460 +03:00 [INF] End processing HTTP request after 80.6022ms - 422
+2024-05-14 23:00:40.533 +03:00 [ERR] UnprocessableEntity при попытке получить строку подключения. {"detail":[{"type":"missing","loc":["body","user_telegram_id"],"msg":"Field required","input":{"user_login":"test9","user_password":"Wzny2nud","telegram_id":"test9","database_name":"mssql"}}]}
+2024-05-14 23:00:40.544 +03:00 [INF] Setting HTTP status code 422.
+2024-05-14 23:00:40.551 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 23:00:40.559 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:00:40.575 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 422 null application/problem+json 3663.0451ms
+2024-05-14 23:01:07.551 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 23:01:08.617 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 23:01:08.641 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 23:01:08.717 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 23:01:08.724 +03:00 [INF] Hosting environment: Development
+2024-05-14 23:01:08.729 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 23:01:09.331 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 23:01:10.101 +03:00 [INF] No cached response available for this request.
+2024-05-14 23:01:10.218 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 23:01:10.231 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 23:01:10.247 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 23:01:10.250 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 23:01:10.256 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 945.0617ms
+2024-05-14 23:01:14.583 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 65
+2024-05-14 23:01:14.671 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:01:14'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:01:14.717 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:01:14'.
+2024-05-14 23:01:14.719 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:01:18.111 +03:00 [INF] Executed DbCommand (243ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:01:18.227 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:01:18.228 +03:00 [INF] Попытка найти бд mssql
+2024-05-14 23:01:18.234 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:01:18.238 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:01:18.342 +03:00 [INF] Received HTTP response headers after 98.2689ms - 404
+2024-05-14 23:01:18.345 +03:00 [INF] End processing HTTP request after 113.4344ms - 404
+2024-05-14 23:01:18.409 +03:00 [ERR] NotFound при попытке получить строку подключения. {"detail":"Incorrect database name"}
+2024-05-14 23:01:18.418 +03:00 [INF] Setting HTTP status code 404.
+2024-05-14 23:01:18.429 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 23:01:18.435 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:01:18.453 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 404 null application/problem+json 3869.6719ms
+2024-05-14 23:02:27.799 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 65
+2024-05-14 23:02:27.809 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:02:27'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:02:27.813 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:02:27'.
+2024-05-14 23:02:27.815 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:02:27.997 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:02:28.021 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:02:28.052 +03:00 [INF] Попытка найти бд mssql
+2024-05-14 23:02:28.054 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:02:28.062 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:02:28.138 +03:00 [INF] Received HTTP response headers after 73.1014ms - 404
+2024-05-14 23:02:28.141 +03:00 [INF] End processing HTTP request after 86.5491ms - 404
+2024-05-14 23:02:28.211 +03:00 [ERR] NotFound при попытке получить строку подключения. {"detail":"Incorrect database name"}
+2024-05-14 23:02:28.213 +03:00 [INF] Setting HTTP status code 404.
+2024-05-14 23:02:28.214 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 23:02:28.216 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:02:28.219 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 404 null application/problem+json 419.2908ms
+2024-05-14 23:02:32.917 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 65
+2024-05-14 23:02:32.922 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:02:32'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:02:32.928 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:02:32'.
+2024-05-14 23:02:32.929 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:02:33.160 +03:00 [INF] Executed DbCommand (148ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:02:33.164 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:02:33.165 +03:00 [INF] Попытка найти бд mssql
+2024-05-14 23:02:33.165 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:02:33.166 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:02:33.239 +03:00 [INF] Received HTTP response headers after 70.6936ms - 404
+2024-05-14 23:02:33.240 +03:00 [INF] End processing HTTP request after 74.3102ms - 404
+2024-05-14 23:02:33.318 +03:00 [ERR] NotFound при попытке получить строку подключения. {"detail":"Incorrect database name"}
+2024-05-14 23:02:33.319 +03:00 [INF] Setting HTTP status code 404.
+2024-05-14 23:02:33.321 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 23:02:33.323 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:02:33.325 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 404 null application/problem+json 407.8848ms
+2024-05-14 23:02:34.122 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 65
+2024-05-14 23:02:34.126 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:02:34'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:02:34.131 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:02:34'.
+2024-05-14 23:02:34.133 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:02:34.284 +03:00 [INF] Executed DbCommand (148ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:02:34.288 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:02:34.290 +03:00 [INF] Попытка найти бд mssql
+2024-05-14 23:02:34.291 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:02:34.294 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:02:34.342 +03:00 [INF] Received HTTP response headers after 47.1288ms - 404
+2024-05-14 23:02:34.344 +03:00 [INF] End processing HTTP request after 52.8114ms - 404
+2024-05-14 23:02:34.411 +03:00 [ERR] NotFound при попытке получить строку подключения. {"detail":"Incorrect database name"}
+2024-05-14 23:02:34.412 +03:00 [INF] Setting HTTP status code 404.
+2024-05-14 23:02:34.413 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 23:02:34.415 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:02:34.416 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 404 null application/problem+json 294.1687ms
+2024-05-14 23:02:35.124 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 65
+2024-05-14 23:02:35.131 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:02:35'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:02:35.144 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:02:35'.
+2024-05-14 23:02:35.147 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:02:35.298 +03:00 [INF] Executed DbCommand (148ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:02:35.301 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:02:35.302 +03:00 [INF] Попытка найти бд mssql
+2024-05-14 23:02:35.303 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:02:35.304 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:02:35.387 +03:00 [INF] Received HTTP response headers after 81.8239ms - 404
+2024-05-14 23:02:35.388 +03:00 [INF] End processing HTTP request after 85.1975ms - 404
+2024-05-14 23:02:35.458 +03:00 [ERR] NotFound при попытке получить строку подключения. {"detail":"Incorrect database name"}
+2024-05-14 23:02:35.462 +03:00 [INF] Setting HTTP status code 404.
+2024-05-14 23:02:35.463 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 23:02:35.465 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:02:35.467 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 404 null application/problem+json 343.7291ms
+2024-05-14 23:02:54.718 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 65
+2024-05-14 23:02:54.722 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:02:54'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:02:54.727 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:02:54'.
+2024-05-14 23:02:54.729 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:02:54.881 +03:00 [INF] Executed DbCommand (149ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:04:18.855 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:04:18.871 +03:00 [INF] Попытка найти бд mssql
+2024-05-14 23:04:18.877 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:04:18.879 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:04:18.953 +03:00 [INF] Received HTTP response headers after 72.599ms - 404
+2024-05-14 23:04:18.955 +03:00 [INF] End processing HTTP request after 77.9458ms - 404
+2024-05-14 23:04:19.020 +03:00 [ERR] NotFound при попытке получить строку подключения. {"detail":"Incorrect database name"}
+2024-05-14 23:04:19.022 +03:00 [INF] Setting HTTP status code 404.
+2024-05-14 23:04:19.024 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 23:04:19.028 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:04:19.031 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 404 null application/problem+json 84313.196ms
+2024-05-14 23:18:17.417 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 23:18:18.288 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 23:18:18.304 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 23:18:18.364 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 23:18:18.366 +03:00 [INF] Hosting environment: Development
+2024-05-14 23:18:18.367 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 23:18:18.793 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 23:18:19.103 +03:00 [INF] No cached response available for this request.
+2024-05-14 23:18:19.209 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 23:18:19.221 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 23:18:19.242 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 23:18:19.244 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 23:18:19.250 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 470.0876ms
+2024-05-14 23:18:31.899 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/json 97
+2024-05-14 23:18:31.905 +03:00 [INF] Executing endpoint 'HTTP: POST /createDbUser'
+2024-05-14 23:18:34.537 +03:00 [INF] Executed DbCommand (224ms) [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 50), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [DbServiceUser] ([user_login], [db_name], [db_type], [telegram_id], [user_password])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-05-14 23:18:34.576 +03:00 [INF] Создан новый пользователь бд сервиса test9
+2024-05-14 23:18:34.582 +03:00 [INF] Setting HTTP status code 200.
+2024-05-14 23:18:34.585 +03:00 [INF] Executed endpoint 'HTTP: POST /createDbUser'
+2024-05-14 23:18:34.601 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 200 0 null 2702.3121ms
+2024-05-14 23:19:18.779 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/json 98
+2024-05-14 23:19:18.785 +03:00 [INF] Executing endpoint 'HTTP: POST /createDbUser'
+2024-05-14 23:19:18.998 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 50), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [DbServiceUser] ([user_login], [db_name], [db_type], [telegram_id], [user_password])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-05-14 23:19:19.002 +03:00 [INF] Создан новый пользователь бд сервиса test11
+2024-05-14 23:19:19.003 +03:00 [INF] Setting HTTP status code 200.
+2024-05-14 23:19:19.004 +03:00 [INF] Executed endpoint 'HTTP: POST /createDbUser'
+2024-05-14 23:19:19.006 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 200 0 null 226.7475ms
+2024-05-14 23:20:44.821 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 148
+2024-05-14 23:20:44.921 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:20:44'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:20:44.980 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:20:44'.
+2024-05-14 23:20:44.984 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:20:45.625 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_name], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:20:45.655 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:20:45.656 +03:00 [INF] Попытка найти бд 
+2024-05-14 23:20:45.662 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:20:45.667 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:20:45.741 +03:00 [INF] Received HTTP response headers after 68.5932ms - 422
+2024-05-14 23:20:45.746 +03:00 [INF] End processing HTTP request after 88.085ms - 422
+2024-05-14 23:20:45.825 +03:00 [ERR] UnprocessableEntity при попытке получить строку подключения. {"detail":[{"type":"string_type","loc":["body","database_name"],"msg":"Input should be a valid string","input":null}]}
+2024-05-14 23:20:45.843 +03:00 [INF] Setting HTTP status code 422.
+2024-05-14 23:20:45.868 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 23:20:45.875 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:20:45.877 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 422 null application/problem+json 1055.9373ms
+2024-05-14 23:21:30.298 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 23:21:31.417 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 23:21:31.442 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 23:21:31.567 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 23:21:31.572 +03:00 [INF] Hosting environment: Development
+2024-05-14 23:21:31.574 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 23:21:32.295 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 23:21:32.618 +03:00 [INF] No cached response available for this request.
+2024-05-14 23:21:32.732 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 23:21:32.746 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 23:21:32.769 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 23:21:32.770 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 23:21:32.776 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 497.2687ms
+2024-05-14 23:21:36.238 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 154
+2024-05-14 23:21:36.330 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:21:36'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:21:36.362 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:21:36'.
+2024-05-14 23:21:36.363 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:21:39.210 +03:00 [INF] Executed DbCommand (212ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_name], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:21:39.306 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:21:39.307 +03:00 [INF] Попытка найти бд 
+2024-05-14 23:21:39.312 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:21:39.317 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:21:39.387 +03:00 [INF] Received HTTP response headers after 65.9635ms - 422
+2024-05-14 23:21:39.389 +03:00 [INF] End processing HTTP request after 78.9953ms - 422
+2024-05-14 23:21:39.465 +03:00 [ERR] UnprocessableEntity при попытке получить строку подключения. {"detail":[{"type":"string_type","loc":["body","database_name"],"msg":"Input should be a valid string","input":null}]}
+2024-05-14 23:21:39.473 +03:00 [INF] Setting HTTP status code 422.
+2024-05-14 23:21:39.482 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 23:21:39.488 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:21:39.511 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 422 null application/problem+json 3273.4838ms
+2024-05-14 23:21:57.614 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 159
+2024-05-14 23:21:57.623 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:21:57'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:21:57.627 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:21:57'.
+2024-05-14 23:21:57.628 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:21:57.800 +03:00 [INF] Executed DbCommand (147ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_name], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:21:57.805 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:21:57.805 +03:00 [INF] Попытка найти бд 
+2024-05-14 23:21:57.807 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:21:57.808 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:21:57.868 +03:00 [INF] Received HTTP response headers after 58.2271ms - 422
+2024-05-14 23:21:57.869 +03:00 [INF] End processing HTTP request after 62.3045ms - 422
+2024-05-14 23:21:57.957 +03:00 [ERR] UnprocessableEntity при попытке получить строку подключения. {"detail":[{"type":"string_type","loc":["body","database_name"],"msg":"Input should be a valid string","input":null}]}
+2024-05-14 23:21:57.964 +03:00 [INF] Setting HTTP status code 422.
+2024-05-14 23:21:57.966 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 23:21:57.968 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:21:57.971 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 422 null application/problem+json 356.9226ms
+2024-05-14 23:22:31.983 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 92
+2024-05-14 23:22:31.988 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:22:31'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:22:32.012 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:22:31'.
+2024-05-14 23:22:32.021 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:22:32.262 +03:00 [INF] Executed DbCommand (148ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_name], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:22:32.268 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:22:32.270 +03:00 [INF] Попытка найти бд 
+2024-05-14 23:22:32.272 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:22:32.273 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:22:32.335 +03:00 [INF] Received HTTP response headers after 58.6306ms - 422
+2024-05-14 23:22:32.337 +03:00 [INF] End processing HTTP request after 65.0935ms - 422
+2024-05-14 23:22:32.413 +03:00 [ERR] UnprocessableEntity при попытке получить строку подключения. {"detail":[{"type":"string_type","loc":["body","database_name"],"msg":"Input should be a valid string","input":null}]}
+2024-05-14 23:22:32.416 +03:00 [INF] Setting HTTP status code 422.
+2024-05-14 23:22:32.418 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-05-14 23:22:32.420 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:22:32.426 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 422 null application/problem+json 443.0375ms
+2024-05-14 23:24:01.578 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 23:24:02.715 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 23:24:02.732 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 23:24:02.842 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 23:24:02.845 +03:00 [INF] Hosting environment: Development
+2024-05-14 23:24:02.866 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 23:24:03.336 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 23:24:03.841 +03:00 [INF] No cached response available for this request.
+2024-05-14 23:24:04.018 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 23:24:04.040 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 23:24:04.087 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 23:24:04.104 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 23:24:04.112 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 791.4271ms
+2024-05-14 23:24:22.495 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - application/json 98
+2024-05-14 23:24:22.504 +03:00 [INF] Executing endpoint 'HTTP: POST /createDbUser'
+2024-05-14 23:24:39.684 +03:00 [INF] Executed DbCommand (196ms) [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 50), @p2='?' (Size = 50), @p3='?' (Size = 50), @p4='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [DbServiceUser] ([user_login], [db_name], [db_type], [telegram_id], [user_password])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-05-14 23:24:41.284 +03:00 [INF] Создан новый пользователь бд сервиса test12
+2024-05-14 23:24:43.253 +03:00 [INF] Setting HTTP status code 200.
+2024-05-14 23:24:43.255 +03:00 [INF] Executed endpoint 'HTTP: POST /createDbUser'
+2024-05-14 23:24:43.268 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/createDbUser - 200 0 null 20773.3365ms
+2024-05-14 23:25:16.910 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 92
+2024-05-14 23:25:17.029 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:25:17'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:25:17.074 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:25:17'.
+2024-05-14 23:25:17.078 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:25:35.421 +03:00 [INF] Executed DbCommand (158ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_name], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:26:08.277 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 23:26:09.473 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 23:26:09.483 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 23:26:09.649 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 23:26:09.694 +03:00 [INF] Hosting environment: Development
+2024-05-14 23:26:09.778 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 23:26:10.733 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 23:26:11.843 +03:00 [INF] No cached response available for this request.
+2024-05-14 23:26:12.238 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 23:26:12.254 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 23:26:12.318 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 23:26:12.323 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 23:26:12.337 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 1621.7914ms
+2024-05-14 23:26:15.474 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 92
+2024-05-14 23:26:15.595 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:26:15'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:26:15.641 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:26:15'.
+2024-05-14 23:26:15.642 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:26:41.381 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-14 23:26:42.712 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-05-14 23:26:42.731 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-14 23:26:42.918 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-14 23:26:42.920 +03:00 [INF] Hosting environment: Development
+2024-05-14 23:26:42.922 +03:00 [INF] Content root path: C:\Users\Lev\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-14 23:26:43.509 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-05-14 23:26:43.782 +03:00 [INF] No cached response available for this request.
+2024-05-14 23:26:43.870 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-14 23:26:43.882 +03:00 [INF] Write content with HTTP Response ContentType of text/plain; charset=utf-8
+2024-05-14 23:26:43.900 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-14 23:26:43.905 +03:00 [INF] The response could not be cached for this request.
+2024-05-14 23:26:43.914 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 6 text/plain; charset=utf-8 416.7753ms
+2024-05-14 23:26:48.571 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - application/json 92
+2024-05-14 23:26:48.652 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:26:48'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-05-14 23:26:48.688 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '07.03.2024 19:30:06', Current time (UTC): '14.05.2024 20:26:48'.
+2024-05-14 23:26:48.691 +03:00 [INF] Executing endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:26:57.138 +03:00 [INF] Executed DbCommand (214ms) [Parameters=[@__user_user_login_0='?' (Size = 50), @__user_user_password_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[user_login], [d].[db_name], [d].[db_type], [d].[telegram_id], [d].[user_password]
+FROM [DbServiceUser] AS [d]
+WHERE [d].[user_login] = @__user_user_login_0 AND [d].[user_password] = @__user_user_password_1
+2024-05-14 23:27:21.618 +03:00 [INF] Найден пользователь бд сервиса ThreeMorons.Model.DbServiceUser
+2024-05-14 23:27:23.506 +03:00 [INF] Попытка найти бд 
+2024-05-14 23:27:23.514 +03:00 [INF] Start processing HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:27:23.520 +03:00 [INF] Sending HTTP request POST http://25.64.54.15:8000/mssql/database/get-connection-string
+2024-05-14 23:27:23.734 +03:00 [INF] Received HTTP response headers after 196.5487ms - 200
+2024-05-14 23:27:23.738 +03:00 [INF] End processing HTTP request after 227.8811ms - 200
+2024-05-14 23:27:23.797 +03:00 [INF] "mssql+aioodbc://test12:XwoDvdue@COMPUTER/test12?driver=ODBC+Driver+17+for+SQL+Server&TrustServerCertificate=yes" получена успешно
+2024-05-14 23:27:23.804 +03:00 [INF] Setting HTTP status code 200.
+2024-05-14 23:27:23.807 +03:00 [INF] Writing value of type 'String' as Json.
+2024-05-14 23:27:23.810 +03:00 [INF] Executed endpoint 'HTTP: POST /getDbConnectionString'
+2024-05-14 23:27:23.833 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/getDbConnectionString - 200 null application/json; charset=utf-8 35262.8595ms

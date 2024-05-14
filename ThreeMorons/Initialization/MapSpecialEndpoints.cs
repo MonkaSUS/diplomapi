@@ -92,7 +92,7 @@ namespace ThreeMorons.Initialization
                 var logger = fac.CreateLogger("DbServiceUser");
                 try
                 {
-                    db.DbServiceUsers.Add(user);
+                    db.DbServiceUser.Add(user);
                     await db.SaveChangesAsync();
                     logger.LogInformation($"Создан новый пользователь бд сервиса {user.user_login}");
                     return Results.Ok();
@@ -108,22 +108,30 @@ namespace ThreeMorons.Initialization
                 var logger = loggerFac.CreateLogger("GetDbConnectionString");
                 try
                 {
-                    var fullUser = await db.DbServiceUsers.FirstOrDefaultAsync(x => x.user_login == user.user_login && x.user_password == user.user_password);
+                    var fullUser = await db.DbServiceUser.FirstOrDefaultAsync(x => x.user_login == user.user_login && x.user_password == user.user_password);
                     var client = clientFac.CreateClient();
-                    var sendContent = new StringContent(JsonSerializer.Serialize(fullUser));
+                    Dictionary<string, string> fullUserDict = new()
+                    {
+                        { "user_login", fullUser.user_login },
+                        { "user_password", fullUser.user_password },
+                        { "user_telegram_id", fullUser.telegram_id },
+                        { "database_name", user.db_name },
+                        {"db_type", fullUser.db_type }
+                    };
+                    var sendContent = new StringContent(JsonSerializer.Serialize(fullUserDict, _opt), Encoding.UTF8, "application/json");
                     logger.LogInformation($"Найден пользователь бд сервиса {fullUser}");
                     HttpResponseMessage res = new();
-                    logger.LogInformation($"Попытка найти бд {fullUser.db_type}");
+                    logger.LogInformation($"Попытка найти бд {fullUser.db_name}");
                     switch (fullUser.db_type)
                     {
                         case PostgreSqlName:
-                            res = await client.PostAsync($"{DbServiceHostAdress}/postgresql/database/get-connection-string", sendContent);
+                            res = await client.PostAsync($"{DbServiceHostAdress}postgresql/database/get-connection-string", sendContent);
                             break;
                         case MariaDbName:
-                            res = await client.PostAsync($"{DbServiceHostAdress}/mariadb/database/get-connection-string", sendContent);
+                            res = await client.PostAsync($"{DbServiceHostAdress}mariadb/database/get-connection-string", sendContent);
                             break;
                         case MsSqlName:
-                            res = await client.PostAsync($"{DbServiceHostAdress}/mssql/database/get-connection-string", sendContent);
+                            res = await client.PostAsync($"{DbServiceHostAdress}mssql/database/get-connection-string", sendContent);
                             break;
                         default:
                             return Results.Problem("название бд не было найдено");
@@ -142,6 +150,11 @@ namespace ThreeMorons.Initialization
                     logger.LogError(ex, "случился отстрел");
                     throw;
                 }
+            });
+            app.MapPost("/changeDbAdress", async (string hostadress) =>
+            {
+                Initializer.DbServiceHostAdress = hostadress;
+                return Results.Ok();
             });
         }
     }
