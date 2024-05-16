@@ -9,44 +9,54 @@ namespace ThreeMorons.Initialization
     {
         public static void MapSpecialEndpoints(WebApplication app)
         {
-            app.MapPost("/announcement", async (AnnouncementDTO annc, IValidator<AnnouncementDTO> val, IWebHostEnvironment env, INotificationService notifs, ILoggerFactory fac) =>
+            app.MapPost("/announcement", async (ThreeMoronsContext db, AnnouncementDTO annc, IValidator<AnnouncementDTO> val, INotificationService notifs, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("announcement");
                 logger.LogInformation("Попытка создать и отправить оповещение");
-                var localPath = env.ContentRootPath;
                 var valres = val.Validate(annc);
-                if (!valres.IsValid) 
+                if (!valres.IsValid)
                 {
                     return Results.ValidationProblem((IDictionary<string, string[]>)valres.Errors);
                 }
-                if (!Directory.Exists(localPath+"/announcements"))
+                Announcement newAnnc = new Announcement()
                 {
-                    Directory.CreateDirectory(localPath + "/announcements");
-                }
-                PublicAnnouncement announcement = new PublicAnnouncement()
-                {
-                    Id = Guid.NewGuid(),
                     Author = annc.author,
                     Body = annc.body,
-                    Description = annc.description,
+                    CreatedOn = DateTime.Now,
+                    ShortDescription = annc.shortDescription,
+                    TargetAudience = annc.targetAudience,
                     Title = annc.title,
-                    Created = annc.created
+                    Id = Guid.NewGuid()
                 };
-                var serializedAnnouncement = JsonSerializer.Serialize(announcement);
-                string FileName = announcement.Created.ToShortDateString() + announcement.Title;
-                using (FileStream fs = File.Create(localPath + "/announcements/" + FileName))
+                //если у оповещалки нет краткого описания, то делаем дефолтное, иначе ставим его
+                string NotificationBody = "";
+                if (string.IsNullOrEmpty(newAnnc.ShortDescription))
                 {
-                    byte[] jsondata = new UTF8Encoding(true).GetBytes(serializedAnnouncement);
-                    fs.Write(jsondata, 0, jsondata.Length);
+                    NotificationBody = newAnnc.Body;
                 }
-                logger.LogInformation($"Создал и сериализовал оповещение {announcement.Id}");
-
+                else
+                {
+                    NotificationBody = newAnnc.ShortDescription;
+                }
+                //в фаербейзе смешно работают темы уведомлений
+                //если попытаться отправить сообщение на несуществующую тему, то фб его создаст
+                //но этот процесс может занять несколько дней
+                //планирую побить темы уведомлений по группам.
+                string notifTopic = "";
+                if (string.IsNullOrEmpty(newAnnc.TargetAudience))
+                {
+                    notifTopic = "announcements";
+                }
+                else
+                {
+                    notifTopic = newAnnc.TargetAudience;
+                }
                 Message fcmMessage = new Message()
                 {
                     Notification = new Notification()
                     {
-                        Title = announcement.Title,
-                        Body = announcement.Body
+                        Title = newAnnc.Title,
+                        Body = NotificationBody
                     },
                     Android = new AndroidConfig()
                     {
@@ -57,23 +67,30 @@ namespace ThreeMorons.Initialization
                         Priority = Priority.High,
                         RestrictedPackageName = "com.kgpk.collegeapp"
                     },
-                    Topic = "announcements"
+                    Topic = notifTopic
                 };
-                string result = await notifs.SendAsync(fcmMessage);
-                logger.LogInformation($"Отправил уведомление {result} пользователям");
-                return Results.Ok(result);
-            }).RequireAuthorization(r=> r.RequireClaim("userClass", "2"));
-            app.MapGet("/announcement", async (IWebHostEnvironment env) =>
-            {
-                List<PublicAnnouncement> allAnnc = new List<PublicAnnouncement>();
-                var filenames = Directory.GetFiles(env.ContentRootPath + "/announcements");
-                foreach (var file in filenames)
+                logger.LogInformation($"Создал оповещение {newAnnc.Id}. Попытка сохранить в бд");
+                try
                 {
-                    var annc = JsonSerializer.Deserialize<PublicAnnouncement>(File.ReadAllText(file));
-                    allAnnc.Add(annc);
+                    await db.Announcements.AddAsync(newAnnc);
+                    await db.SaveChangesAsync();
+                    logger.LogInformation($"Успешно сохранил увдомление {newAnnc.Id} в базу");
                 }
-                return Results.Json(allAnnc, _opt, contentType: "application/json", statusCode:200);
+                catch (Exception exc)
+                {
+                    logger.LogError(exc, "произошёл хуяк при сохранении оповещения");
+                }
+                string result = await notifs.SendAsync(fcmMessage);
+                logger.LogInformation($"Отправил уведомление {result} об оповещении {newAnnc.Id} пользователям");
+                return Results.Ok(newAnnc.Id);
+            }).RequireAuthorization(r => r.RequireClaim("userClass", "2"));
+            app.MapGet("/announcement", async (IWebHostEnvironment env, ThreeMoronsContext db) =>
+            {
+                return Results.Json(await db.Announcements.ToListAsync(), _opt, contentType: "application/json", statusCode: 200);
             });
+            //ДАЛЬШЕ ДУМАТЬ О РАЗДЕЛЕНИИ ПО ГРУППАМ
+            //РАЗДЕЛЕНИЕ ПО ГРУППАМ БУДЕМ ДЕЛАТЬ НА КЛИЕНТЕ. МНЕ ПОХУЙ. 
+            //ПРОТЕСТИТЬ
         }
     }
 }

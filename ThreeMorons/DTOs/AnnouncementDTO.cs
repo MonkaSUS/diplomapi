@@ -1,4 +1,4 @@
 ﻿namespace ThreeMorons.DTOs
 {
-    public record AnnouncementDTO(string title, string author, string description, string body, DateTime created);
+    public record AnnouncementDTO(string title, DateTime createdOn, string body, string author, string shortDescription, string? targetAudience);
 }

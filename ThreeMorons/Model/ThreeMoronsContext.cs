@@ -27,6 +27,7 @@ public partial class ThreeMoronsContext : DbContext
     public virtual DbSet<User> Users { get; set; }
     public virtual DbSet<Session> Sessions { get; set; }
     public virtual DbSet<UserClass> UserClasses { get; set; }
+    public virtual DbSet<Announcement> Announcements { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #pragma warning disable CS1030 // Директива #warning
@@ -36,6 +37,14 @@ public partial class ThreeMoronsContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Announcement>(e =>
+        {
+            e.HasKey(en => en.Id);
+            e.Property(en => en.Title).HasMaxLength(100);
+            e.Property(en => en.Body).HasMaxLength(500);
+            e.Property(en => en.Author).HasMaxLength(100);
+            e.Property(en => en.TargetAudience).HasMaxLength(30);
+        });
         modelBuilder.Entity<Group>(entity =>
         {
             entity.HasKey(e => e.GroupName);
