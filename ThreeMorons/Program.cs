@@ -18,7 +18,7 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
     o.SerializerOptions.IncludeFields = true;
 });
 
-
+//TODO днаюбхрэ EasyCache
 
 
 builder.Services.AddHttpClient();
@@ -46,14 +46,17 @@ Initializer.MapUserEndpoints(app, builder);
 
 Initializer.MapGroupEndpoints(app);
 
-
+Initializer.MapSpecialEndpoints(app);
 
 app.UseResponseCaching();
 
 
 
 //TODO уект вейя
-app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 
 

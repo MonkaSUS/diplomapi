@@ -7,6 +7,10 @@ namespace ThreeMorons.Initialization
 {
     public static partial class Initializer
     {
+        private const string MariaDbName = "mariadb";
+        private const string MsSqlName = "mssql";
+        private const string PostgreSqlName = "postgreql";
+        private static string DbServiceHostAdress = "http://25.64.54.15:8000/";
         public static JsonSerializerOptions _opt = new JsonSerializerOptions()
         {
             IncludeFields = true,
