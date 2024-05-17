@@ -1,4 +1,6 @@
-﻿using FirebaseAdmin.Messaging;
+﻿using EasyCaching.Core;
+using FirebaseAdmin.Messaging;
+using Microsoft.AspNetCore.Components.Forms;
 using System.Text.Json;
 using ThreeMorons.DTOs;
 using ThreeMorons.Services;
@@ -84,9 +86,17 @@ namespace ThreeMorons.Initialization
                 logger.LogInformation($"Отправил уведомление {result} об оповещении {newAnnc.Id} пользователям");
                 return Results.Ok(newAnnc.Id);
             }).RequireAuthorization(r => r.RequireClaim("userClass", "2"));
-            app.MapGet("/announcement", async (IWebHostEnvironment env, ThreeMoronsContext db) =>
+            app.MapGet("/announcement", async (IWebHostEnvironment env, ThreeMoronsContext db, IEasyCachingProvider prov) =>
             {
-                return Results.Json(await db.Announcements.ToListAsync(), _opt, contentType: "application/json", statusCode: 200);
+                if (await prov.ExistsAsync("allAnnouncements"))
+                {
+                    var cachedres = await prov.GetAsync<List<Announcement>>("allAnnouncements");
+                    return Results.Json(cachedres, _opt);
+                }
+                var allAnnouncements = await db.Announcements.ToListAsync();
+                await prov.SetAsync<List<Announcement>>(nameof(allAnnouncements), allAnnouncements, TimeSpan.FromMinutes(10));
+
+                return Results.Json(allAnnouncements, options: _opt, contentType: "application/json", statusCode: 200);
             });
             //ДАЛЬШЕ ДУМАТЬ О РАЗДЕЛЕНИИ ПО ГРУППАМ
             //РАЗДЕЛЕНИЕ ПО ГРУППАМ БУДЕМ ДЕЛАТЬ НА КЛИЕНТЕ. МНЕ ПОХУЙ. 

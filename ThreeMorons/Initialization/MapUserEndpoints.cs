@@ -1,5 +1,6 @@
 ﻿
 using System.Text.Json;
+
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace ThreeMorons.Initialization
@@ -109,11 +110,18 @@ namespace ThreeMorons.Initialization
                 logger.LogInformation($"Успешная авторизация{inp.login}");
                 return Results.Json(stringToken, new JsonSerializerOptions() { IncludeFields = true }, "application/json", 200);
             });
-            UserGroup.MapGet("/all", async (ThreeMoronsContext db, ILoggerFactory fac) =>
+            UserGroup.MapGet("/all", async (ThreeMoronsContext db, ILoggerFactory fac, IEasyCachingProvider prov) =>
             {
+                if (await prov.ExistsAsync("allUsers"))
+                {
+                    var allUsersCached = await prov.GetAsync<List<User>>("allUsers");
+                    return Results.Json(allUsersCached, _opt, contentType: "application/json", statusCode: 200);
+                }
                 var logger = fac.CreateLogger("user");
                 logger.LogInformation("Получена информация о всех пользователях");
-                return Results.Json(await db.Users.ToListAsync(), new JsonSerializerOptions() { IncludeFields = true }, "application/json", 200);
+                var allUsers = await db.Users.ToListAsync();
+                await prov.SetAsync<List<User>>("allUsers", allUsers, TimeSpan.FromMinutes(30));
+                return Results.Json(allUsers, _opt, "application/json", 200);
             });
             UserGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery] Guid id) => await db.Users.FindAsync(id));
             UserGroup.MapDelete("/", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id, ILoggerFactory fac) =>

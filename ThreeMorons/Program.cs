@@ -32,6 +32,22 @@ builder.Services.AddOutputCache(o =>
     o.AddPolicy("Medium", p => p.Expire(TimeSpan.FromHours(6)));
 
 });
+builder.Services.AddEasyCaching(o =>
+{
+    o.UseInMemory(config =>
+    {
+        config.DBConfig = new()
+        {
+            SizeLimit = 2000,
+            EnableReadDeepClone = true,
+            EnableWriteDeepClone = false,
+            ExpirationScanFrequency = 60
+        };
+        config.MaxRdSecond = 9;
+        config.LockMs = 5000;
+        config.SleepMs = 321;
+    }, "MemoryCache");
+});
 builder.Services.AddScoped<INotificationService, FcmNotificationService>();
 
 var app = Initializer.Initialize(builder);

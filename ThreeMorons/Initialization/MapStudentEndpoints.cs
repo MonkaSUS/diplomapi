@@ -8,11 +8,18 @@ namespace ThreeMorons.Initialization
         public static void MapStudentEndpoints(WebApplication app)
         {
             var StudentGroup = app.MapGroup("/student").RequireAuthorization();
-            StudentGroup.MapGet("/all", async (ThreeMoronsContext db, ILoggerFactory fac) =>
+            StudentGroup.MapGet("/all", async (ThreeMoronsContext db, ILoggerFactory fac, IEasyCachingProvider prov) =>
             {
+                if (await prov.ExistsAsync("allStudents"))
+                {
+                    var allstuds = await prov.GetAsync<List<Student>>("allStudents");
+                    return Results.Json(allstuds, _opt, "application/json", 200);
+                }
                 var logger = fac.CreateLogger("student");
                 logger.LogInformation("Получение информации о всех студентах");
-                return await db.Students.Where(x => x.IsDeleted == false).ToListAsync();
+                var nonDeletedStudents = await db.Students.Where(x => x.IsDeleted == false).ToListAsync();
+                await prov.SetAsync<List<Student>>("allStudents", nonDeletedStudents, TimeSpan.FromHours(3));
+                return Results.Json(nonDeletedStudents, _opt, "applicationJson", 200);
             }).CacheOutput();
             StudentGroup.MapGet("", async (string studId, ThreeMoronsContext db, ILoggerFactory fac) =>
             {

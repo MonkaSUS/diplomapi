@@ -17,4 +17,4 @@ global using System.Security.Claims;
 global using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 global using System.Security.Cryptography;
 global using System.Web;
-
+global using EasyCaching.Core;
