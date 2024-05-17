@@ -26,7 +26,7 @@ namespace ThreeMorons.Initialization
                 var logger = fac.CreateLogger("student");
                 logger.LogInformation($"Получение информации о {studId}");
                 return await db.Students.Where(x => x.IsDeleted == false).FirstOrDefaultAsync(x => x.StudNumber == studId);
-            });
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"])); ;
             StudentGroup.MapPost("", async (StudentInput inp, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("student");
@@ -52,7 +52,7 @@ namespace ThreeMorons.Initialization
                     logger.LogError(exc, "Ошибка при создании студента");
                     return Results.Problem(exc.ToString());
                 }
-            });
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
             StudentGroup.MapPut("", async (StudentInput inp, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("student");
@@ -73,7 +73,7 @@ namespace ThreeMorons.Initialization
                     logger.LogError(exc, "Ошибка при обновлении информации о студенте");
                     return Results.Problem(exc.ToString());
                 }
-            });
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]);
             StudentGroup.MapDelete("", async (string StudNumber, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger($"Попытка удалить студента {StudNumber}");
@@ -91,7 +91,7 @@ namespace ThreeMorons.Initialization
                     return Results.Problem(exc.ToString()); //мы даже отчислить человека не можем нормально
                 }
 
-            });
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
 
             StudentGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery(Name = "term")] string searchTerm, [FromQuery(Name = "group")] string groupName, ILoggerFactory fac) =>
             {
@@ -107,7 +107,7 @@ namespace ThreeMorons.Initialization
                 var searchFilterResult = await db.Students.Where(x => x.GroupName == groupName && x.IsDeleted == false).Where(x => x.SerachTerm.Contains(searchTerm)).ToListAsync();
                 logger.LogInformation($"По запросу {searchTerm} в группе {groupName} было найдено {searchFilterResult.Count} студентов");
                 return Results.Ok(searchFilterResult);
-            });
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]);
 
         }
     }

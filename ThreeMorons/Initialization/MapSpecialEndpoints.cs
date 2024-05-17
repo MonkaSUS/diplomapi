@@ -97,7 +97,7 @@ namespace ThreeMorons.Initialization
                 await prov.SetAsync<List<Announcement>>(nameof(allAnnouncements), allAnnouncements, TimeSpan.FromMinutes(10));
 
                 return Results.Json(allAnnouncements, options: _opt, contentType: "application/json", statusCode: 200);
-            });
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["3"])); ;
             //ДАЛЬШЕ ДУМАТЬ О РАЗДЕЛЕНИИ ПО ГРУППАМ
             //РАЗДЕЛЕНИЕ ПО ГРУППАМ БУДЕМ ДЕЛАТЬ НА КЛИЕНТЕ. МНЕ ПОХУЙ. 
             //ПРОТЕСТИТЬ

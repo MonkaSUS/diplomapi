@@ -11,13 +11,13 @@ namespace ThreeMorons.Initialization
                 var logger = fac.CreateLogger("skips");
                 logger.LogInformation("Запрос на получение всех пропусков");
                 return await db.SkippedClasses.Where(x => x.IsDeleted == false).ToListAsync();
-            });
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
             SkippedClassGroup.MapGet("/find", async (Guid id, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("skips");
                 logger.LogInformation($"Поиск пропуска по id {id}");
                 return await db.SkippedClasses.FirstOrDefaultAsync(x => x.Id == id && x.IsDeleted == false);
-            });
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
             SkippedClassGroup.MapGet("/forGroup", async ([FromQuery(Name = "groupName")] string groupName, ThreeMoronsContext db, ILoggerFactory fac) =>  //https://api.../skippedClass/forGroup/?groupName=ис-44К
             {
                 var logger = fac.CreateLogger("group");
@@ -32,7 +32,7 @@ namespace ThreeMorons.Initialization
                 });
                 logger.LogInformation($"По группе {groupName} найдено {skippedClasses.Count} записей");
                 return Results.Json(skippedClasses, _opt, "application/json", 200);
-            });
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
             SkippedClassGroup.MapPost("", async (SkippedClassInput input, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("skips");
@@ -54,7 +54,7 @@ namespace ThreeMorons.Initialization
                 {
                     return Results.Problem(exc.ToString());
                 }
-            });
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
             SkippedClassGroup.MapDelete("", async ([FromQuery] Guid id, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("skips");
@@ -73,7 +73,7 @@ namespace ThreeMorons.Initialization
 
                     return Results.Problem(exc.ToString());
                 }
-            }).RequireAuthorization(o => o.RequireClaim("userClassId", "2"));
+            }).RequireAuthorization(o => o.RequireClaim("userClassId", ["2", "3"]));
 
         }
     }
