@@ -73,7 +73,7 @@ namespace ThreeMorons.Initialization
                     logger.LogError(exc, "Ошибка при обновлении информации о студенте");
                     return Results.Problem(exc.ToString());
                 }
-            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]);
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
             StudentGroup.MapDelete("", async (string StudNumber, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger($"Попытка удалить студента {StudNumber}");
@@ -107,7 +107,7 @@ namespace ThreeMorons.Initialization
                 var searchFilterResult = await db.Students.Where(x => x.GroupName == groupName && x.IsDeleted == false).Where(x => x.SerachTerm.Contains(searchTerm)).ToListAsync();
                 logger.LogInformation($"По запросу {searchTerm} в группе {groupName} было найдено {searchFilterResult.Count} студентов");
                 return Results.Ok(searchFilterResult);
-            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]);
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
 
         }
     }

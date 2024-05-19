@@ -122,8 +122,8 @@ namespace ThreeMorons.Initialization
                 var allUsers = await db.Users.ToListAsync();
                 await prov.SetAsync<List<User>>("allUsers", allUsers, TimeSpan.FromMinutes(30));
                 return Results.Json(allUsers, _opt, "application/json", 200);
-            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]);
-            UserGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery] Guid id) => await db.Users.FindAsync(id)).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]);
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
+            UserGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery] Guid id) => await db.Users.FindAsync(id)).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
             UserGroup.MapDelete("/", async (ThreeMoronsContext db, [FromQuery(Name = "id")] Guid id, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("user");
@@ -140,7 +140,7 @@ namespace ThreeMorons.Initialization
                     logger.LogError(exc, "Ошибка при удалении пользователя");
                     return Results.Problem(exc.Message);
                 }
-            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]);
+            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
             UserGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery] string term, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("user");
