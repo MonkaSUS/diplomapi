@@ -78,7 +78,7 @@ if (!app.Environment.IsDevelopment())
 
 
 
-app.MapGet("/", () => Results.Content("amogus"));
+app.MapGet("/", (IHostEnvironment env) => Results.Content(File.ReadAllText(env.ContentRootPath + "/wwwroot/index.html"), "text/html"));
 
 
 app.MapGet("/periods", async (ThreeMoronsContext db) => await db.Periods.ToListAsync());
@@ -159,7 +159,9 @@ app.MapGet("testnotif", async (IWebHostEnvironment env, INotificationService not
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseStaticFiles();
 
+//чисто чтоб иконка была
 
 
 
