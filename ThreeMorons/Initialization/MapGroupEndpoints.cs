@@ -10,13 +10,13 @@
                 var logger = logfac.CreateLogger("group");
                 logger.LogInformation("All groups retrieved");
                 return await db.Groups.ToListAsync();
-            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
+            }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
             groupsGroup.MapGet("/", async ([FromQuery(Name = "groupName")] string Name, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("group");
                 logger.LogInformation($"Запрос информации по группе {Name}");
                 return await db.Groups.FirstOrDefaultAsync(x => x.GroupName == Name);
-            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
+            }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
             groupsGroup.MapPost("/", async (ThreeMoronsContext db, GroupInput created, IValidator<GroupInput> validator, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("group");
@@ -38,10 +38,10 @@
                     logger.LogError(excep, "Ошибка при сохранении группы");
                     return Results.Problem(excep.ToString());
                 }
-            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
+            }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
 
             groupsGroup.MapGet("search", async (ThreeMoronsContext db, [FromQuery(Name = "searchTerm")]
-            string searchTerm) => await db.Groups.Where(x => x.GroupName.Contains(searchTerm)).ToListAsync()).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
+            string searchTerm) => await db.Groups.Where(x => x.GroupName.Contains(searchTerm)).ToListAsync()).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
         }
     }
 }

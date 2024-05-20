@@ -136,7 +136,6 @@ public partial class ThreeMoronsContext : DbContext
             entity.Property(e => e.Patronymic).HasMaxLength(40);
             entity.Property(e => e.Surname).HasMaxLength(40);
             entity.Property(e => e.Salt).HasMaxLength(20);
-
             entity.HasOne(d => d.UserClass).WithMany(p => p.Users)
                 .HasForeignKey(d => d.UserClassId)
                 .OnDelete(DeleteBehavior.ClientSetNull)

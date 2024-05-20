@@ -35,7 +35,7 @@
                 {
                     return Results.Problem(exc.Message);
                 }
-            }).RequireAuthorization(x => x.RequireClaim("userClassId", "2"));
+            }).RequireAuthorization(x => x.RequireClaim("userClass", "2"));
             StudentDelayGroup.MapDelete("/", async (ThreeMoronsContext db, Guid id) =>
             {
                 try

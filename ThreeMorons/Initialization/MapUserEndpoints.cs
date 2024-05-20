@@ -37,7 +37,8 @@ namespace ThreeMorons.Initialization
                         Name = inp.name,
                         Surname = inp.surname,
                         Patronymic = inp.patronymic,
-                        UserClassId = inp.UserClassId
+                        UserClassId = inp.UserClassId,
+                        DateOfRegistration = DateTime.Now
                     };
                     await db.Users.AddAsync(UserToRegister);
                     await db.SaveChangesAsync();
@@ -140,14 +141,14 @@ namespace ThreeMorons.Initialization
                     logger.LogError(exc, "Ошибка при удалении пользователя");
                     return Results.Problem(exc.Message);
                 }
-            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
+            }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
             UserGroup.MapGet("/search", async (ThreeMoronsContext db, [FromQuery] string term, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("user");
                 var usersFound = await db.Users.Where(x => x.SearchTerm.Contains(term) && x.IsDeleted == false).ToListAsync();
                 logger.LogInformation($"По запросу {term} найдено {usersFound.Count} пользователей");
                 return Results.Ok(usersFound);
-            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
+            }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
 
         }
     }

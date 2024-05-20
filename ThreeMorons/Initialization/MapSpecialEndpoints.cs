@@ -85,7 +85,7 @@ namespace ThreeMorons.Initialization
                 string result = await notifs.SendAsync(fcmMessage);
                 logger.LogInformation($"Отправил уведомление {result} об оповещении {newAnnc.Id} пользователям");
                 return Results.Ok(newAnnc.Id);
-            }).RequireAuthorization(r => r.RequireClaim("userClass", "2"));
+            }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
             app.MapGet("/announcement", async (IWebHostEnvironment env, ThreeMoronsContext db, IEasyCachingProvider prov) =>
             {
                 if (await prov.ExistsAsync("allAnnouncements"))
@@ -97,9 +97,9 @@ namespace ThreeMorons.Initialization
                 await prov.SetAsync<List<Announcement>>(nameof(allAnnouncements), allAnnouncements, TimeSpan.FromMinutes(10));
 
                 return Results.Json(allAnnouncements, options: _opt, contentType: "application/json", statusCode: 200);
-            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["3"])); ;
+            }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"])); 
             //ДАЛЬШЕ ДУМАТЬ О РАЗДЕЛЕНИИ ПО ГРУППАМ
-            //РАЗДЕЛЕНИЕ ПО ГРУППАМ БУДЕМ ДЕЛАТЬ НА КЛИЕНТЕ. МНЕ ПОХУЙ. 
+            //РАЗДЕЛЕНИЕ ПО ГРУППАМ БУДЕМ ДЕЛАТЬ НА КЛИЕНТЕ. 
             //ПРОТЕСТИТЬ
         }
     }

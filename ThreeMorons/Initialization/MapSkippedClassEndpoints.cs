@@ -32,7 +32,7 @@ namespace ThreeMorons.Initialization
                 });
                 logger.LogInformation($"По группе {groupName} найдено {skippedClasses.Count} записей");
                 return Results.Json(skippedClasses, _opt, "application/json", 200);
-            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
+            }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
             SkippedClassGroup.MapPost("", async (SkippedClassInput input, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("skips");
@@ -54,7 +54,7 @@ namespace ThreeMorons.Initialization
                 {
                     return Results.Problem(exc.ToString());
                 }
-            }).RequireAuthorization(r => r.RequireClaim("userClassId", ["2", "3"]));
+            }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
             SkippedClassGroup.MapDelete("", async ([FromQuery] Guid id, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("skips");
@@ -73,7 +73,7 @@ namespace ThreeMorons.Initialization
 
                     return Results.Problem(exc.ToString());
                 }
-            }).RequireAuthorization(o => o.RequireClaim("userClassId", ["2", "3"]));
+            }).RequireAuthorization(o => o.RequireClaim("userClass", ["2", "3"]));
 
         }
     }

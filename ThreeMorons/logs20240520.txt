@@ -896,3 +896,237 @@ System.Net.Sockets.SocketException (10049): Требуемый адрес для
 2024-05-20 00:22:48.986 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
 2024-05-20 00:22:49.010 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 24.5987ms
 2024-05-20 00:22:49.046 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 61.6565ms
+2024-05-20 10:15:12.982 +03:00 [INF] User profile is available. Using 'C:\Users\Student29\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-20 10:15:13.703 +03:00 [INF] Now listening on: https://localhost:7174
+2024-05-20 10:15:13.707 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-20 10:15:13.707 +03:00 [INF] Hosting environment: Development
+2024-05-20 10:15:13.708 +03:00 [INF] Content root path: C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-20 10:15:14.194 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/ - null null
+2024-05-20 10:15:14.351 +03:00 [INF] No cached response available for this request.
+2024-05-20 10:15:14.440 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-20 10:15:14.474 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-05-20 10:15:14.481 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-20 10:15:14.482 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 10:15:14.485 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/ - 200 null text/html 294.0414ms
+2024-05-20 10:15:14.487 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 10:15:14.487 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 10:15:14.487 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/favicon.ico - null null
+2024-05-20 10:15:14.490 +03:00 [INF] No cached response available for this request.
+2024-05-20 10:15:14.505 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 18.1673ms
+2024-05-20 10:15:14.539 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons\wwwroot\favicon.ico'
+2024-05-20 10:15:14.541 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 10:15:14.542 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/favicon.ico - 200 268286 image/x-icon 55.031ms
+2024-05-20 10:15:16.220 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1732.9431ms
+2024-05-20 10:22:29.823 +03:00 [INF] User profile is available. Using 'C:\Users\Student29\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-20 10:22:30.482 +03:00 [INF] Now listening on: https://localhost:7174
+2024-05-20 10:22:30.484 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-20 10:22:30.485 +03:00 [INF] Hosting environment: Development
+2024-05-20 10:22:30.485 +03:00 [INF] Content root path: C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-20 10:22:33.180 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/ - null null
+2024-05-20 10:22:33.314 +03:00 [INF] No cached response available for this request.
+2024-05-20 10:22:33.389 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-20 10:22:33.421 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-05-20 10:22:33.427 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-20 10:22:33.428 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 10:22:33.431 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/ - 200 null text/html 253.1755ms
+2024-05-20 10:22:33.431 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 10:22:33.431 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 10:22:33.431 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/favicon.ico - null null
+2024-05-20 10:22:33.441 +03:00 [INF] No cached response available for this request.
+2024-05-20 10:22:33.446 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 15.6341ms
+2024-05-20 10:22:33.462 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.9086ms
+2024-05-20 10:22:33.470 +03:00 [INF] The file /favicon.ico was not modified
+2024-05-20 10:22:33.471 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 10:22:33.472 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/favicon.ico - 304 null image/x-icon 40.8603ms
+2024-05-20 10:23:00.274 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7174/group/all - application/json 60
+2024-05-20 10:23:00.329 +03:00 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=userClassId and Claim.Value is one of the following values: (2|3)
+2024-05-20 10:23:00.331 +03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2024-05-20 10:23:00.359 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7174/group/all - 403 0 null 85.1553ms
+2024-05-20 10:23:20.542 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7174/group/all - application/json 60
+2024-05-20 10:23:20.545 +03:00 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=userClassId and Claim.Value is one of the following values: (2|3)
+2024-05-20 10:23:20.546 +03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2024-05-20 10:23:20.547 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7174/group/all - 403 0 null 5.5909ms
+2024-05-20 10:29:27.988 +03:00 [INF] User profile is available. Using 'C:\Users\Student29\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-20 10:29:28.316 +03:00 [INF] Now listening on: https://localhost:7174
+2024-05-20 10:29:28.318 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-20 10:29:28.319 +03:00 [INF] Hosting environment: Development
+2024-05-20 10:29:28.319 +03:00 [INF] Content root path: C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-20 10:29:31.024 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/ - null null
+2024-05-20 10:29:31.122 +03:00 [INF] No cached response available for this request.
+2024-05-20 10:29:31.166 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-20 10:29:31.171 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-05-20 10:29:31.177 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-20 10:29:31.178 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 10:29:31.181 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/ - 200 null text/html 161.54ms
+2024-05-20 10:29:31.242 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 10:29:31.242 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/favicon.ico - null null
+2024-05-20 10:29:31.242 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 10:29:31.246 +03:00 [INF] No cached response available for this request.
+2024-05-20 10:29:31.261 +03:00 [INF] The file /favicon.ico was not modified
+2024-05-20 10:29:31.261 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 19.3169ms
+2024-05-20 10:29:31.262 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 10:29:31.264 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/favicon.ico - 304 null image/x-icon 22.1366ms
+2024-05-20 10:29:31.274 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.9202ms
+2024-05-20 10:29:36.947 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7174/group/all - application/json 60
+2024-05-20 10:29:36.998 +03:00 [INF] Executing endpoint 'HTTP: GET /group/all'
+2024-05-20 10:29:37.251 +03:00 [INF] All groups retrieved
+2024-05-20 10:29:39.563 +03:00 [INF] Executed DbCommand (182ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[GroupName], [g].[Building], [g].[GroupCurator]
+FROM [Group] AS [g]
+2024-05-20 10:29:39.586 +03:00 [INF] Executed endpoint 'HTTP: GET /group/all'
+2024-05-20 10:29:39.591 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7174/group/all - 200 null application/json; charset=utf-8 2643.5489ms
+2024-05-20 10:31:34.037 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7174/group/ - application/json 115
+2024-05-20 10:31:34.043 +03:00 [INF] Executing endpoint 'HTTP: POST /group/'
+2024-05-20 10:31:34.058 +03:00 [INF] Попытка создать группу ИС-44к
+2024-05-20 10:31:34.380 +03:00 [INF] Executed DbCommand (203ms) [Parameters=[@p0='?' (Size = 10), @p1='?' (DbType = Int32), @p2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Group] ([GroupName], [Building], [GroupCurator])
+VALUES (@p0, @p1, @p2);
+2024-05-20 10:31:34.391 +03:00 [INF] Setting HTTP status code 200.
+2024-05-20 10:31:34.393 +03:00 [INF] Writing value of type 'Group' as Json.
+2024-05-20 10:31:34.398 +03:00 [INF] Executed endpoint 'HTTP: POST /group/'
+2024-05-20 10:31:34.399 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/group/ - 200 null application/json 362.208ms
+2024-05-20 10:31:52.723 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7174/group/ - application/json 115
+2024-05-20 10:31:52.726 +03:00 [INF] Executing endpoint 'HTTP: POST /group/'
+2024-05-20 10:31:52.728 +03:00 [INF] Попытка создать группу ИС-45к
+2024-05-20 10:31:52.918 +03:00 [INF] Executed DbCommand (150ms) [Parameters=[@p0='?' (Size = 10), @p1='?' (DbType = Int32), @p2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Group] ([GroupName], [Building], [GroupCurator])
+VALUES (@p0, @p1, @p2);
+2024-05-20 10:31:52.921 +03:00 [INF] Setting HTTP status code 200.
+2024-05-20 10:31:52.922 +03:00 [INF] Writing value of type 'Group' as Json.
+2024-05-20 10:31:52.924 +03:00 [INF] Executed endpoint 'HTTP: POST /group/'
+2024-05-20 10:31:52.924 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/group/ - 200 null application/json 201.883ms
+2024-05-20 10:32:05.844 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7174/group/ - application/json 115
+2024-05-20 10:32:05.847 +03:00 [INF] Executing endpoint 'HTTP: POST /group/'
+2024-05-20 10:32:05.848 +03:00 [INF] Попытка создать группу ИС-46к
+2024-05-20 10:32:06.000 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@p0='?' (Size = 10), @p1='?' (DbType = Int32), @p2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Group] ([GroupName], [Building], [GroupCurator])
+VALUES (@p0, @p1, @p2);
+2024-05-20 10:32:06.002 +03:00 [INF] Setting HTTP status code 200.
+2024-05-20 10:32:06.003 +03:00 [INF] Writing value of type 'Group' as Json.
+2024-05-20 10:32:06.003 +03:00 [INF] Executed endpoint 'HTTP: POST /group/'
+2024-05-20 10:32:06.004 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/group/ - 200 null application/json 159.6992ms
+2024-05-20 10:34:57.001 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7174/student - application/json 211
+2024-05-20 10:34:57.033 +03:00 [INF] Executing endpoint 'HTTP: POST /student/'
+2024-05-20 10:34:57.036 +03:00 [INF] Попытка создать студента Студентов Студент 22321
+2024-05-20 10:34:57.205 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@p0='?' (Size = 5), @p1='?' (Size = 10), @p2='?' (DbType = Boolean), @p3='?' (Size = 40), @p4='?' (Size = 40), @p5='?' (Size = 11), @p6='?' (Size = 40)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([StudNumber], [GroupName], [IsDeleted], [Name], [Patronymic], [PhoneNumber], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-05-20 10:34:57.210 +03:00 [INF] Студент создан успешно
+2024-05-20 10:34:57.211 +03:00 [INF] Setting HTTP status code 200.
+2024-05-20 10:34:57.212 +03:00 [INF] Writing value of type 'Student' as Json.
+2024-05-20 10:34:57.214 +03:00 [INF] Executed endpoint 'HTTP: POST /student/'
+2024-05-20 10:34:57.215 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/student - 200 null application/json 214.5103ms
+2024-05-20 10:35:35.945 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7174/student - application/json 223
+2024-05-20 10:35:35.948 +03:00 [INF] Executing endpoint 'HTTP: POST /student/'
+2024-05-20 10:35:35.948 +03:00 [INF] Попытка создать студента Студентовик Студентик 22322
+2024-05-20 10:35:36.102 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@p0='?' (Size = 5), @p1='?' (Size = 10), @p2='?' (DbType = Boolean), @p3='?' (Size = 40), @p4='?' (Size = 40), @p5='?' (Size = 11), @p6='?' (Size = 40)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([StudNumber], [GroupName], [IsDeleted], [Name], [Patronymic], [PhoneNumber], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-05-20 10:35:36.107 +03:00 [INF] Студент создан успешно
+2024-05-20 10:35:36.108 +03:00 [INF] Setting HTTP status code 200.
+2024-05-20 10:35:36.108 +03:00 [INF] Writing value of type 'Student' as Json.
+2024-05-20 10:35:36.109 +03:00 [INF] Executed endpoint 'HTTP: POST /student/'
+2024-05-20 10:35:36.110 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/student - 200 null application/json 164.5285ms
+2024-05-20 10:36:32.804 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7174/student - application/json 181
+2024-05-20 10:36:32.807 +03:00 [INF] Executing endpoint 'HTTP: POST /student/'
+2024-05-20 10:36:32.808 +03:00 [INF] Попытка создать студента Пыжа Жижа 22323
+2024-05-20 10:36:32.960 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@p0='?' (Size = 5), @p1='?' (Size = 10), @p2='?' (DbType = Boolean), @p3='?' (Size = 40), @p4='?' (Size = 40), @p5='?' (Size = 11), @p6='?' (Size = 40)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([StudNumber], [GroupName], [IsDeleted], [Name], [Patronymic], [PhoneNumber], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-05-20 10:36:32.963 +03:00 [INF] Студент создан успешно
+2024-05-20 10:36:32.964 +03:00 [INF] Setting HTTP status code 200.
+2024-05-20 10:36:32.964 +03:00 [INF] Writing value of type 'Student' as Json.
+2024-05-20 10:36:32.965 +03:00 [INF] Executed endpoint 'HTTP: POST /student/'
+2024-05-20 10:36:32.965 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/student - 200 null application/json 162.1385ms
+2024-05-20 10:38:07.932 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7174/student - application/json 189
+2024-05-20 10:38:07.935 +03:00 [INF] Executing endpoint 'HTTP: POST /student/'
+2024-05-20 10:38:07.936 +03:00 [INF] Попытка создать студента Полкан Жора 22324
+2024-05-20 10:38:08.088 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@p0='?' (Size = 5), @p1='?' (Size = 10), @p2='?' (DbType = Boolean), @p3='?' (Size = 40), @p4='?' (Size = 40), @p5='?' (Size = 11), @p6='?' (Size = 40)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([StudNumber], [GroupName], [IsDeleted], [Name], [Patronymic], [PhoneNumber], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-05-20 10:38:08.091 +03:00 [INF] Студент создан успешно
+2024-05-20 10:38:08.091 +03:00 [INF] Setting HTTP status code 200.
+2024-05-20 10:38:08.092 +03:00 [INF] Writing value of type 'Student' as Json.
+2024-05-20 10:38:08.093 +03:00 [INF] Executed endpoint 'HTTP: POST /student/'
+2024-05-20 10:38:08.093 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/student - 200 null application/json 162.1269ms
+2024-05-20 10:40:20.902 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7174/student - application/json 203
+2024-05-20 10:40:20.906 +03:00 [INF] Executing endpoint 'HTTP: POST /student/'
+2024-05-20 10:40:20.907 +03:00 [INF] Попытка создать студента Мухтар Геворгян 22325
+2024-05-20 10:40:21.060 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@p0='?' (Size = 5), @p1='?' (Size = 10), @p2='?' (DbType = Boolean), @p3='?' (Size = 40), @p4='?' (Size = 40), @p5='?' (Size = 11), @p6='?' (Size = 40)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([StudNumber], [GroupName], [IsDeleted], [Name], [Patronymic], [PhoneNumber], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-05-20 10:40:21.069 +03:00 [INF] Студент создан успешно
+2024-05-20 10:40:21.069 +03:00 [INF] Setting HTTP status code 200.
+2024-05-20 10:40:21.070 +03:00 [INF] Writing value of type 'Student' as Json.
+2024-05-20 10:40:21.071 +03:00 [INF] Executed endpoint 'HTTP: POST /student/'
+2024-05-20 10:40:21.071 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/student - 200 null application/json 169.4741ms
+2024-05-20 10:40:50.934 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7174/student - application/json 193
+2024-05-20 10:40:50.936 +03:00 [INF] Executing endpoint 'HTTP: POST /student/'
+2024-05-20 10:40:50.937 +03:00 [INF] Попытка создать студента Мухович Пират 22326
+2024-05-20 10:40:51.089 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@p0='?' (Size = 5), @p1='?' (Size = 10), @p2='?' (DbType = Boolean), @p3='?' (Size = 40), @p4='?' (Size = 40), @p5='?' (Size = 11), @p6='?' (Size = 40)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([StudNumber], [GroupName], [IsDeleted], [Name], [Patronymic], [PhoneNumber], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-05-20 10:40:51.091 +03:00 [INF] Студент создан успешно
+2024-05-20 10:40:51.092 +03:00 [INF] Setting HTTP status code 200.
+2024-05-20 10:40:51.093 +03:00 [INF] Writing value of type 'Student' as Json.
+2024-05-20 10:40:51.093 +03:00 [INF] Executed endpoint 'HTTP: POST /student/'
+2024-05-20 10:40:51.094 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/student - 200 null application/json 160.1377ms
+2024-05-20 10:43:03.613 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7174/student - application/json 193
+2024-05-20 10:43:03.615 +03:00 [INF] Executing endpoint 'HTTP: POST /student/'
+2024-05-20 10:43:03.617 +03:00 [INF] Попытка создать студента Варгян Армян 22327
+2024-05-20 10:43:03.771 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@p0='?' (Size = 5), @p1='?' (Size = 10), @p2='?' (DbType = Boolean), @p3='?' (Size = 40), @p4='?' (Size = 40), @p5='?' (Size = 11), @p6='?' (Size = 40)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([StudNumber], [GroupName], [IsDeleted], [Name], [Patronymic], [PhoneNumber], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-05-20 10:43:03.774 +03:00 [INF] Студент создан успешно
+2024-05-20 10:43:03.774 +03:00 [INF] Setting HTTP status code 200.
+2024-05-20 10:43:03.775 +03:00 [INF] Writing value of type 'Student' as Json.
+2024-05-20 10:43:03.776 +03:00 [INF] Executed endpoint 'HTTP: POST /student/'
+2024-05-20 10:43:03.777 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/student - 200 null application/json 165.1243ms
+2024-05-20 10:43:38.363 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7174/student - application/json 195
+2024-05-20 10:43:38.364 +03:00 [INF] Executing endpoint 'HTTP: POST /student/'
+2024-05-20 10:43:38.365 +03:00 [INF] Попытка создать студента Понч Пахомка 22328
+2024-05-20 10:43:38.517 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@p0='?' (Size = 5), @p1='?' (Size = 10), @p2='?' (DbType = Boolean), @p3='?' (Size = 40), @p4='?' (Size = 40), @p5='?' (Size = 11), @p6='?' (Size = 40)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([StudNumber], [GroupName], [IsDeleted], [Name], [Patronymic], [PhoneNumber], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-05-20 10:43:38.519 +03:00 [INF] Студент создан успешно
+2024-05-20 10:43:38.520 +03:00 [INF] Setting HTTP status code 200.
+2024-05-20 10:43:38.520 +03:00 [INF] Writing value of type 'Student' as Json.
+2024-05-20 10:43:38.521 +03:00 [INF] Executed endpoint 'HTTP: POST /student/'
+2024-05-20 10:43:38.522 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/student - 200 null application/json 159.3716ms
+2024-05-20 10:43:54.820 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7174/student - application/json 215
+2024-05-20 10:43:54.822 +03:00 [INF] Executing endpoint 'HTTP: POST /student/'
+2024-05-20 10:43:54.823 +03:00 [INF] Попытка создать студента Бомбардировщик Владик 22329
+2024-05-20 10:43:54.975 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@p0='?' (Size = 5), @p1='?' (Size = 10), @p2='?' (DbType = Boolean), @p3='?' (Size = 40), @p4='?' (Size = 40), @p5='?' (Size = 11), @p6='?' (Size = 40)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Student] ([StudNumber], [GroupName], [IsDeleted], [Name], [Patronymic], [PhoneNumber], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-05-20 10:43:54.978 +03:00 [INF] Студент создан успешно
+2024-05-20 10:43:54.979 +03:00 [INF] Setting HTTP status code 200.
+2024-05-20 10:43:54.979 +03:00 [INF] Writing value of type 'Student' as Json.
+2024-05-20 10:43:54.980 +03:00 [INF] Executed endpoint 'HTTP: POST /student/'
+2024-05-20 10:43:54.981 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/student - 200 null application/json 160.9179ms
