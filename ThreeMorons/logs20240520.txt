@@ -1130,3 +1130,192 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
 2024-05-20 10:43:54.979 +03:00 [INF] Writing value of type 'Student' as Json.
 2024-05-20 10:43:54.980 +03:00 [INF] Executed endpoint 'HTTP: POST /student/'
 2024-05-20 10:43:54.981 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7174/student - 200 null application/json 160.9179ms
+2024-05-20 11:31:16.755 +03:00 [INF] User profile is available. Using 'C:\Users\Student29\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-20 11:31:17.042 +03:00 [INF] Now listening on: https://localhost:7174
+2024-05-20 11:31:17.044 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-20 11:31:17.045 +03:00 [INF] Hosting environment: Development
+2024-05-20 11:31:17.046 +03:00 [INF] Content root path: C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-20 11:31:28.349 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/ - null null
+2024-05-20 11:31:28.470 +03:00 [INF] No cached response available for this request.
+2024-05-20 11:31:28.541 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-20 11:31:28.543 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-05-20 11:31:28.549 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-20 11:31:28.549 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 11:31:28.552 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/ - 200 null text/html 206.1843ms
+2024-05-20 11:31:28.555 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 11:31:28.555 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 11:31:28.555 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/favicon.ico - null null
+2024-05-20 11:31:28.565 +03:00 [INF] No cached response available for this request.
+2024-05-20 11:31:28.568 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 13.5312ms
+2024-05-20 11:31:28.575 +03:00 [INF] The file /favicon.ico was not modified
+2024-05-20 11:31:28.576 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 11:31:28.577 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/favicon.ico - 304 null image/x-icon 22.1697ms
+2024-05-20 11:31:28.587 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.1414ms
+2024-05-20 11:31:32.510 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/docs - null null
+2024-05-20 11:31:32.516 +03:00 [INF] No cached response available for this request.
+2024-05-20 11:31:32.518 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 11:31:32.518 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/docs - 404 0 null 8.6119ms
+2024-05-20 11:31:32.520 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7174/docs, Response status code: 404
+2024-05-20 11:31:35.726 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger - null null
+2024-05-20 11:31:35.729 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger - 301 0 null 3.8179ms
+2024-05-20 11:31:35.740 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/index.html - null null
+2024-05-20 11:31:35.775 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/index.html - 200 null text/html;charset=utf-8 34.9245ms
+2024-05-20 11:31:35.875 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/swagger-ui-bundle.js - null null
+2024-05-20 11:31:35.875 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/swagger-ui.css - null null
+2024-05-20 11:31:35.875 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 11:31:35.875 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/swagger-ui-standalone-preset.js - null null
+2024-05-20 11:31:35.878 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 11:31:35.891 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 16.2714ms
+2024-05-20 11:31:35.896 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-05-20 11:31:35.896 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-05-20 11:31:35.898 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 23.5988ms
+2024-05-20 11:31:35.898 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/swagger-ui.css - 200 152034 text/css 23.8756ms
+2024-05-20 11:31:35.899 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-05-20 11:31:35.902 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/swagger-ui-bundle.js - 200 1456682 text/javascript 27.6716ms
+2024-05-20 11:31:35.905 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.2735ms
+2024-05-20 11:31:36.070 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/v1/swagger.json - null null
+2024-05-20 11:31:36.077 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-20 11:31:36.081 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/favicon-32x32.png - null null
+2024-05-20 11:31:36.082 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-05-20 11:31:36.083 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/favicon-32x32.png - 200 628 image/png 2.5161ms
+2024-05-20 11:31:36.137 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET delay/" for actions - HTTP: GET /delay/,HTTP: GET /delay/. Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-20 11:31:36.192 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 122.4379ms
+2024-05-20 11:32:19.687 +03:00 [INF] User profile is available. Using 'C:\Users\Student29\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-20 11:32:19.973 +03:00 [INF] Now listening on: https://localhost:7174
+2024-05-20 11:32:19.976 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-20 11:32:19.977 +03:00 [INF] Hosting environment: Development
+2024-05-20 11:32:19.977 +03:00 [INF] Content root path: C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-20 11:32:20.248 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/ - null null
+2024-05-20 11:32:20.369 +03:00 [INF] No cached response available for this request.
+2024-05-20 11:32:20.415 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-20 11:32:20.416 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-05-20 11:32:20.422 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-20 11:32:20.423 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 11:32:20.426 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/ - 200 null text/html 181.3098ms
+2024-05-20 11:32:20.429 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 11:32:20.429 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 11:32:20.439 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 10.7491ms
+2024-05-20 11:32:20.455 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.4238ms
+2024-05-20 11:32:25.309 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/index.html - null null
+2024-05-20 11:32:25.348 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/index.html - 200 null text/html;charset=utf-8 38.9371ms
+2024-05-20 11:32:25.356 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 11:32:25.356 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 11:32:25.362 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 5.915ms
+2024-05-20 11:32:25.371 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.5565ms
+2024-05-20 11:32:25.542 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/v1/swagger.json - null null
+2024-05-20 11:32:25.549 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-20 11:32:25.603 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET delay/" for actions - HTTP: GET /delay/,HTTP: GET /delay/. Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-20 11:32:25.626 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 83.9445ms
+2024-05-20 11:32:40.446 +03:00 [INF] User profile is available. Using 'C:\Users\Student29\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-20 11:32:40.721 +03:00 [INF] Now listening on: https://localhost:7174
+2024-05-20 11:32:40.723 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-20 11:32:40.724 +03:00 [INF] Hosting environment: Development
+2024-05-20 11:32:40.724 +03:00 [INF] Content root path: C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-20 11:32:54.804 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/ - null null
+2024-05-20 11:32:54.925 +03:00 [INF] No cached response available for this request.
+2024-05-20 11:32:54.969 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-20 11:32:54.975 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-05-20 11:32:54.981 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-20 11:32:54.982 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 11:32:54.984 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/ - 200 null text/html 182.5318ms
+2024-05-20 11:32:54.987 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 11:32:54.987 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 11:32:55.000 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 13.4346ms
+2024-05-20 11:32:55.015 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.3495ms
+2024-05-20 11:32:58.985 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/index.html - null null
+2024-05-20 11:32:59.022 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/index.html - 200 null text/html;charset=utf-8 36.7304ms
+2024-05-20 11:32:59.024 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 11:32:59.026 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 2.4043ms
+2024-05-20 11:32:59.028 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 11:32:59.040 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.972ms
+2024-05-20 11:32:59.099 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/v1/swagger.json - null null
+2024-05-20 11:32:59.105 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-20 11:32:59.162 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET delay/" for actions - HTTP: GET /delay/,HTTP: GET /delay/. Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-20 11:32:59.186 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 87.3296ms
+2024-05-20 11:34:12.569 +03:00 [INF] User profile is available. Using 'C:\Users\Student29\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-20 11:34:12.864 +03:00 [INF] Now listening on: https://localhost:7174
+2024-05-20 11:34:12.866 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-20 11:34:12.867 +03:00 [INF] Hosting environment: Development
+2024-05-20 11:34:12.868 +03:00 [INF] Content root path: C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-20 11:34:29.990 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/ - null null
+2024-05-20 11:34:30.107 +03:00 [INF] No cached response available for this request.
+2024-05-20 11:34:30.149 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-20 11:34:30.155 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-05-20 11:34:30.160 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-20 11:34:30.161 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 11:34:30.164 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/ - 200 null text/html 177.0167ms
+2024-05-20 11:34:30.167 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 11:34:30.167 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 11:34:30.179 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 12.5423ms
+2024-05-20 11:34:30.196 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.7216ms
+2024-05-20 11:34:33.621 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/index.html - null null
+2024-05-20 11:34:33.659 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/index.html - 200 null text/html;charset=utf-8 38.4397ms
+2024-05-20 11:34:33.663 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 11:34:33.665 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 2.6047ms
+2024-05-20 11:34:33.666 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 11:34:33.682 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.8795ms
+2024-05-20 11:34:33.738 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/v1/swagger.json - null null
+2024-05-20 11:34:33.745 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-20 11:34:33.800 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET delay/" for actions - HTTP: GET /delay/,HTTP: GET /delay/. Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-20 11:34:33.824 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 86.7569ms
+2024-05-20 11:37:52.921 +03:00 [INF] User profile is available. Using 'C:\Users\Student29\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-20 11:37:53.219 +03:00 [INF] Now listening on: https://localhost:7174
+2024-05-20 11:37:53.222 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-20 11:37:53.223 +03:00 [INF] Hosting environment: Development
+2024-05-20 11:37:53.224 +03:00 [INF] Content root path: C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-05-20 11:38:07.210 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/ - null null
+2024-05-20 11:38:07.358 +03:00 [INF] No cached response available for this request.
+2024-05-20 11:38:07.404 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-05-20 11:38:07.410 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-05-20 11:38:07.416 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-05-20 11:38:07.417 +03:00 [INF] The response could not be cached for this request.
+2024-05-20 11:38:07.420 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/ - 200 null text/html 213.1959ms
+2024-05-20 11:38:07.423 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 11:38:07.423 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 11:38:07.434 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 11.5796ms
+2024-05-20 11:38:07.449 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.5059ms
+2024-05-20 11:38:14.550 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/index.html - null null
+2024-05-20 11:38:14.588 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/index.html - 200 null text/html;charset=utf-8 37.9715ms
+2024-05-20 11:38:14.599 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 11:38:14.599 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 11:38:14.601 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 2.0835ms
+2024-05-20 11:38:14.613 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.5033ms
+2024-05-20 11:38:14.673 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/v1/swagger.json - null null
+2024-05-20 11:38:14.680 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-20 11:38:14.702 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/index.html - null null
+2024-05-20 11:38:14.707 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/index.html - 200 null text/html;charset=utf-8 4.9233ms
+2024-05-20 11:38:14.712 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 11:38:14.714 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/_vs/browserLink - null null
+2024-05-20 11:38:14.715 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 2.8119ms
+2024-05-20 11:38:14.725 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.4908ms
+2024-05-20 11:38:14.787 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7174/swagger/v1/swagger.json - null null
+2024-05-20 11:38:14.838 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 164.2346ms
+2024-05-20 11:38:14.839 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7174/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 52.2826ms

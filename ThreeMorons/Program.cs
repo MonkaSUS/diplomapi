@@ -10,6 +10,7 @@ using ThreeMorons.HealthCheck;
 using FirebaseAdmin;
 using FirebaseAdmin.Messaging;
 using Google.Apis.Auth.OAuth2;
+using Microsoft.AspNetCore.OpenApi; 
 using ThreeMorons.Services;
 var builder = WebApplication.CreateBuilder(args);
 //ашкн днаюбкемн, онрнлс врн детнкрмши яепхюкюигеп фхдйн яп╗р онд яеаъ опх бхде рсокнб
@@ -20,6 +21,9 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 
 //TODO днаюбхрэ EasyCache
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c=>
+c.ResolveConflictingActions(a=> a.First()));
 
 builder.Services.AddHttpClient();
 builder.Services.AddOutputCache(o =>
@@ -51,6 +55,12 @@ builder.Services.AddEasyCaching(o =>
 builder.Services.AddScoped<INotificationService, FcmNotificationService>();
 
 var app = Initializer.Initialize(builder);
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("./v1/swagger.json", "My API V1")); //originally "./swagger/v1/swagger.json");
+}
+app.UseDeveloperExceptionPage();
 
 Initializer.MapSkippedClassEndpoints(app);
 
