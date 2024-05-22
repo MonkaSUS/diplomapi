@@ -1,6 +1,7 @@
 ﻿using EasyCaching.Core;
 using FirebaseAdmin.Messaging;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 using ThreeMorons.DTOs;
 using ThreeMorons.Services;
@@ -106,6 +107,7 @@ namespace ThreeMorons.Initialization
                 var logger = fac.CreateLogger("DbServiceUser");
                 try
                 {
+                    user.id = Guid.NewGuid();
                     db.DbServiceUsers.Add(user);
                     await db.SaveChangesAsync();
                     logger.LogInformation($"Создан новый пользователь бд сервиса {user.user_login}");
@@ -155,6 +157,35 @@ namespace ThreeMorons.Initialization
                 {
                     logger.LogError(ex, "случился отстрел");
                     throw;
+                }
+            });
+            app.MapGet("/createBackup", async (ThreeMoronsContext db, IWebHostEnvironment env, ILoggerFactory fac) =>
+            {
+                var logger = fac.CreateLogger("backup");
+                try
+                {
+                    // Получение имени базы данных
+                    var databaseName = db.Database.GetDbConnection().Database;
+
+                    // Формирование имени файла бэкапа
+                    var backupFileName = $"backup_{databaseName}_{DateTime.Now:yyyyMMdd_HHmmss}.bak";
+                    var backupFilePath = Path.Combine(Environment.CurrentDirectory, backupFileName);
+
+                    // Создание SQL-запроса для создания бэкапа
+                    var backupQuery = $"BACKUP DATABASE [{databaseName}] TO DISK = '{backupFilePath}' WITH FORMAT";
+
+                    // Выполнение SQL-запроса с использованием Raw SQL
+                    await db.Database.ExecuteSqlRawAsync(backupQuery);
+
+                    // Возвращение успешного ответа
+                    logger.LogInformation($"Создан бекап базы данных {DateTime.Now}");
+                    return Results.Ok($"Бэкап базы данных {databaseName} успешно создан: {backupFilePath}");
+                }
+                catch (Exception ex)
+                {
+                    // Обработка исключения
+                    logger.LogError(ex, "пиздык");
+                    return Results.Problem(statusCode: 500, detail: ex.Message);
                 }
             });
         }

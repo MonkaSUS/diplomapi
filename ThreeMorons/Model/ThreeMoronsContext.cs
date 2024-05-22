@@ -49,6 +49,7 @@ public partial class ThreeMoronsContext : DbContext
         });
         modelBuilder.Entity<DbServiceUser>(e =>
         {
+            e.HasKey(p => p.id);
             e.Property(p => p.user_login).HasMaxLength(50);
             e.Property(p => p.user_password).HasMaxLength(50);
             e.Property(p => p.telegram_id).HasMaxLength(50);
