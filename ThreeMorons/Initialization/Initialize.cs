@@ -51,13 +51,13 @@ namespace ThreeMorons.Initialization
             {
                 o.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                    ValidAudience = builder.Configuration["Jwt:Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"], //издатель токена - условное понятие
+                    ValidAudience = builder.Configuration["Jwt:Audience"], //аудитория токена - условное понятие
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])), //ключ шифрования
+                    ValidateIssuer = true, //проверять издателя?
+                    ValidateAudience = true, //проверять аудиторию?
+                    ValidateLifetime = true, //проверять срок годности?
+                    ValidateIssuerSigningKey = true //проверять клююч шифрования?
                 };
             });
             builder.Services.AddAuthorization();

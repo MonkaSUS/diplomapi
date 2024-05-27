@@ -4,13 +4,13 @@
     {
         private static KeyDerivationPrf pRandomFunction = KeyDerivationPrf.HMACSHA256;
 
-        
+
 
         /// <summary>
         /// Метод, используемый для создания новой пары пароль+соль при регистрации.
         /// </summary>
         /// <param name="inp">Пароль, который необходимо хешировать</param>
-        /// <returns>Кортеж(хз), первый элемент - хешированный пароль, второй - соль которая к нему была применена</returns>
+        /// <returns>Тупл, первый элемент - хешированный пароль, второй - соль которая к нему была применена</returns>
         public static (string hashpass, byte[] salt) HashPass(string inp)
         {
             byte[] salt = RandomNumberGenerator.GetBytes(128 / 8);

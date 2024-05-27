@@ -9,14 +9,14 @@ namespace ThreeMorons.SecurityThings
     public static class JwtIssuer
     {
         /// <summary>
-        /// Метод, выдающий JWT для авторизующегося пользователя. Claim пока один - по guid пользователя.
+        /// Метод, выдающий JWT для авторизующегося пользователя. Claim пока два - по guid пользователя и по userClass (класс доступа).
         /// </summary>
         /// <param name="config">builder.Config текущего приложения</param>
         /// <param name="authUser">Пользователь, который авторизуется</param>
         /// <returns>Строковую версию JWT токена для текущего пользователя. Identity содержит определение для jti, который устанавливается на основе guid пользователя</returns>
         public static (string jwt, string refresh) IssueJwtForUser(ConfigurationManager config, User authUser)
         {
-            var issuer = config["Jwt:issuer"];
+            var issuer = config["Jwt:issuer"]; //это всё чтение из appsettings.json
             var audience = config["Jwt:audience"];
             var key = Encoding.ASCII.GetBytes(config["Jwt:Key"]);
             var jwtTokenDescriptor = new SecurityTokenDescriptor
@@ -35,7 +35,7 @@ namespace ThreeMorons.SecurityThings
             var jwtToken = tokenHandler.CreateToken(jwtTokenDescriptor);
             var stringToken = tokenHandler.WriteToken(jwtToken);
             var RefreshToken = IssueRefreshToken(stringToken);
-            
+
             return (stringToken, RefreshToken);
         }
         public static (string jwt, string refresh) IssueJwtForUser(ConfigurationManager config, string userId, string UserClassId)
