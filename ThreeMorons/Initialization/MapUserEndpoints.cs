@@ -38,7 +38,8 @@ namespace ThreeMorons.Initialization
                         Surname = inp.surname,
                         Patronymic = inp.patronymic,
                         UserClassId = inp.UserClassId,
-                        DateOfRegistration = DateTime.Now
+                        DateOfRegistration = DateTime.Now,
+                        DateOfBirth = inp.dateOfBirth
                     };
                     await db.Users.AddAsync(UserToRegister);
                     await db.SaveChangesAsync();
