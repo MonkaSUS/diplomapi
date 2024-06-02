@@ -1,19 +1,6 @@
-using Microsoft.AspNetCore.Http;
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-using System.Diagnostics;
-using System.Diagnostics.Metrics;
-using System.Net;
-using System.Runtime.CompilerServices;
-using System.Text.Json;
-using ThreeMorons.HealthCheck;
-using FirebaseAdmin;
-using FirebaseAdmin.Messaging;
-using Google.Apis.Auth.OAuth2;
-using Microsoft.AspNetCore.OpenApi; 
 using ThreeMorons.Services;
 var builder = WebApplication.CreateBuilder(args);
-//ашкн днаюбкемн, онрнлс врн детнкрмши яепхюкюигеп фхдйн яп╗р онд яеаъ опх бхде рсокнб
+//ашкн днаюбкемн, онрнлс врн детнкрмши яепхюкюигеп нвемэ окнун яопюбкъеряъ я рсокълх
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 {
     o.SerializerOptions.IncludeFields = true;
@@ -22,8 +9,8 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 //TODO днаюбхрэ EasyCache
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c=>
-c.ResolveConflictingActions(a=> a.First()));
+builder.Services.AddSwaggerGen(c =>
+c.ResolveConflictingActions(a => a.First()));
 
 builder.Services.AddHttpClient();
 builder.Services.AddOutputCache(o =>
@@ -61,38 +48,21 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c => c.SwaggerEndpoint("./v1/swagger.json", "My API V1")); //originally "./swagger/v1/swagger.json");
 }
 app.UseDeveloperExceptionPage();
-
 Initializer.MapSkippedClassEndpoints(app);
-
 Initializer.MapStudentEndpoints(app);
-
 Initializer.MapDelayEndpoints(app);
-
 Initializer.MapUserEndpoints(app, builder);
-
 Initializer.MapGroupEndpoints(app);
-
 Initializer.MapSpecialEndpoints(app);
-
 app.UseResponseCaching();
 
-
-
-//TODO уект вейя
 if (!app.Environment.IsDevelopment())
 {
     app.UseHttpsRedirection();
 }
 
-
-
-
-
 app.MapGet("/", (IHostEnvironment env) => Results.Content(File.ReadAllText(env.ContentRootPath + "/wwwroot/index.html"), "text/html"));
-
-
 app.MapGet("/periods", async (ThreeMoronsContext db) => await db.Periods.ToListAsync());
-
 app.MapPost("/refresh", async (ThreeMoronsContext db, RefreshInput inp) =>
 {
     var existingSession =
@@ -126,15 +96,6 @@ app.MapPost("/refresh", async (ThreeMoronsContext db, RefreshInput inp) =>
     db.SaveChanges();
     return Results.Json(newPair, statusCode: 200, contentType: "application/json");
 });
-
-//app.MapGet("/harakiri", (ThreeMoronsContext db, [FromQuery(Name ="sqlQ")] string query) =>
-//{
-//    var queryf = FormattableStringFactory.Create(query);
-//    var res = db.Database.ExecuteSql(queryf);
-//    return Results.Ok("гЮЕАХЯЭ!");
-//});
-
-
 app.MapGet("testnotif", async (IWebHostEnvironment env, INotificationService notifs, ILoggerFactory fac) =>
 {
     var logger = fac.CreateLogger("testnotif");
@@ -166,14 +127,8 @@ app.MapGet("testnotif", async (IWebHostEnvironment env, INotificationService not
     logger.LogInformation($"яНГДЮК ЯННАЫЕМХЕ Х НРОПЮБХК СБЕДНЛКЕМХЕ ОНКЭГНБЮРЕКЪЛ {result}");
     return Results.Ok(result);
 });
-
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();
-
-//ВХЯРН ВРНА ХЙНМЙЮ АШКЮ
-
-
-
 app.Run();
 app.Logger.LogInformation($"Application started at {DateTime.Now}");
