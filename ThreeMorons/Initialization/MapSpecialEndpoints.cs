@@ -124,31 +124,21 @@ namespace ThreeMorons.Initialization
                 var logger = loggerFac.CreateLogger("GetDbConnectionString");
                 try
                 {
-                    var fullUser = await db.DbServiceUsers.FirstOrDefaultAsync(x => x.user_login == user.user_login && x.user_password == user.user_password);
+                    var fullUser = await db.DbServiceUsers.FirstOrDefaultAsync(x => x.user_login == user.user_login && x.user_password == user.user_password && x.db_type == user.db_type);
+                    fullUser.db_name = user.db_name;
                     var client = clientFac.CreateClient();
-                    var sendContent = new StringContent(JsonSerializer.Serialize(fullUser));
-                    logger.LogInformation($"Найден пользователь бд сервиса {fullUser}");
-                    HttpResponseMessage res = new();
-                    logger.LogInformation($"Попытка найти бд {fullUser.db_type}");
-                    switch (fullUser.db_type)
+                    ConnectionStringDTO csd = new()
                     {
-                        case PostgreSqlName:
-                            res = await client.PostAsync($"{DbServiceHostAdress}/postgresql/database/get-connection-string", sendContent);
-                            break;
-                        case MariaDbName:
-                            res = await client.PostAsync($"{DbServiceHostAdress}/mariadb/database/get-connection-string", sendContent);
-                            break;
-                        case MsSqlName:
-                            res = await client.PostAsync($"{DbServiceHostAdress}/mssql/database/get-connection-string", sendContent);
-                            break;
-                        default:
-                            return Results.Problem("название бд не было найдено");
-                    }
-                    if (!res.IsSuccessStatusCode)
-                    {
-                        logger.LogError($"{res.StatusCode} при попытке получить строку подключения. {await res.Content.ReadAsStringAsync()}");
-                        return Results.Problem(statusCode: (int)res.StatusCode, detail: await res.Content.ReadAsStringAsync());
-                    }
+                        data = new()
+                        {
+                            { "account_login", fullUser.user_login },
+                            { "account_password", fullUser.user_password },
+                            { "user_telegram_id", fullUser.telegram_id },
+                            { "database_name", fullUser.db_name }
+                        },
+                        dbms_name = fullUser.db_type
+                    };
+                    var res = await client.PostAsJsonAsync<ConnectionStringDTO>($"{DbServiceHostAdress}/database/get-connection-string", csd);
                     string connectionString = await res.Content.ReadAsStringAsync();
                     logger.LogInformation($"{connectionString} получена успешно");
                     return Results.Ok(connectionString);

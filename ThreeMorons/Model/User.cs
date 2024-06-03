@@ -17,8 +17,8 @@ public partial class User
     public byte[] Salt { get; set; } = null!;
 
     public bool IsDeleted { get; set; } = false;
-    public DateTime DateOfRegistration { get; set; }
-    public DateOnly DateOfBirth { get; set; }
+    public DateTime? DateOfRegistration { get; set; }
+    public DateOnly? DateOfBirth { get; set; }
     [JsonIgnore]
     public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
 

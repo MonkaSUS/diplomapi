@@ -34,7 +34,7 @@ public partial class ThreeMoronsContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #pragma warning disable CS1030 // Директива #warning
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("workstation id=ThreeMorons.mssql.somee.com;packet size=4096;user id=TigerLion46_SQLLogin_1;pwd=1ymuz53ub9;data source=ThreeMorons.mssql.somee.com;persist security info=False;initial catalog=ThreeMorons;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("workstation id = ThreeMorons.mssql.somee.com; packet size = 4096; user id = TigerLion46_SQLLogin_1; pwd=1ymuz53ub9;data source = ThreeMorons.mssql.somee.com; persist security info=False;initial catalog = ThreeMorons; TrustServerCertificate=True");
 #pragma warning restore CS1030 // Директива #warning
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -49,6 +49,7 @@ public partial class ThreeMoronsContext : DbContext
         });
         modelBuilder.Entity<DbServiceUser>(e =>
         {
+            e.ToTable("DbServiceUser");
             e.HasKey(p => p.id);
             e.Property(p => p.user_login).HasMaxLength(50);
             e.Property(p => p.user_password).HasMaxLength(50);
