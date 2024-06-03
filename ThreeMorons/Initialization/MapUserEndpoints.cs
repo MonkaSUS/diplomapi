@@ -90,6 +90,12 @@ namespace ThreeMorons.Initialization
                     return Results.Unauthorized();
                 }
                 var stringToken = JwtIssuer.IssueJwtForUser(builder.Configuration, UserToAuthorizeInDb);
+                (string jwt, string refresh, int userClass) credsAndClass;
+
+                credsAndClass.jwt = stringToken.jwt;
+                credsAndClass.refresh = stringToken.refresh;
+                credsAndClass.userClass = UserToAuthorizeInDb.UserClassId;
+
                 Session newSession = new() //ДЛИТЕЛЬНОСТЬ СЕССИИ СОСТАВЛЯЕТ ДВА ДНЯ. ПРИ СОЗДАНИИ СЕССИИ В ПОЛЕ SessionEnd ЗАПИСЫВАЕТСЯ МАКСИМАЛЬНОЕ ВРЕМЯ ОКОНЧАНИЯ СЕССИИ, А ПРИ ДОСРОЧНОМ ЗАКРЫТИИ В ДБ ЗАПИСЫВАЕТСЯ НАСТОЯЩЕЕ ВРЕМЯ ЗАКРЫТИЯ СЕССИИ
                 {
                     id = Guid.NewGuid(),
@@ -110,7 +116,7 @@ namespace ThreeMorons.Initialization
                     return Results.Problem("Ошибка при сохранении");
                 }
                 logger.LogInformation($"Успешная авторизация{inp.login}");
-                return Results.Json(stringToken, new JsonSerializerOptions() { IncludeFields = true }, "application/json", 200);
+                return Results.Json(credsAndClass, new JsonSerializerOptions() { IncludeFields = true }, "application/json", 200);
             });
             UserGroup.MapGet("/all", async (ThreeMoronsContext db, ILoggerFactory fac, IEasyCachingProvider prov) =>
             {

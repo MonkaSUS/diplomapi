@@ -178,6 +178,7 @@ namespace ThreeMorons.Initialization
                     return Results.Problem(statusCode: 500, detail: ex.Message);
                 }
             });
+
         }
     }
 }
