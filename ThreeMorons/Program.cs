@@ -127,6 +127,8 @@ app.MapGet("testnotif", async (IWebHostEnvironment env, INotificationService not
     logger.LogInformation($"Создал сообщение и отправил уведомление пользователям {result}");
     return Results.Ok(result);
 });
+app.MapGet("/checkAuth", () => "checking").RequireAuthorization();
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();
