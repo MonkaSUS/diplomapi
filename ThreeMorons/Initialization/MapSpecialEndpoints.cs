@@ -10,6 +10,8 @@ namespace ThreeMorons.Initialization
 {
     public partial class Initializer
     {
+        private static string ParserHostAdress { get; set; }
+
         public static void MapSpecialEndpoints(WebApplication app)
         {
             app.MapPost("/announcement", async (ThreeMoronsContext db, AnnouncementDTO annc, IValidator<AnnouncementDTO> val, INotificationService notifs, ILoggerFactory fac) =>
@@ -149,13 +151,13 @@ namespace ThreeMorons.Initialization
                     throw;
                 }
             });
-            app.MapGet("schedule", async(IHttpClientFactory clientFactory, ILoggerFactory logfac, [FromQuery] string group) =>
+            app.MapGet("schedule", async (IHttpClientFactory clientFactory, ILoggerFactory logfac, [FromQuery] string group) =>
             {
                 var client = clientFactory.CreateClient();
                 var res = await client.GetAsync($"{ParserHostAdress}/schedule/?forGroup={group}");
                 if (!res.IsSuccessStatusCode)
                 {
-                    return Results.Problem(detail: await res.Content.ReadAsStringAsync(), statusCode: (int) res.StatusCode);
+                    return Results.Problem(detail: await res.Content.ReadAsStringAsync(), statusCode: (int)res.StatusCode);
                 }
                 return Results.Ok(res);
             });
