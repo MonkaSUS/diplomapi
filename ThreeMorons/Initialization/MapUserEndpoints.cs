@@ -1,7 +1,9 @@
 ﻿
+using System.Linq;
 using System.Text.Json;
 
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using ThreeMorons.DTOs;
 
 namespace ThreeMorons.Initialization
 {
@@ -72,7 +74,7 @@ namespace ThreeMorons.Initialization
                 logger.LogInformation("Создается JWT токен");
                 foreach (var session in db.Sessions) //ЕСЛИ ДЛЯ ЭТОГО ПОЛЬЗОВАТЕЛЯ УЖЕ СУЩЕСТВУЕТ ОТКРЫТАЯ СЕССИЯ, ТО МЫ ЕЁ ЗАКРЫВАЕМ
                 {
-                    if (session.SessionEnd is not null && session.SessionEnd <= DateTime.Now)
+                    if (session.SessionEnd is not null && session.SessionEnd <= DateTime.Now && session.IsValid)
                     {
                         var jwt = handler.ReadToken(session.JwtToken) as JwtSecurityToken;
                         var jti = jwt.Id;
@@ -156,7 +158,47 @@ namespace ThreeMorons.Initialization
                 logger.LogInformation($"По запросу {term} найдено {usersFound.Count} пользователей");
                 return Results.Ok(usersFound);
             }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
+            UserGroup.MapPost("/refreshPassword", async (ThreeMoronsContext db, ILoggerFactory fac, PasswordRefreshDTO data, IValidator<PasswordRefreshDTO> val) =>
+            {
+                var jwt = new JwtSecurityTokenHandler().ReadJwtToken(data.jwtToken);
+                string jti = jwt.Claims.First(c => c.Type == "jti").Value;
+                var thisUser = await db.Users.FindAsync(Guid.Parse(jti));
+                if (thisUser is null)
+                {
+                    return Results.NotFound("Пользователь с таким айди не найден");
+                }
+                var thisUserSalt = thisUser.Salt;
+                var validationRes = val.Validate(data);
+                if (!validationRes.IsValid)
+                {
+                    return Results.Json(validationRes.Errors, statusCode: 400);
+                }
+                if (PasswordMegaHasher.HashPass(data.oldPassword, thisUserSalt) != thisUser.Password)
+                {
+                    return Results.BadRequest("Введён неправильный пароль. Попробуйте ещё раз");
+                }
+                var newPassAndSalt = PasswordMegaHasher.HashPass(data.newPassword);
+                try
+                {
+                    var thisUserSession = await db.Sessions.FirstAsync(x => x.JwtToken == data.jwtToken && x.RefreshToken == data.refreshToken);
+                    if (!thisUserSession.IsValid)
+                    {
+                        return Results.Problem("Сессия устарела");
+                    }
+                    thisUserSession.SessionEnd = DateTime.Now;
+                    thisUser.Password = newPassAndSalt.hashpass;
+                    thisUser.Salt = newPassAndSalt.salt;
+                    thisUserSession.IsValid = false;
+                    await db.SaveChangesAsync();
+                    return Results.Ok("Пароль изменён успешно. Авторизуйтесь ещё раз");
+                }
+                catch (Exception)
+                {
+                    return Results.Problem("Произошла проблема при изменении пароля. Попробуйте ещё раз", statusCode: 500);
+                    throw;
+                }
 
+            });
         }
     }
 }

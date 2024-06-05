@@ -2,14 +2,13 @@
 using Serilog.Core;
 using System.Text.Json;
 using ThreeMorons.DTOs;
+using ThreeMorons.Security;
 
 namespace ThreeMorons.Initialization
 {
     public static partial class Initializer
     {
-        private const string MariaDbName = "mariadb";
-        private const string MsSqlName = "mssql";
-        private const string PostgreSqlName = "postgreql";
+
         private static string DbServiceHostAdress = "http://25.64.54.15:8000";
         public static JsonSerializerOptions _opt = new JsonSerializerOptions()
         {
@@ -26,7 +25,7 @@ namespace ThreeMorons.Initialization
             builder.Logging.ClearProviders();
             LoggingLevelSwitch logsw = new();
             var logger = new LoggerConfiguration()
-                .WriteTo.File("logs.txt", rollingInterval: RollingInterval.Day, flushToDiskInterval: TimeSpan.FromSeconds(10), shared: true).WriteTo.Console().CreateLogger();
+                .WriteTo.File("apilogs.txt", rollingInterval: RollingInterval.Day, flushToDiskInterval: TimeSpan.FromSeconds(10), shared: true, encoding: Encoding.UTF8).WriteTo.Console().CreateLogger();
             Log.Logger = logger;
             builder.Logging.AddSerilog(logger);
             builder.Services.AddDbContext<ThreeMoronsContext>(o => o.UseSqlServer());
@@ -42,6 +41,9 @@ namespace ThreeMorons.Initialization
             builder.Services.AddScoped<IValidator<GroupInput>, GroupValidator>();
             builder.Services.AddScoped<IValidator<StudentDelayInput>, StudentDelayValidator>();
             builder.Services.AddScoped<IValidator<AnnouncementDTO>, AnnouncementValidator>();
+            builder.Services.AddScoped<IValidator<PasswordRefreshDTO>, PasswordRefreshValidator>();
+
+
             builder.Services.AddAuthentication(o =>
             {
                 o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -51,15 +53,21 @@ namespace ThreeMorons.Initialization
             {
                 o.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidIssuer = builder.Configuration["Jwt:Issuer"], //издатель токена - условное понятие
-                    ValidAudience = builder.Configuration["Jwt:Audience"], //аудитория токена - условное понятие
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                    ValidAudience = builder.Configuration["Jwt:Audience"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])), //ключ шифрования
-                    ValidateIssuer = true, //проверять издателя?
-                    ValidateAudience = true, //проверять аудиторию?
-                    ValidateLifetime = true, //проверять срок годности?
-                    ValidateIssuerSigningKey = true //проверять клююч шифрования?
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true
                 };
+                o.Events = new CustomJwtBearerEvents(builder.Services.BuildServiceProvider().GetRequiredService<ThreeMoronsContext>());
             });
+
+
+
+
+
             builder.Services.AddAuthorization();
             return builder.Build();
         }

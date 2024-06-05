@@ -26,7 +26,7 @@ namespace ThreeMorons.SecurityThings
                     new Claim(JwtRegisteredClaimNames.Jti, authUser.Id.ToString()),
                     new Claim("userClass", authUser.UserClassId.ToString())
                 }),
-                Expires = DateTime.UtcNow.AddHours(24),
+                Expires = DateTime.UtcNow.AddHours(12),
                 Issuer = issuer,
                 Audience = audience,
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha512Signature)
