@@ -1,0 +1,157 @@
+2024-06-04 11:05:53.214 +03:00 [INF] User profile is available. Using 'C:\Users\Student29\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-04 11:05:53.835 +03:00 [INF] Now listening on: http://localhost:5132
+2024-06-04 11:05:53.838 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:05:53.839 +03:00 [INF] Hosting environment: Development
+2024-06-04 11:05:53.839 +03:00 [INF] Content root path: C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-06-04 11:05:56.776 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/ - null null
+2024-06-04 11:05:56.968 +03:00 [INF] No cached response available for this request.
+2024-06-04 11:05:57.037 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-04 11:05:57.075 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-06-04 11:05:57.113 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-04 11:05:57.114 +03:00 [INF] The response could not be cached for this request.
+2024-06-04 11:05:57.117 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/favicon.ico - null null
+2024-06-04 11:05:57.118 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-04 11:05:57.120 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/ - 200 null text/html 344.3951ms
+2024-06-04 11:05:57.123 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 7.0773ms
+2024-06-04 11:05:57.124 +03:00 [INF] No cached response available for this request.
+2024-06-04 11:05:57.125 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/_vs/browserLink - null null
+2024-06-04 11:05:57.169 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons\wwwroot\favicon.ico'
+2024-06-04 11:05:57.171 +03:00 [INF] The response could not be cached for this request.
+2024-06-04 11:05:57.172 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/favicon.ico - 200 268286 image/x-icon 55.5514ms
+2024-06-04 11:05:57.175 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.741ms
+2024-06-04 11:07:17.472 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/schedule/?group=%D0%98%D0%A1-11 - application/json 215
+2024-06-04 11:07:17.511 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '21.05.2024 7:18:06', Current time (UTC): '04.06.2024 8:07:17'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-04 11:07:17.577 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '21.05.2024 7:18:06', Current time (UTC): '04.06.2024 8:07:17'.
+2024-06-04 11:07:17.577 +03:00 [INF] Executing endpoint 'HTTP: GET schedule'
+2024-06-04 11:07:17.585 +03:00 [INF] Start processing HTTP request GET https://localhost:7175/schedule/?forGroup=%D0%98%D0%A1-11
+2024-06-04 11:07:17.587 +03:00 [INF] Sending HTTP request GET https://localhost:7175/schedule/?forGroup=%D0%98%D0%A1-11
+2024-06-04 11:07:21.726 +03:00 [INF] Executed endpoint 'HTTP: GET schedule'
+2024-06-04 11:07:21.729 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (localhost:7175)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ThreeMorons.Initialization.Initializer.<>c.<<MapSpecialEndpoints>b__10_6>d.MoveNext() in C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons\Initialization\MapSpecialEndpoints.cs:line 163
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-06-04 11:07:21.761 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/schedule/?group=%D0%98%D0%A1-11 - 500 null text/plain; charset=utf-8 4289.4095ms
+2024-06-04 11:08:51.958 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/schedule/?group=%D0%98%D0%A1-11 - application/json 215
+2024-06-04 11:08:51.963 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '21.05.2024 7:18:06', Current time (UTC): '04.06.2024 8:08:51'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-04 11:08:51.966 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '21.05.2024 7:18:06', Current time (UTC): '04.06.2024 8:08:51'.
+2024-06-04 11:08:51.967 +03:00 [INF] Executing endpoint 'HTTP: GET schedule'
+2024-06-04 11:08:51.967 +03:00 [INF] Start processing HTTP request GET https://localhost:7175/schedule/?forGroup=%D0%98%D0%A1-11
+2024-06-04 11:08:51.968 +03:00 [INF] Sending HTTP request GET https://localhost:7175/schedule/?forGroup=%D0%98%D0%A1-11
+2024-06-04 11:08:56.080 +03:00 [INF] Executed endpoint 'HTTP: GET schedule'
+2024-06-04 11:08:56.082 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (localhost:7175)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ThreeMorons.Initialization.Initializer.<>c.<<MapSpecialEndpoints>b__10_6>d.MoveNext() in C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons\Initialization\MapSpecialEndpoints.cs:line 163
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-06-04 11:08:56.093 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/schedule/?group=%D0%98%D0%A1-11 - 500 null text/plain; charset=utf-8 4135.4556ms
+2024-06-04 11:09:31.696 +03:00 [INF] User profile is available. Using 'C:\Users\Student29\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-04 11:09:31.930 +03:00 [INF] Now listening on: http://localhost:5132
+2024-06-04 11:09:31.932 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:09:31.933 +03:00 [INF] Hosting environment: Development
+2024-06-04 11:09:31.933 +03:00 [INF] Content root path: C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons
+2024-06-04 11:09:35.111 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/ - null null
+2024-06-04 11:09:35.240 +03:00 [INF] No cached response available for this request.
+2024-06-04 11:09:35.283 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-04 11:09:35.290 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-06-04 11:09:35.302 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-04 11:09:35.303 +03:00 [INF] The response could not be cached for this request.
+2024-06-04 11:09:35.306 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/ - 200 null text/html 198.5523ms
+2024-06-04 11:09:35.306 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/_vs/browserLink - null null
+2024-06-04 11:09:35.309 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-04 11:09:35.313 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 3.6721ms
+2024-06-04 11:09:35.332 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.6236ms
+2024-06-04 11:09:39.234 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/schedule/?group=%D0%98%D0%A1-11 - application/json 215
+2024-06-04 11:09:39.272 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '21.05.2024 7:18:06', Current time (UTC): '04.06.2024 8:09:39'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-04 11:09:39.288 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '21.05.2024 7:18:06', Current time (UTC): '04.06.2024 8:09:39'.
+2024-06-04 11:09:39.289 +03:00 [INF] Executing endpoint 'HTTP: GET schedule'
+2024-06-04 11:09:39.297 +03:00 [INF] Start processing HTTP request GET https://localhost:7175/schedule/?forGroup=%D0%98%D0%A1-11
+2024-06-04 11:09:39.300 +03:00 [INF] Sending HTTP request GET https://localhost:7175/schedule/?forGroup=%D0%98%D0%A1-11
+2024-06-04 11:09:43.424 +03:00 [INF] Executed endpoint 'HTTP: GET schedule'
+2024-06-04 11:09:43.427 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (localhost:7175)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ThreeMorons.Initialization.Initializer.<>c.<<MapSpecialEndpoints>b__10_6>d.MoveNext() in C:\Users\Student29\Source\Repos\MonkaSUS\ThreeMorons\ThreeMorons\Initialization\MapSpecialEndpoints.cs:line 163
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-06-04 11:09:43.450 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/schedule/?group=%D0%98%D0%A1-11 - 500 null text/plain; charset=utf-8 4216.701ms

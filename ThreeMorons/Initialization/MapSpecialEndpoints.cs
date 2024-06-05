@@ -149,36 +149,18 @@ namespace ThreeMorons.Initialization
                     throw;
                 }
             });
-            app.MapGet("/createBackup", async (ThreeMoronsContext db, IWebHostEnvironment env, ILoggerFactory fac) =>
+            app.MapGet("schedule", async(IHttpClientFactory clientFactory, ILoggerFactory logfac, [FromQuery] string group) =>
             {
-                var logger = fac.CreateLogger("backup");
-                try
+                var client = clientFactory.CreateClient();
+                var res = await client.GetAsync($"{ParserHostAdress}/schedule/?forGroup={group}");
+                if (!res.IsSuccessStatusCode)
                 {
-                    // Получение имени базы данных
-                    var databaseName = db.Database.GetDbConnection().Database;
-
-                    // Формирование имени файла бэкапа
-                    var backupFileName = $"backup_{databaseName}_{DateTime.Now:yyyyMMdd_HHmmss}.bak";
-                    var backupFilePath = Path.Combine(Environment.CurrentDirectory, backupFileName);
-
-                    // Создание SQL-запроса для создания бэкапа
-                    var backupQuery = $"BACKUP DATABASE [{databaseName}] TO DISK = '{backupFilePath}' WITH FORMAT";
-
-                    // Выполнение SQL-запроса с использованием Raw SQL
-                    await db.Database.ExecuteSqlRawAsync(backupQuery);
-
-                    // Возвращение успешного ответа
-                    logger.LogInformation($"Создан бекап базы данных {DateTime.Now}");
-                    return Results.Ok($"Бэкап базы данных {databaseName} успешно создан: {backupFilePath}");
+                    return Results.Problem(detail: await res.Content.ReadAsStringAsync(), statusCode: (int) res.StatusCode);
                 }
-                catch (Exception ex)
-                {
-                    // Обработка исключения
-                    logger.LogError(ex, "пиздык");
-                    return Results.Problem(statusCode: 500, detail: ex.Message);
-                }
+                return Results.Ok(res);
             });
-
+            app.MapPost("changeParserHostAdress", (string newAdress) => Initializer.ParserHostAdress = newAdress);
+            app.MapPost("changeDbServiceHostAdress", (string newAdress) => Initializer.DbServiceHostAdress = newAdress);
         }
     }
 }
