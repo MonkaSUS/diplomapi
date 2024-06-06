@@ -1,155 +1,155 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ThreeMorons.Initialization.Initializer">
-    <Position X="8.25" Y="0.5" Width="2.25" />
+    <Position X="8.5" Y="1.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAIAAEgAQAAAAAIAAAEAAAAEAAAAEIAAIAAAIA=</HashCode>
+      <HashCode>AQAAAAAAAAEgAQAAAAAIAAAECAAAAAAAAAIAAIAAAIA=</HashCode>
       <FileName>Initialization\Initialize.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Model.Announcement" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+  <Class Name="ThreeMorons.Model.Announcement">
+    <Position X="16.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAgAAEAAgAABAAAAAAACAAAAAAAAAAAAAIA=</HashCode>
       <FileName>Model\Announcement.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Model.DbServiceUser" Collapsed="true">
-    <Position X="0.5" Y="2.5" Width="1.5" />
+  <Class Name="ThreeMorons.Model.DbServiceUser">
+    <Position X="14.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAEAgAAAAAAAAAAAAAAAAAAAAAAAwAAAgA=</HashCode>
       <FileName>Model\DbServiceUser.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Model.Group" Collapsed="true">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+  <Class Name="ThreeMorons.Model.Group">
+    <Position X="12.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAABAAAAEAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>Model\Group.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Model.Period" Collapsed="true">
-    <Position X="0.5" Y="4" Width="1.5" />
+  <Class Name="ThreeMorons.Model.Period">
+    <Position X="11" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAIAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Period.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Model.Session" Collapsed="true">
-    <Position X="4.75" Y="3.75" Width="1.5" />
+  <Class Name="ThreeMorons.Model.Session">
+    <Position X="4.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAACAQAAAgAAAAAAAAAAAAAAAAAAAAAAiA=</HashCode>
       <FileName>Model\Session.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Model.SkippedClass" Collapsed="true">
-    <Position X="2.25" Y="2.5" Width="1.5" />
+  <Class Name="ThreeMorons.Model.SkippedClass">
+    <Position X="12.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAgAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAQAAAEA=</HashCode>
       <FileName>Model\SkippedClass.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Model.Student" Collapsed="true">
-    <Position X="2.25" Y="1.75" Width="1.5" />
+  <Class Name="ThreeMorons.Model.Student">
+    <Position X="14.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAACAAAAAAAAAAABAAQAQABAAAAAQAAAAAARAAAEE=</HashCode>
+      <HashCode>AAIBACAAAAAAAAAAABAAQAQABAAAAAQAAAAAARAAAEE=</HashCode>
       <FileName>Model\Student.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Model.StudentDelay" Collapsed="true">
-    <Position X="2.25" Y="3.25" Width="1.5" />
+  <Class Name="ThreeMorons.Model.StudentDelay">
+    <Position X="12.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAACAAAAAAAAAAAAAIAAIAAAAAAAAAQAAAEA=</HashCode>
       <FileName>Model\StudentDelay.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Model.ThreeMoronsContext" Collapsed="true">
-    <Position X="0.5" Y="0.75" Width="1.75" />
+  <Class Name="ThreeMorons.Model.ThreeMoronsContext">
+    <Position X="16.5" Y="1.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAIABmAAAQAQAAABACAAAAAAEAAAAAQAAIAAAAAAAAA=</HashCode>
       <FileName>Model\ThreeMoronsContext.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Model.User" Collapsed="true">
-    <Position X="2.25" Y="4" Width="1.5" />
+  <Class Name="ThreeMorons.Model.User">
+    <Position X="11" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgBCAGAAEAAAAAAAAAAAAAwABAAQAAAKAAAQAQAAAAA=</HashCode>
+      <HashCode>AgBCAGAAUAAAAAAAAAAAAAwABAAQAAAKAAAQAQAAAEA=</HashCode>
       <FileName>Model\User.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Model.UserClass" Collapsed="true">
-    <Position X="2.5" Y="1" Width="1.5" />
+  <Class Name="ThreeMorons.Model.UserClass">
+    <Position X="14.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\UserClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ThreeMorons.SecurityThings.JwtIssuer">
-    <Position X="1" Y="4.75" Width="2.75" />
+    <Position X="0.75" Y="6.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Security\JwtIssuer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ThreeMorons.SecurityThings.PasswordMegaHasher">
-    <Position X="4" Y="4.5" Width="2.25" />
+    <Position X="4" Y="6.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAIAAAAA=</HashCode>
       <FileName>Security\PasswordMegaHasher.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Services.FcmNotificationService" Collapsed="true">
-    <Position X="4.75" Y="3" Width="1.5" />
+  <Class Name="ThreeMorons.Services.FcmNotificationService">
+    <Position X="4.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>Services\FcmNotificationService.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.1" />
   </Class>
-  <Class Name="ThreeMorons.Validators.AnnouncementValidator" Collapsed="true">
-    <Position X="6.5" Y="1.5" Width="1.5" />
+  <Class Name="ThreeMorons.Validators.AnnouncementValidator">
+    <Position X="6.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validators\AnnouncementValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Validators.AuthorizationValidator" Collapsed="true">
-    <Position X="6.5" Y="2.25" Width="1.5" />
+  <Class Name="ThreeMorons.Validators.AuthorizationValidator">
+    <Position X="6.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validators\AuthorizationValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Validators.GroupValidator" Collapsed="true">
-    <Position X="6.5" Y="5.25" Width="1.5" />
+  <Class Name="ThreeMorons.Validators.GroupValidator">
+    <Position X="6.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validators\GroupValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Validators.RegistrationValidator" Collapsed="true">
-    <Position X="6.5" Y="4.5" Width="1.5" />
+  <Class Name="ThreeMorons.Validators.RegistrationValidator">
+    <Position X="6.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validators\RegistrationValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Validators.SkippedClassValidator" Collapsed="true">
-    <Position X="6.5" Y="3.75" Width="1.5" />
+  <Class Name="ThreeMorons.Validators.SkippedClassValidator">
+    <Position X="8.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validators\SkippedClassValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ThreeMorons.Validators.StudentDelayValidator" Collapsed="true">
-    <Position X="6.5" Y="3" Width="1.5" />
+  <Class Name="ThreeMorons.Validators.StudentDelayValidator">
+    <Position X="8.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validators\StudentDelayValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="ThreeMorons.Services.INotificationService">
-    <Position X="4.75" Y="1.5" Width="1.5" />
+    <Position X="6.75" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Services\INotificationService.cs</FileName>

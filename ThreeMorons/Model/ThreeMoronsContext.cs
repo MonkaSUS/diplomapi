@@ -131,7 +131,7 @@ public partial class ThreeMoronsContext : DbContext
             entity.HasOne(d => d.StudNumberNavigation).WithMany(p => p.StudentDelays)
                 .HasForeignKey(d => d.StudNumber)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_StudentDelays_Student");
+                .HasConstraintName("FK_StudentDelays_Student").IsRequired(false);
         });
 
         modelBuilder.Entity<User>(entity =>
@@ -151,6 +151,10 @@ public partial class ThreeMoronsContext : DbContext
                 .HasForeignKey(d => d.UserClassId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_User_UserClass");
+            entity.HasOne(e => e.Student).WithOne(p => p.User)
+            .HasForeignKey<User>(x => x.StudNumber)
+            .OnDelete(DeleteBehavior.ClientSetNull)
+            .HasConstraintName("FK_User_Student");
         });
 
         modelBuilder.Entity<UserClass>(entity =>

@@ -1337,3 +1337,152 @@ WHERE [u].[id] = @__get_Item_0
 SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
 FROM [Session] AS [s]
 WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-05 23:45:11.102 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-05 23:45:12.315 +03:00 [INF] Now listening on: http://localhost:5132
+2024-06-05 23:45:12.329 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-05 23:45:12.506 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-05 23:45:12.508 +03:00 [INF] Hosting environment: Development
+2024-06-05 23:45:12.509 +03:00 [INF] Content root path: C:\Users\Lev\source\repos\ThreeMorons\ThreeMorons
+2024-06-05 23:45:13.091 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/ - null null
+2024-06-05 23:45:13.461 +03:00 [INF] No cached response available for this request.
+2024-06-05 23:45:13.882 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-05 23:45:13.942 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-06-05 23:45:14.022 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-05 23:45:14.024 +03:00 [INF] The response could not be cached for this request.
+2024-06-05 23:45:14.030 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/ - 200 null text/html 945.2306ms
+2024-06-05 23:45:14.063 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/_vs/browserLink - null null
+2024-06-05 23:45:14.063 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-05 23:45:14.080 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 16.5146ms
+2024-06-05 23:45:14.165 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/_vs/browserLink - 200 null text/javascript; charset=UTF-8 101.8153ms
+2024-06-05 23:46:56.298 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-05 23:46:57.097 +03:00 [INF] Now listening on: http://localhost:5132
+2024-06-05 23:46:57.112 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-05 23:46:57.218 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-05 23:46:57.220 +03:00 [INF] Hosting environment: Development
+2024-06-05 23:46:57.222 +03:00 [INF] Content root path: C:\Users\Lev\source\repos\ThreeMorons\ThreeMorons
+2024-06-05 23:46:57.701 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/ - null null
+2024-06-05 23:46:57.965 +03:00 [INF] No cached response available for this request.
+2024-06-05 23:46:58.183 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-05 23:46:58.203 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-06-05 23:46:58.230 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-05 23:46:58.231 +03:00 [INF] The response could not be cached for this request.
+2024-06-05 23:46:58.236 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/ - 200 null text/html 543.6742ms
+2024-06-05 23:46:58.346 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-05 23:46:58.346 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/_vs/browserLink - null null
+2024-06-05 23:46:58.356 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 10.084ms
+2024-06-05 23:46:58.417 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/_vs/browserLink - 200 null text/javascript; charset=UTF-8 71.4936ms
+2024-06-05 23:47:37.117 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-05 23:47:38.023 +03:00 [INF] Now listening on: http://localhost:5132
+2024-06-05 23:47:38.043 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-05 23:47:38.161 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-05 23:47:38.164 +03:00 [INF] Hosting environment: Development
+2024-06-05 23:47:38.167 +03:00 [INF] Content root path: C:\Users\Lev\source\repos\ThreeMorons\ThreeMorons
+2024-06-05 23:47:38.622 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/ - null null
+2024-06-05 23:47:38.879 +03:00 [INF] No cached response available for this request.
+2024-06-05 23:47:39.127 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-05 23:47:39.152 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-06-05 23:47:39.183 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-05 23:47:39.189 +03:00 [INF] The response could not be cached for this request.
+2024-06-05 23:47:39.195 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/ - 200 null text/html 579.2183ms
+2024-06-05 23:47:39.335 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/_vs/browserLink - null null
+2024-06-05 23:47:39.335 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-05 23:47:39.355 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 20.2637ms
+2024-06-05 23:47:39.400 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/_vs/browserLink - 200 null text/javascript; charset=UTF-8 65.0443ms
+2024-06-05 23:47:53.345 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-05 23:47:54.040 +03:00 [INF] Now listening on: http://localhost:5132
+2024-06-05 23:47:54.053 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-05 23:47:54.136 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-05 23:47:54.139 +03:00 [INF] Hosting environment: Development
+2024-06-05 23:47:54.143 +03:00 [INF] Content root path: C:\Users\Lev\source\repos\ThreeMorons\ThreeMorons
+2024-06-05 23:47:54.708 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/ - null null
+2024-06-05 23:47:54.938 +03:00 [INF] No cached response available for this request.
+2024-06-05 23:47:55.157 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-05 23:47:55.181 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-06-05 23:47:55.203 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-05 23:47:55.204 +03:00 [INF] The response could not be cached for this request.
+2024-06-05 23:47:55.209 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/ - 200 null text/html 507.0876ms
+2024-06-05 23:47:55.292 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/_vs/browserLink - null null
+2024-06-05 23:47:55.292 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-05 23:47:55.302 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 9.9964ms
+2024-06-05 23:47:55.347 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/_vs/browserLink - 200 null text/javascript; charset=UTF-8 55.0853ms
+2024-06-05 23:50:45.505 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5132/user/register - application/json 196
+2024-06-05 23:50:45.686 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '05.06.2024 20:50:45'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-05 23:50:45.831 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '05.06.2024 20:50:45'.
+2024-06-05 23:50:45.834 +03:00 [INF] Executing endpoint 'HTTP: POST /user/register'
+2024-06-05 23:50:45.924 +03:00 [INF] Попытка регистрации DiplomScreenshot
+2024-06-05 23:50:45.942 +03:00 [ERR] Ошибка валидации
+2024-06-05 23:50:45.950 +03:00 [INF] Setting HTTP status code 400.
+2024-06-05 23:50:45.958 +03:00 [INF] Writing value of type 'HttpValidationProblemDetails' as Json.
+2024-06-05 23:50:45.964 +03:00 [INF] Executed endpoint 'HTTP: POST /user/register'
+2024-06-05 23:50:45.967 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5132/user/register - 400 null application/problem+json 462.7274ms
+2024-06-05 23:50:51.248 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5132/user/register - application/json 197
+2024-06-05 23:50:51.271 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '05.06.2024 20:50:51'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-05 23:50:51.283 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '05.06.2024 20:50:51'.
+2024-06-05 23:50:51.285 +03:00 [INF] Executing endpoint 'HTTP: POST /user/register'
+2024-06-05 23:50:51.290 +03:00 [INF] Попытка регистрации DiplomScreenshot
+2024-06-05 23:50:54.613 +03:00 [INF] Executed DbCommand (208ms) [Parameters=[@__inp_login_0='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [User] AS [u]
+        WHERE [u].[Login] = @__inp_login_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-05 23:50:55.060 +03:00 [INF] Executed DbCommand (150ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Date), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 20), @p5='?' (Size = 40), @p6='?' (Size = 50), @p7='?' (Size = 40), @p8='?' (Size = 20) (DbType = Binary), @p9='?' (Size = 40), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [User] ([id], [DateOfBirth], [DateOfRegistration], [IsDeleted], [Login], [Name], [Password], [Patronymic], [Salt], [Surname], [UserClassId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2024-06-05 23:50:55.084 +03:00 [INF] Setting HTTP status code 200.
+2024-06-05 23:50:55.087 +03:00 [INF] Writing value of type 'User' as Json.
+2024-06-05 23:50:55.101 +03:00 [INF] Executed endpoint 'HTTP: POST /user/register'
+2024-06-05 23:50:55.115 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5132/user/register - 200 null application/json 3867.0913ms
+2024-06-05 23:52:23.294 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5132/user/authorize - application/json 72
+2024-06-05 23:52:23.304 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '05.06.2024 20:52:23'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-05 23:52:23.324 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '05.06.2024 20:52:23'.
+2024-06-05 23:52:23.327 +03:00 [INF] Executing endpoint 'HTTP: POST /user/authorize'
+2024-06-05 23:52:23.341 +03:00 [INF] Попытка авторизацииDiplomScreenshot
+2024-06-05 23:52:23.590 +03:00 [INF] Executed DbCommand (147ms) [Parameters=[@__inp_login_0='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[Login] = @__inp_login_0
+2024-06-05 23:52:23.607 +03:00 [INF] Создается JWT токен
+2024-06-05 23:52:23.771 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+2024-06-05 23:52:24.359 +03:00 [INF] Executed DbCommand (149ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (Size = 500), @p3='?' (Size = 300), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Session] ([id], [IsValid], [JwtToken], [RefreshToken], [SessionEnd], [SessionStart])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-06-05 23:52:24.365 +03:00 [INF] Успешная авторизацияDiplomScreenshot
+2024-06-05 23:52:24.368 +03:00 [INF] Setting HTTP status code 200.
+2024-06-05 23:52:24.373 +03:00 [INF] Writing value of type 'ValueTuple`3' as Json.
+2024-06-05 23:52:24.417 +03:00 [INF] Executed endpoint 'HTTP: POST /user/authorize'
+2024-06-05 23:52:24.419 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5132/user/authorize - 200 null application/json 1125.7391ms
+2024-06-05 23:58:30.696 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5132/group/all - application/json 72
+2024-06-05 23:58:31.681 +03:00 [INF] Executed DbCommand (149ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__get_Item_0
+2024-06-05 23:58:31.840 +03:00 [INF] Executed DbCommand (149ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-05 23:58:31.845 +03:00 [INF] Bearer was not authenticated. Failure message: Сессия пользователя недействительна
+2024-06-05 23:58:31.854 +03:00 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=userClass and Claim.Value is one of the following values: (2|3)
+2024-06-05 23:58:31.862 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-05 23:58:31.864 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5132/group/all - 401 0 null 1172.4013ms

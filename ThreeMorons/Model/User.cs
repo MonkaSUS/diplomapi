@@ -14,6 +14,8 @@ public partial class User
 
     public int UserClassId { get; set; }
 
+    public string? StudNumber { get; set; }
+
     public byte[] Salt { get; set; } = null!;
 
     public bool IsDeleted { get; set; } = false;
@@ -22,7 +24,10 @@ public partial class User
     [JsonIgnore]
     public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
 
-    public virtual UserClass UserClass { get; set; } = null!;
+
+    public virtual UserClass UserClass { get; set; }
+
+    public virtual Student? Student { get; set; }
     [NotMapped]
     public string SearchTerm => String.Join(' ', Name, Surname, Patronymic);
 

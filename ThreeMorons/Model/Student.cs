@@ -27,6 +27,8 @@ public partial class Student
     public virtual ICollection<SkippedClass> SkippedClasses { get; set; } = new List<SkippedClass>();
     [JsonIgnore]
     public virtual ICollection<StudentDelay> StudentDelays { get; set; } = new List<StudentDelay>();
+    [JsonIgnore]
+    public virtual User? User { get; set; } = null!;
     [NotMapped]
     public string SerachTerm => String.Join(" ", Name, Surname, Patronymic, StudNumber);
 }

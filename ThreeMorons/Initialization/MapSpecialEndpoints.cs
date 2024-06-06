@@ -10,7 +10,7 @@ namespace ThreeMorons.Initialization
 {
     public partial class Initializer
     {
-        private static string ParserHostAdress { get; set; }
+        private static string ParserHostAdress { get; set; } = "http://25.64.51.236:5256";
 
         public static void MapSpecialEndpoints(WebApplication app)
         {
@@ -151,7 +151,7 @@ namespace ThreeMorons.Initialization
                     throw;
                 }
             });
-            app.MapGet("schedule", async (IHttpClientFactory clientFactory, ILoggerFactory logfac, [FromQuery] string group) =>
+            app.MapGet("/schedule", async (IHttpClientFactory clientFactory, ILoggerFactory logfac, [FromQuery] string group) =>
             {
                 var client = clientFactory.CreateClient();
                 var res = await client.GetAsync($"{ParserHostAdress}/schedule/?forGroup={group}");
@@ -159,7 +159,17 @@ namespace ThreeMorons.Initialization
                 {
                     return Results.Problem(detail: await res.Content.ReadAsStringAsync(), statusCode: (int)res.StatusCode);
                 }
-                return Results.Ok(res);
+                return Results.Content(await res.Content.ReadAsStringAsync(), contentType: "application/json", Encoding.UTF8, statusCode: 200);
+            });
+            app.MapGet("/groupsParser", async (IHttpClientFactory fac) =>
+            {
+                var client = fac.CreateClient();
+                var res = await client.GetAsync($"{ParserHostAdress}/groups");
+                if (!res.IsSuccessStatusCode) 
+                {
+                    return Results.Problem(await res.Content.ReadAsStringAsync(), statusCode: (int)res.StatusCode);
+                }
+                return Results.Content(await res.Content.ReadAsStringAsync(), contentType: "application/json", Encoding.UTF8, statusCode: 200);
             });
             app.MapPost("changeParserHostAdress", (string newAdress) => Initializer.ParserHostAdress = newAdress);
             app.MapPost("changeDbServiceHostAdress", (string newAdress) => Initializer.DbServiceHostAdress = newAdress);
