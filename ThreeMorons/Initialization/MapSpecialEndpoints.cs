@@ -165,12 +165,44 @@ namespace ThreeMorons.Initialization
             {
                 var client = fac.CreateClient();
                 var res = await client.GetAsync($"{ParserHostAdress}/groups");
-                if (!res.IsSuccessStatusCode) 
+                if (!res.IsSuccessStatusCode)
                 {
                     return Results.Problem(await res.Content.ReadAsStringAsync(), statusCode: (int)res.StatusCode);
                 }
                 return Results.Content(await res.Content.ReadAsStringAsync(), contentType: "application/json", Encoding.UTF8, statusCode: 200);
             });
+            app.MapGet("testnotif", async (IWebHostEnvironment env, INotificationService notifs, ILoggerFactory fac) =>
+            {
+                var logger = fac.CreateLogger("testnotif");
+                Message msg = new Message()
+                {
+                    Notification = new Notification
+                    {
+                        Title = "провэрочка",
+                        Body = "тело провэрочки"
+                    },
+                    Android = new AndroidConfig
+                    {
+                        Notification = new AndroidNotification
+                        {
+                            ChannelId = "public_announcements"
+                        },
+                        Priority = Priority.Normal,
+                        RestrictedPackageName = "com.kgpk.collegeapp"
+                    },
+                    Data = new Dictionary<string, string>()
+                     {
+                         { "amogus", "amogus" },
+                         { "sussy", "wussy" }
+                     },
+                    //ТОКЕНЫ СИЛЬНО. МОЖНО ПОЛЬЗОВАТЕЛЮ ЛИЧНО ПОСЫЛАТЬ
+                    Topic = "announcements"
+                };
+                string result = await notifs.SendAsync(msg);
+                logger.LogInformation($"Создал сообщение и отправил уведомление пользователям {result}");
+                return Results.Ok(result);
+            });
+            app.MapGet("/periods", async (ThreeMoronsContext db) => await db.Periods.ToListAsync());
             app.MapPost("changeParserHostAdress", (string newAdress) => Initializer.ParserHostAdress = newAdress);
             app.MapPost("changeDbServiceHostAdress", (string newAdress) => Initializer.DbServiceHostAdress = newAdress);
         }

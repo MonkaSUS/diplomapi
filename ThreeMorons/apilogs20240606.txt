@@ -1287,3 +1287,87 @@ Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime
 2024-06-06 19:47:00.244 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
 2024-06-06 19:47:00.247 +03:00 [INF] The response could not be cached for this request.
 2024-06-06 19:47:00.249 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%BA - 200 4424 application/json; charset=utf-8 33544.1998ms
+2024-06-06 20:09:09.097 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/user/authorize - application/json; charset=utf-8 41
+2024-06-06 20:09:09.104 +03:00 [INF] Executing endpoint 'HTTP: POST /user/authorize'
+2024-06-06 20:09:17.196 +03:00 [INF] Попытка авторизацииIvanov1
+2024-06-06 20:09:18.226 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-06-06 20:09:18.256 +03:00 [INF] No cached response available for this request.
+2024-06-06 20:09:18.257 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-06 20:09:18.259 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-06-06 20:09:18.261 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-06 20:09:18.263 +03:00 [INF] The response could not be cached for this request.
+2024-06-06 20:09:18.265 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 null text/html 39.7021ms
+2024-06-06 20:09:18.356 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/_vs/browserLink - null null
+2024-06-06 20:09:18.358 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-06 20:09:18.466 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 108.4579ms
+2024-06-06 20:09:18.484 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/_vs/browserLink - 200 null text/javascript; charset=UTF-8 128.1068ms
+2024-06-06 20:09:18.657 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/favicon.ico - null null
+2024-06-06 20:09:18.664 +03:00 [INF] No cached response available for this request.
+2024-06-06 20:09:18.730 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Lev\source\repos\ThreeMorons\ThreeMorons\wwwroot\favicon.ico'
+2024-06-06 20:09:18.741 +03:00 [INF] The response could not be cached for this request.
+2024-06-06 20:09:18.744 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/favicon.ico - 200 268286 image/x-icon 87.355ms
+2024-06-06 20:09:21.061 +03:00 [INF] Executed DbCommand (203ms) [Parameters=[@__inp_login_0='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[Login] = @__inp_login_0
+2024-06-06 20:09:21.180 +03:00 [INF] Создается JWT токен
+2024-06-06 20:09:21.349 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+2024-06-06 20:09:22.034 +03:00 [INF] Executed DbCommand (150ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (Size = 500), @p3='?' (Size = 300), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Session] ([id], [IsValid], [JwtToken], [RefreshToken], [SessionEnd], [SessionStart])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-06-06 20:09:22.046 +03:00 [INF] Успешная авторизацияIvanov1
+2024-06-06 20:09:22.050 +03:00 [INF] Setting HTTP status code 200.
+2024-06-06 20:09:22.055 +03:00 [INF] Writing value of type 'ValueTuple`3' as Json.
+2024-06-06 20:09:22.065 +03:00 [INF] Executed endpoint 'HTTP: POST /user/authorize'
+2024-06-06 20:09:22.074 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/user/authorize - 200 null application/json 12977.715ms
+2024-06-06 20:15:11.276 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/user/authorize - application/json; charset=utf-8 41
+2024-06-06 20:15:11.581 +03:00 [INF] Executed DbCommand (148ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__get_Item_0
+2024-06-06 20:15:11.739 +03:00 [INF] Executed DbCommand (148ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-06 20:15:11.747 +03:00 [INF] Executing endpoint 'HTTP: POST /user/authorize'
+2024-06-06 20:15:11.750 +03:00 [INF] Попытка авторизацииIvanov1
+2024-06-06 20:15:11.958 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__inp_login_0='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[Login] = @__inp_login_0
+2024-06-06 20:15:11.963 +03:00 [INF] Создается JWT токен
+2024-06-06 20:15:12.118 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+2024-06-06 20:15:12.459 +03:00 [INF] Executed DbCommand (146ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (Size = 500), @p3='?' (Size = 300), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Session] ([id], [IsValid], [JwtToken], [RefreshToken], [SessionEnd], [SessionStart])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-06-06 20:15:12.463 +03:00 [INF] Успешная авторизацияIvanov1
+2024-06-06 20:15:12.464 +03:00 [INF] Setting HTTP status code 200.
+2024-06-06 20:15:12.466 +03:00 [INF] Writing value of type 'ValueTuple`3' as Json.
+2024-06-06 20:15:12.468 +03:00 [INF] Executed endpoint 'HTTP: POST /user/authorize'
+2024-06-06 20:15:12.469 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/user/authorize - 200 null application/json 1193.6159ms
+2024-06-06 20:15:13.010 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-06 20:15:13.161 +03:00 [INF] Executed DbCommand (148ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-06 20:15:13.186 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-06 20:15:13.188 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-06 20:15:13.189 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 179.2508ms
+2024-06-06 20:53:27.896 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-06 20:53:28.647 +03:00 [INF] Executed DbCommand (148ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-06 20:53:28.649 +03:00 [INF] Bearer was not authenticated. Failure message: Сессия пользователя недействительна
+2024-06-06 20:53:28.653 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-06-06 20:53:28.661 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-06 20:53:28.663 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 401 0 null 766.9905ms

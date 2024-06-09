@@ -1,6 +1,5 @@
 using ThreeMorons.Services;
 var builder = WebApplication.CreateBuilder(args);
-//БЫЛО ДОБАВЛЕНО, ПОТОМУ ЧТО ДЕФОЛТНЫЙ СЕРИАЛАЙЗЕР ОЧЕНЬ ПЛОХО СПРАВЛЯЕТСЯ С ТУПЛЯМИ
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 {
     o.SerializerOptions.IncludeFields = true;
@@ -62,7 +61,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.MapGet("/", (IHostEnvironment env) => Results.Content(File.ReadAllText(env.ContentRootPath + "/wwwroot/index.html"), "text/html"));
-app.MapGet("/periods", async (ThreeMoronsContext db) => await db.Periods.ToListAsync());
+
 app.MapPost("/refresh", async (ThreeMoronsContext db, RefreshInput inp) =>
 {
     var existingSession =
@@ -96,37 +95,7 @@ app.MapPost("/refresh", async (ThreeMoronsContext db, RefreshInput inp) =>
     db.SaveChanges();
     return Results.Json(newPair, statusCode: 200, contentType: "application/json");
 });
-app.MapGet("testnotif", async (IWebHostEnvironment env, INotificationService notifs, ILoggerFactory fac) =>
-{
-    var logger = fac.CreateLogger("testnotif");
-    Message msg = new Message()
-    {
-        Notification = new Notification
-        {
-            Title = "провэрочка",
-            Body = "тело провэрочки"
-        },
-        Android = new AndroidConfig
-        {
-            Notification = new AndroidNotification
-            {
-                ChannelId = "public_announcements"
-            },
-            Priority = Priority.Normal,
-            RestrictedPackageName = "com.kgpk.collegeapp"
-        },
-        Data = new Dictionary<string, string>()
-        {
-            { "amogus", "amogus" },
-            { "sussy", "wussy" }
-        },
-        //ТОКЕНЫ СИЛЬНО. МОЖНО ПОЛЬЗОВАТЕЛЮ ЛИЧНО ПОСЫЛАТЬ
-        Topic = "announcements"
-    };
-    string result = await notifs.SendAsync(msg);
-    logger.LogInformation($"Создал сообщение и отправил уведомление пользователям {result}");
-    return Results.Ok(result);
-});
+
 app.MapGet("/checkAuth", () => "checking").RequireAuthorization();
 
 app.UseAuthentication();
