@@ -41,6 +41,7 @@ public partial class ThreeMoronsContext : DbContext
     {
         modelBuilder.Entity<Announcement>(e =>
         {
+            e.ToTable("Announcement");
             e.HasKey(en => en.Id);
             e.Property(en => en.Title).HasMaxLength(100);
             e.Property(en => en.Body).HasMaxLength(500);

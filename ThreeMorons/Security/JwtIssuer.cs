@@ -18,7 +18,7 @@ namespace ThreeMorons.SecurityThings
         {
             var issuer = config["Jwt:issuer"]; //это всё чтение из appsettings.json
             var audience = config["Jwt:audience"];
-            var key = Encoding.ASCII.GetBytes(config["Jwt:Key"]);
+            var key = Encoding.ASCII.GetBytes(config["Jwt:Key"]!);
             var jwtTokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
@@ -42,7 +42,7 @@ namespace ThreeMorons.SecurityThings
         {
             var issuer = config["Jwt:issuer"];
             var audience = config["Jwt:audience"];
-            var key = Encoding.ASCII.GetBytes(config["Jwt:Key"]);
+            var key = Encoding.ASCII.GetBytes(config["Jwt:Key"]!);
             var jwtTokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
@@ -69,7 +69,12 @@ namespace ThreeMorons.SecurityThings
 
 
             var idToSearch = decryptedToken.Claims.First(c => c.Type == "jti").Value; //КОГДА Я ПЫТАЛСЯ СДЕЛАТЬ ЭТО В ОДНУ СТРОКУ, ВСЁ ЛОМАЛОСЬ
-            var salt = context.Users.FirstOrDefault(x => x.Id.ToString() == idToSearch).Salt;
+            var thisUser = context.Users.FirstOrDefault(x => x.Id.ToString() == idToSearch);
+            if (thisUser is null)
+            {
+                throw new KeyNotFoundException();
+            }
+            var salt = thisUser.Salt;
 
             var refreshString = PasswordMegaHasher.HashPass(JwtToken, salt);
             return refreshString;

@@ -20,7 +20,7 @@ namespace ThreeMorons.Initialization
                 var nonDeletedStudents = await db.Students.Where(x => x.IsDeleted == false).ToListAsync();
                 await prov.SetAsync<List<Student>>("allStudents", nonDeletedStudents, TimeSpan.FromHours(3));
                 return Results.Json(nonDeletedStudents, _opt, "applicationJson", 200);
-            }).RequireAuthorization(o=> o.RequireClaim("userClass", ["2", "3"]));
+            }).RequireAuthorization(o => o.RequireClaim("userClass", ["2", "3"]));
             StudentGroup.MapGet("", async (string studId, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("student");
@@ -60,6 +60,10 @@ namespace ThreeMorons.Initialization
                 try //12 часов ночи, я знаю, что можно сделать элегантнее. оставлю так до первого рефакторинга
                 {
                     var StudentToUpdate = await db.Students.FindAsync(inp.StudNumber);
+                    if (StudentToUpdate is null)
+                    {
+                        return Results.BadRequest("Студента не найдено");
+                    }
                     StudentToUpdate.Name = inp.Name;
                     StudentToUpdate.Surname = inp.Surname;
                     StudentToUpdate.PhoneNumber = inp.PhoneNumber;
@@ -80,6 +84,10 @@ namespace ThreeMorons.Initialization
                 try
                 {
                     var StudentToDelete = await db.Students.FindAsync(StudNumber);
+                    if (StudentToDelete is null)
+                    {
+                        return Results.BadRequest("Такого студента не существует");
+                    }
                     StudentToDelete.IsDeleted = true;
                     logger.LogInformation($"Студент {StudNumber} удалён успешно");
                     await db.SaveChangesAsync();

@@ -62,6 +62,10 @@ namespace ThreeMorons.Initialization
                 {
                     logger.LogInformation($"Попытка удалить пропуск {id}");
                     var toDelete = await db.SkippedClasses.FindAsync(id);
+                    if (toDelete is null)
+                    {
+                        return Results.BadRequest("Пропуск не найден");
+                    }
                     toDelete.IsDeleted = true;
                     await db.SaveChangesAsync();
                     logger.LogInformation($"Пропуск {id} от {toDelete.DateOfSkip} удалён успешно");

@@ -10,8 +10,16 @@
         public override async Task TokenValidated(TokenValidatedContext context)
         {
             var jwtToken = context.SecurityToken;
+#pragma warning disable CS8604 // Возможно, аргумент-ссылка, допускающий значение NULL.
             var userId = context.Principal.FindFirstValue("jti");
-            if (_db.Users.Find(Guid.Parse(userId)).IsDeleted)
+#pragma warning restore CS8604 // Возможно, аргумент-ссылка, допускающий значение NULL.
+            if (userId is null)
+            {
+                context.Fail("id was null");
+                return;
+            }
+            var thisUser = await _db.Users.FirstAsync(x => x.Id == Guid.Parse(userId));
+            if (thisUser.IsDeleted)
             {
                 context.Fail("Пользователя не активен");
                 return;

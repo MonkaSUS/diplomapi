@@ -23,7 +23,7 @@ namespace ThreeMorons.Initialization
         public static WebApplication Initialize(WebApplicationBuilder builder)
         {
             builder.Logging.ClearProviders();
-            LoggingLevelSwitch logsw = new();
+            //LoggingLevelSwitch logsw = new();
             var logger = new LoggerConfiguration()
                 .WriteTo.File("apilogs.txt", rollingInterval: RollingInterval.Day, flushToDiskInterval: TimeSpan.FromSeconds(10), shared: true, encoding: Encoding.UTF8).WriteTo.Console().CreateLogger();
             Log.Logger = logger;
@@ -55,7 +55,7 @@ namespace ThreeMorons.Initialization
                 {
                     ValidIssuer = builder.Configuration["Jwt:Issuer"],
                     ValidAudience = builder.Configuration["Jwt:Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])), //ключ шифрования
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)), //ключ шифрования
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidateLifetime = true,

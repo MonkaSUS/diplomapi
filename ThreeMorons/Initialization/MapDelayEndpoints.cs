@@ -10,7 +10,7 @@
                 logFac.CreateLogger("delay").LogInformation("All delays retrieved");
                 return await db.StudentDelays.Where(x => x.IsDeleted == false).ToListAsync();
             });
-            StudentDelayGroup.MapGet("/", async (ThreeMoronsContext db,Guid id) => db.StudentDelays.Where(x=>x.IsDeleted==false).FirstOrDefaultAsync(x=>x.Id==id));
+            StudentDelayGroup.MapGet("/", async (ThreeMoronsContext db, Guid id) => await db.StudentDelays.Where(x => x.IsDeleted == false).FirstOrDefaultAsync(x => x.Id == id));
             StudentDelayGroup.MapPost("/", async (ThreeMoronsContext db, StudentDelayInput inp, IValidator<StudentDelayInput> val) =>
             {
                 var ValidationResult = val.Validate(inp);
@@ -41,6 +41,10 @@
                 try
                 {
                     var delay = await db.StudentDelays.FindAsync(id);
+                    if (delay is null)
+                    {
+                        return Results.BadRequest("Опоздание не найдено");
+                    }
                     delay.IsDeleted = true;
                     await db.SaveChangesAsync();
                     return Results.NoContent();
@@ -50,8 +54,8 @@
                     return Results.Problem(exc.Message);
                 }
             });
-            StudentDelayGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery(Name = "student")]string studNum ) =>await db.StudentDelays.Where(x => x.StudNumber == studNum && x.IsDeleted==false).ToListAsync());
+            StudentDelayGroup.MapGet("/", async (ThreeMoronsContext db, [FromQuery(Name = "student")] string studNum) => await db.StudentDelays.Where(x => x.StudNumber == studNum && x.IsDeleted == false).ToListAsync());
 
         }
-    } 
+    }
 }

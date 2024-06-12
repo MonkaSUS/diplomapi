@@ -9,7 +9,7 @@ namespace ThreeMorons.Services
         private readonly string _configpath;
         public async Task<string> SendAsync(Message message)
         {
-            FirebaseApp firebaseApp = null;
+            FirebaseApp firebaseApp;
             try
             {
 
@@ -17,7 +17,7 @@ namespace ThreeMorons.Services
                 {
                     Credential = GoogleCredential.FromFile(_configpath),
                     ProjectId = "kgpknotif"
-                }, "Kgpknotif"); 
+                }, "Kgpknotif");
             }
             catch (Exception)
             {
@@ -27,7 +27,7 @@ namespace ThreeMorons.Services
             string result = await fcm.SendAsync(message);
             return result;
         }
-        public FcmNotificationService(IWebHostEnvironment env) 
+        public FcmNotificationService(IWebHostEnvironment env)
         {
             _configpath = env.ContentRootPath + "\\GoogleAuth.json";
         }

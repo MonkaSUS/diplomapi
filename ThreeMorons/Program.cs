@@ -12,16 +12,8 @@ builder.Services.AddSwaggerGen(c =>
 c.ResolveConflictingActions(a => a.First()));
 
 builder.Services.AddHttpClient();
-builder.Services.AddOutputCache(o =>
-{
-    o.DefaultExpirationTimeSpan = TimeSpan.FromDays(1);
-    o.SizeLimit = 3076;
-    o.MaximumBodySize = 300;
-    o.AddBasePolicy(p => p.Expire(TimeSpan.FromHours(12)));
-    o.AddPolicy("Quick", p => p.Expire(TimeSpan.FromMinutes(5)));
-    o.AddPolicy("Medium", p => p.Expire(TimeSpan.FromHours(6)));
 
-});
+
 builder.Services.AddEasyCaching(o =>
 {
     o.UseInMemory(config =>
@@ -53,7 +45,7 @@ Initializer.MapDelayEndpoints(app);
 Initializer.MapUserEndpoints(app, builder);
 Initializer.MapGroupEndpoints(app);
 Initializer.MapSpecialEndpoints(app);
-app.UseResponseCaching();
+
 
 if (!app.Environment.IsDevelopment())
 {
@@ -77,9 +69,13 @@ app.MapPost("/refresh", async (ThreeMoronsContext db, RefreshInput inp) =>
         return Results.Text("Ваша сессия устарела. Авторизуйтесь заново", statusCode: 403);
     }
     var handler = new JwtSecurityTokenHandler();
-    var jwt = handler.ReadToken(inp.JwtToken) as JwtSecurityToken;
+    JwtSecurityToken? jwt = handler.ReadToken(inp.JwtToken) as JwtSecurityToken;
+    if (jwt is null)
+    {
+        return Results.Problem("С токеном какая-то жижа", statusCode: 401);
+    }
     var jti = jwt.Id;
-    var userClass = jwt.Claims.FirstOrDefault(x => x.Type == "userClass").Value;
+    string userClass = jwt.Claims.First(x => x.Type == "userClass").Value;
     var newPair = JwtIssuer.IssueJwtForUser(builder.Configuration, jti, userClass);
     var newSession = new Session()
     {

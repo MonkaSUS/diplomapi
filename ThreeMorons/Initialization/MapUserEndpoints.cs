@@ -63,7 +63,7 @@ namespace ThreeMorons.Initialization
                     logger.LogError($"Ошибка валидации {inp.login}");
                     return Results.ValidationProblem(valres.ToDictionary());
                 }
-                User UserToAuthorizeInDb = await db.Users.FirstOrDefaultAsync(user => user.Login == inp.login);
+                User? UserToAuthorizeInDb = await db.Users.FirstOrDefaultAsync(user => user.Login == inp.login);
 
                 if (UserToAuthorizeInDb is null)
                 {
@@ -77,7 +77,9 @@ namespace ThreeMorons.Initialization
                     if (session.SessionEnd is not null && session.SessionEnd <= DateTime.Now && session.IsValid)
                     {
                         var jwt = handler.ReadToken(session.JwtToken) as JwtSecurityToken;
+#pragma warning disable CS8602 // Разыменование вероятной пустой ссылки.
                         var jti = jwt.Id;
+#pragma warning restore CS8602 // Разыменование вероятной пустой ссылки.
                         if (jti == UserToAuthorizeInDb.Id.ToString())
                         {
                             session.SessionEnd = DateTime.Now;
@@ -141,6 +143,10 @@ namespace ThreeMorons.Initialization
                 try
                 {
                     var deletme = await db.Users.FindAsync(id);
+                    if (deletme is null)
+                    {
+                        return Results.BadRequest("Пользователь не найден");
+                    }
                     deletme.IsDeleted = true;
                     return Results.NoContent();
                 }
@@ -195,7 +201,6 @@ namespace ThreeMorons.Initialization
                 catch (Exception)
                 {
                     return Results.Problem("Произошла проблема при изменении пароля. Попробуйте ещё раз", statusCode: 500);
-                    throw;
                 }
 
             });

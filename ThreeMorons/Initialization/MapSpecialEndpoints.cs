@@ -10,7 +10,7 @@ namespace ThreeMorons.Initialization
 {
     public partial class Initializer
     {
-        private static string ParserHostAdress { get; set; } = "http://25.64.51.236:5256";
+        private static string ParserHostAdress { get; set; } = "http://25.64.51.236:7175";
 
         public static void MapSpecialEndpoints(WebApplication app)
         {
@@ -127,6 +127,10 @@ namespace ThreeMorons.Initialization
                 try
                 {
                     var fullUser = await db.DbServiceUsers.FirstOrDefaultAsync(x => x.user_login == user.user_login && x.user_password == user.user_password && x.db_type == user.db_type);
+                    if (fullUser is null)
+                    {
+                        return Results.BadRequest("Пользователь бд не был найден");
+                    }
                     fullUser.db_name = user.db_name;
                     var client = clientFac.CreateClient();
                     ConnectionStringDTO csd = new()
@@ -159,17 +163,25 @@ namespace ThreeMorons.Initialization
                 {
                     return Results.Problem(detail: await res.Content.ReadAsStringAsync(), statusCode: (int)res.StatusCode);
                 }
-                return Results.Content(await res.Content.ReadAsStringAsync(), contentType: "application/json", Encoding.UTF8, statusCode: 200);
+                var deser = JsonSerializer.Deserialize<ScheduleOfWeek>(await res.Content.ReadAsStringAsync());
+                return Results.Json(deser, statusCode: 200, options: _opt, contentType: "application/json");
             });
-            app.MapGet("/groupsParser", async (IHttpClientFactory fac) =>
+            app.MapGet("/groupsParser", async (IHttpClientFactory fac, IEasyCachingProvider prov) =>
             {
+                if (await prov.ExistsAsync("allGroups"))
+                {
+                    var cachedRes = await prov.GetAsync<string>("allGroups");
+                    return Results.Content(cachedRes.Value, contentType: "application/json", statusCode: 200, contentEncoding: Encoding.UTF8);
+                }
                 var client = fac.CreateClient();
                 var res = await client.GetAsync($"{ParserHostAdress}/groups");
+                var stringRes = await res.Content.ReadAsStringAsync();
+                await prov.SetAsync<string>("allGroups", stringRes, TimeSpan.FromDays(7));
                 if (!res.IsSuccessStatusCode)
                 {
                     return Results.Problem(await res.Content.ReadAsStringAsync(), statusCode: (int)res.StatusCode);
                 }
-                return Results.Content(await res.Content.ReadAsStringAsync(), contentType: "application/json", Encoding.UTF8, statusCode: 200);
+                return Results.Content(stringRes, contentType: "application/json", statusCode: 200, contentEncoding: Encoding.UTF8);
             });
             app.MapGet("testnotif", async (IWebHostEnvironment env, INotificationService notifs, ILoggerFactory fac) =>
             {
@@ -205,6 +217,8 @@ namespace ThreeMorons.Initialization
             app.MapGet("/periods", async (ThreeMoronsContext db) => await db.Periods.ToListAsync());
             app.MapPost("changeParserHostAdress", (string newAdress) => Initializer.ParserHostAdress = newAdress);
             app.MapPost("changeDbServiceHostAdress", (string newAdress) => Initializer.DbServiceHostAdress = newAdress);
+
+
         }
     }
 }
