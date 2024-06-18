@@ -5,9 +5,8 @@
         public static void MapDelayEndpoints(WebApplication app)
         {
             var StudentDelayGroup = app.MapGroup("/delay").RequireAuthorization();
-            StudentDelayGroup.MapGet("/all", async (ThreeMoronsContext db, ILoggerFactory logFac) =>
+            StudentDelayGroup.MapGet("/all", async (ThreeMoronsContext db) =>
             {
-                logFac.CreateLogger("delay").LogInformation("All delays retrieved");
                 return await db.StudentDelays.Where(x => x.IsDeleted == false).ToListAsync();
             });
             StudentDelayGroup.MapGet("/", async (ThreeMoronsContext db, Guid id) => await db.StudentDelays.Where(x => x.IsDeleted == false).FirstOrDefaultAsync(x => x.Id == id));

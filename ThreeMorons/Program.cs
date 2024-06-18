@@ -1,11 +1,12 @@
 using ThreeMorons.Services;
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(o =>
 {
     o.SerializerOptions.IncludeFields = true;
 });
 
-//TODO ДОБАВИТЬ EasyCache
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -72,7 +73,7 @@ app.MapPost("/refresh", async (ThreeMoronsContext db, RefreshInput inp) =>
     JwtSecurityToken? jwt = handler.ReadToken(inp.JwtToken) as JwtSecurityToken;
     if (jwt is null)
     {
-        return Results.Problem("С токеном какая-то жижа", statusCode: 401);
+        return Results.Problem("С токеном какая-то жижа", statusCode: 403);
     }
     var jti = jwt.Id;
     string userClass = jwt.Claims.First(x => x.Type == "userClass").Value;

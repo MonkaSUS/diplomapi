@@ -11,12 +11,14 @@
                 logger.LogInformation("All groups retrieved");
                 return await db.Groups.ToListAsync();
             }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
+
             groupsGroup.MapGet("/", async ([FromQuery(Name = "groupName")] string Name, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("group");
                 logger.LogInformation($"Запрос информации по группе {Name}");
                 return await db.Groups.FirstOrDefaultAsync(x => x.GroupName == Name);
             }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
+
             groupsGroup.MapPost("/", async (ThreeMoronsContext db, GroupInput created, IValidator<GroupInput> validator, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("group");

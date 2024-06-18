@@ -53,10 +53,10 @@ namespace ThreeMorons.Initialization
                     return TypedResults.BadRequest(exc.Message);
                 }
             });
-            UserGroup.MapPost("/authorize", [AllowAnonymous] async (IValidator<AuthorizationInput> Validator, AuthorizationInput inp, ThreeMoronsContext db, ILoggerFactory fac) =>
+            UserGroup.MapPost("/authorize", [AllowAnonymous] async (HttpContext cont, IValidator<AuthorizationInput> Validator, AuthorizationInput inp, ThreeMoronsContext db, ILoggerFactory fac) =>
             {
                 var logger = fac.CreateLogger("userauth");
-                logger.LogInformation($"Попытка авторизации{inp.login}");
+                logger.LogInformation($"Попытка авторизации {inp.login}");
                 var valres = await Validator.ValidateAsync(inp);
                 if (!valres.IsValid)
                 {
