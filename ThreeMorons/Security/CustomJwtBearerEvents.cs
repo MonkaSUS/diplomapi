@@ -18,14 +18,14 @@
                 context.Fail("id was null");
                 return;
             }
-            var thisUser = await _db.Users.FirstAsync(x => x.Id == Guid.Parse(userId));
+            var thisUser = _db.Users.AsNoTracking().First(x => x.Id == Guid.Parse(userId));
             if (thisUser.IsDeleted)
             {
                 context.Fail("Пользователя не активен");
                 return;
             }
             var thisTokenString = jwtToken.UnsafeToString();
-            var session = await _db.Sessions.FirstOrDefaultAsync(s => s.JwtToken == thisTokenString);
+            var session = _db.Sessions.AsNoTracking().FirstOrDefault(s => s.JwtToken == thisTokenString);
             if (session == null)
             {
                 context.Fail("Сессии не существует");

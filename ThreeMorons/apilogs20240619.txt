@@ -1,0 +1,946 @@
+﻿2024-06-19 22:37:48.432 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-19 22:37:49.641 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-06-19 22:37:49.651 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-19 22:37:49.796 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-19 22:37:49.798 +03:00 [INF] Hosting environment: Development
+2024-06-19 22:37:49.799 +03:00 [INF] Content root path: C:\Users\Lev\source\repos\ThreeMorons\ThreeMorons
+2024-06-19 22:37:51.584 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-06-19 22:37:52.650 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-19 22:37:52.654 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-06-19 22:37:52.719 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-19 22:37:52.723 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 null text/html 1149.6351ms
+2024-06-19 22:37:53.894 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-19 22:37:53.894 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/_vs/browserLink - null null
+2024-06-19 22:37:53.902 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 12.8013ms
+2024-06-19 22:37:53.962 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.3386ms
+2024-06-19 22:44:47.867 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 22:44:51.312 +03:00 [INF] Executed DbCommand (208ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:44:51.581 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:44:51.606 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:44:51.608 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:44:51.612 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 3744.1282ms
+2024-06-19 22:45:09.841 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%9A - null null
+2024-06-19 22:45:10.043 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:45:10.199 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:45:10.204 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 22:45:10.232 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%9A
+2024-06-19 22:45:10.237 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%9A
+2024-06-19 22:45:16.123 +03:00 [INF] Received HTTP response headers after 5880.1634ms - 500
+2024-06-19 22:45:16.126 +03:00 [INF] End processing HTTP request after 5899.1954ms - 500
+2024-06-19 22:45:16.136 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 22:45:16.148 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 22:45:16.159 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 22:45:16.162 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%9A - 500 null application/problem+json 6320.4075ms
+2024-06-19 22:47:51.964 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 22:47:52.120 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:47:52.276 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:47:52.287 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:47:52.288 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:47:52.290 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 326.3212ms
+2024-06-19 22:48:19.459 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%9A - null null
+2024-06-19 22:48:19.615 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:48:19.772 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:48:19.775 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 22:48:19.778 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%9A
+2024-06-19 22:48:19.779 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%9A
+2024-06-19 22:48:21.850 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 22:48:21.851 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 22:48:21.853 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 22:48:21.855 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%9A - 500 null application/problem+json 2396.3785ms
+2024-06-19 22:51:20.129 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 22:51:20.285 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:51:20.440 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:51:20.445 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:51:20.446 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:51:20.448 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 318.2043ms
+2024-06-19 22:51:39.988 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%9A - null null
+2024-06-19 22:51:40.142 +03:00 [INF] Executed DbCommand (150ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:51:40.300 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:51:40.303 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 22:51:40.304 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%9A
+2024-06-19 22:51:40.305 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%9A
+2024-06-19 22:51:45.891 +03:00 [INF] Received HTTP response headers after 5583.9164ms - 500
+2024-06-19 22:51:45.892 +03:00 [INF] End processing HTTP request after 5588.1686ms - 500
+2024-06-19 22:51:45.895 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 22:51:45.896 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 22:51:45.898 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 22:51:45.900 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%9A - 500 null application/problem+json 5911.9641ms
+2024-06-19 22:52:02.036 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 22:52:02.191 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:52:02.347 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:52:02.351 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:52:02.353 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:52:02.354 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 319.1706ms
+2024-06-19 22:52:39.613 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule/?group=%D0%98%D0%A1-12 - application/json 72
+2024-06-19 22:52:39.619 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 19:52:39'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-19 22:52:39.627 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 19:52:39'.
+2024-06-19 22:52:39.629 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 22:52:39.630 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-12
+2024-06-19 22:52:39.632 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-12
+2024-06-19 22:52:56.156 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%9A - null null
+2024-06-19 22:52:56.312 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:52:56.469 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:52:56.477 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 22:52:56.480 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%9A
+2024-06-19 22:52:56.482 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%9A
+2024-06-19 22:52:59.839 +03:00 [INF] Received HTTP response headers after 3355.3962ms - 500
+2024-06-19 22:52:59.841 +03:00 [INF] End processing HTTP request after 3361.1683ms - 500
+2024-06-19 22:52:59.843 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 22:52:59.844 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 22:52:59.845 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 22:52:59.848 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%9A - 500 null application/problem+json 3691.533ms
+2024-06-19 22:53:13.947 +03:00 [INF] Received HTTP response headers after 34314.1701ms - 200
+2024-06-19 22:53:13.949 +03:00 [INF] End processing HTTP request after 34318.0548ms - 200
+2024-06-19 22:53:13.960 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 22:53:13.962 +03:00 [INF] Writing value of type 'ScheduleOfWeek' as Json.
+2024-06-19 22:53:13.968 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 22:53:13.969 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule/?group=%D0%98%D0%A1-12 - 200 null application/json 34356.1389ms
+2024-06-19 22:53:43.632 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 22:53:43.789 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:53:43.946 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:53:43.950 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:53:43.951 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:53:43.953 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 321.0574ms
+2024-06-19 22:53:45.107 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule/?group=%D0%98%D0%A1-13%D0%BA - application/json 72
+2024-06-19 22:53:45.112 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 19:53:45'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-19 22:53:45.119 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 19:53:45'.
+2024-06-19 22:53:45.124 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 22:53:45.125 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%BA
+2024-06-19 22:53:45.127 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%BA
+2024-06-19 22:54:03.649 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-12 - null null
+2024-06-19 22:54:03.804 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:54:03.961 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:54:03.965 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 22:54:03.965 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-12
+2024-06-19 22:54:03.967 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-12
+2024-06-19 22:54:04.004 +03:00 [INF] Received HTTP response headers after 36.0631ms - 200
+2024-06-19 22:54:04.006 +03:00 [INF] End processing HTTP request after 40.5197ms - 200
+2024-06-19 22:54:04.008 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 22:54:04.009 +03:00 [INF] Writing value of type 'ScheduleOfWeek' as Json.
+2024-06-19 22:54:04.011 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 22:54:04.013 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-12 - 200 null application/json 363.3241ms
+2024-06-19 22:54:17.977 +03:00 [INF] Received HTTP response headers after 32848.5245ms - 200
+2024-06-19 22:54:17.978 +03:00 [INF] End processing HTTP request after 32853.2246ms - 200
+2024-06-19 22:54:17.980 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 22:54:17.981 +03:00 [INF] Writing value of type 'ScheduleOfWeek' as Json.
+2024-06-19 22:54:17.983 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 22:54:17.984 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule/?group=%D0%98%D0%A1-13%D0%BA - 200 null application/json 32876.627ms
+2024-06-19 22:54:45.765 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 22:54:45.919 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:54:46.074 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:54:46.078 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:54:46.079 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:54:46.081 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 316.575ms
+2024-06-19 22:55:16.981 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 22:55:17.136 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:55:17.291 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:55:17.295 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:55:17.297 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:55:17.298 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 317.1381ms
+2024-06-19 22:55:35.192 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%BA - null null
+2024-06-19 22:55:35.347 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:55:35.505 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:55:35.509 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 22:55:35.510 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%BA
+2024-06-19 22:55:35.512 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%BA
+2024-06-19 22:55:35.521 +03:00 [INF] Received HTTP response headers after 7.0556ms - 200
+2024-06-19 22:55:35.523 +03:00 [INF] End processing HTTP request after 12.4051ms - 200
+2024-06-19 22:55:35.525 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 22:55:35.529 +03:00 [INF] Writing value of type 'ScheduleOfWeek' as Json.
+2024-06-19 22:55:35.530 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 22:55:35.532 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%BA - 200 null application/json 340.4842ms
+2024-06-19 22:56:11.102 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 22:56:11.259 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:56:11.416 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:56:11.419 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:56:11.420 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 22:56:11.422 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 319.3513ms
+2024-06-19 22:56:20.417 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%BA - null null
+2024-06-19 22:56:20.573 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 22:56:20.729 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 22:56:20.732 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 22:56:20.733 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%BA
+2024-06-19 22:56:20.735 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%BA
+2024-06-19 22:56:54.090 +03:00 [INF] Received HTTP response headers after 33353.2791ms - 200
+2024-06-19 22:56:54.099 +03:00 [INF] End processing HTTP request after 33365.6856ms - 200
+2024-06-19 22:56:54.103 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 22:56:54.105 +03:00 [INF] Writing value of type 'ScheduleOfWeek' as Json.
+2024-06-19 22:56:54.107 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 22:56:54.113 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%BA - 200 null application/json 33695.6998ms
+2024-06-19 23:01:23.401 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:01:24.337 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:01:24.494 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:01:24.499 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:01:24.500 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:01:24.502 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 1101.1816ms
+2024-06-19 23:01:25.628 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - null null
+2024-06-19 23:01:25.785 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:01:25.942 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:01:25.946 +03:00 [INF] Executing endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:01:25.956 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:01:25.957 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:01:29.796 +03:00 [INF] Received HTTP response headers after 3837.4663ms - 200
+2024-06-19 23:01:29.798 +03:00 [INF] End processing HTTP request after 3842.3123ms - 200
+2024-06-19 23:01:29.805 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 23:01:29.807 +03:00 [INF] Write content with HTTP Response ContentType of application/json; charset=utf-8
+2024-06-19 23:01:29.808 +03:00 [INF] Executed endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:01:29.809 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - 200 2237 application/json; charset=utf-8 4181.2935ms
+2024-06-19 23:01:33.130 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule?group= - null null
+2024-06-19 23:01:33.286 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:01:33.447 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:01:33.451 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 23:01:33.452 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=
+2024-06-19 23:01:33.454 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=
+2024-06-19 23:01:33.507 +03:00 [INF] Received HTTP response headers after 52.3418ms - 500
+2024-06-19 23:01:33.508 +03:00 [INF] End processing HTTP request after 56.1153ms - 500
+2024-06-19 23:01:33.510 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 23:01:33.511 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 23:01:33.512 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 23:01:33.514 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule?group= - 500 null application/problem+json 384.101ms
+2024-06-19 23:02:32.163 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:02:39.201 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - null null
+2024-06-19 23:04:28.173 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-19 23:04:29.138 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-06-19 23:04:29.163 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-19 23:04:29.598 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-19 23:04:29.633 +03:00 [INF] Hosting environment: Development
+2024-06-19 23:04:29.643 +03:00 [INF] Content root path: C:\Users\Lev\source\repos\ThreeMorons\ThreeMorons
+2024-06-19 23:04:30.358 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-06-19 23:04:33.905 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-19 23:04:33.921 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-06-19 23:04:33.969 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-19 23:04:33.976 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 null text/html 3635.2715ms
+2024-06-19 23:04:34.117 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/_vs/browserLink - null null
+2024-06-19 23:04:34.145 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-19 23:04:34.237 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 92.0817ms
+2024-06-19 23:04:34.335 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/_vs/browserLink - 200 null text/javascript; charset=UTF-8 221.167ms
+2024-06-19 23:04:58.920 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:05:01.689 +03:00 [INF] Executed DbCommand (214ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:05:01.958 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:05:01.985 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:05:01.987 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:05:01.992 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 3071.9388ms
+2024-06-19 23:05:15.178 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - null null
+2024-06-19 23:05:15.342 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:05:15.502 +03:00 [INF] Executed DbCommand (158ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:05:15.508 +03:00 [INF] Executing endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:05:15.533 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:05:15.538 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:05:19.320 +03:00 [INF] Received HTTP response headers after 3776.34ms - 200
+2024-06-19 23:05:19.323 +03:00 [INF] End processing HTTP request after 3796.718ms - 200
+2024-06-19 23:05:19.334 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 23:05:19.335 +03:00 [INF] Write content with HTTP Response ContentType of application/json; charset=utf-8
+2024-06-19 23:05:19.337 +03:00 [INF] Executed endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:05:19.339 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - 200 2237 application/json; charset=utf-8 4160.4174ms
+2024-06-19 23:05:20.092 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%90%D0%9E-10 - null null
+2024-06-19 23:05:20.249 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:05:20.408 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:05:20.412 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 23:05:20.422 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%90%D0%9E-10
+2024-06-19 23:05:20.423 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%90%D0%9E-10
+2024-06-19 23:05:44.686 +03:00 [INF] Received HTTP response headers after 24261.1892ms - 500
+2024-06-19 23:05:44.688 +03:00 [INF] End processing HTTP request after 24265.6421ms - 500
+2024-06-19 23:05:44.694 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 23:05:44.702 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 23:05:44.708 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 23:05:44.710 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%90%D0%9E-10 - 500 null application/problem+json 24617.334ms
+2024-06-19 23:07:59.404 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule/?group=%D0%90%D0%9E-10 - application/json 72
+2024-06-19 23:07:59.411 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 20:07:59'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-19 23:07:59.450 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 20:07:59'.
+2024-06-19 23:07:59.452 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 23:07:59.457 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%90%D0%9E-10
+2024-06-19 23:07:59.460 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%90%D0%9E-10
+2024-06-19 23:08:23.487 +03:00 [INF] Received HTTP response headers after 24025.818ms - 500
+2024-06-19 23:08:23.489 +03:00 [INF] End processing HTTP request after 24032.514ms - 500
+2024-06-19 23:08:23.492 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 23:08:23.493 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 23:08:23.495 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 23:08:23.497 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule/?group=%D0%90%D0%9E-10 - 500 null application/problem+json 24093.1569ms
+2024-06-19 23:08:52.869 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule/?group=%D0%90%D0%9E-10 - application/json 72
+2024-06-19 23:08:52.873 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 20:08:52'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-19 23:08:52.885 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 20:08:52'.
+2024-06-19 23:08:52.889 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 23:08:52.891 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%90%D0%9E-10
+2024-06-19 23:08:52.900 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%90%D0%9E-10
+2024-06-19 23:10:32.946 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 23:10:32.948 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 23:10:32.949 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 23:10:32.951 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule/?group=%D0%90%D0%9E-10 - 500 null application/problem+json 100081.8986ms
+2024-06-19 23:13:15.224 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule/?group=%D0%90%D0%9E-10 - application/json 72
+2024-06-19 23:13:15.245 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 20:13:15'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-19 23:13:15.266 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 20:13:15'.
+2024-06-19 23:13:15.272 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 23:13:15.275 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%90%D0%9E-10
+2024-06-19 23:13:15.278 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%90%D0%9E-10
+2024-06-19 23:14:55.298 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 23:14:55.300 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 23:14:55.302 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 23:14:55.303 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule/?group=%D0%90%D0%9E-10 - 500 null application/problem+json 100079.4069ms
+2024-06-19 23:15:25.923 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:15:26.866 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:15:27.030 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:15:27.036 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:15:27.037 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:15:27.038 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 1115.3587ms
+2024-06-19 23:21:30.076 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule/?group=%D0%90%D0%9E-10 - application/json 72
+2024-06-19 23:21:30.084 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 20:21:30'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-19 23:21:30.091 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 20:21:30'.
+2024-06-19 23:21:30.093 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 23:21:30.095 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%90%D0%9E-10
+2024-06-19 23:21:30.096 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%90%D0%9E-10
+2024-06-19 23:22:26.987 +03:00 [INF] Received HTTP response headers after 56886.2206ms - 500
+2024-06-19 23:22:26.993 +03:00 [INF] End processing HTTP request after 56898.2616ms - 500
+2024-06-19 23:22:26.996 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 23:22:26.997 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 23:22:26.999 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 23:22:27.000 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule/?group=%D0%90%D0%9E-10 - 500 null application/problem+json 56924.2137ms
+2024-06-19 23:23:41.082 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:23:41.609 +03:00 [INF] Request starting HTTP/1.1 POST http://25.64.51.236:5132/user/authorize - application/json 72
+2024-06-19 23:23:41.616 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 20:23:41'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-06-19 23:23:41.628 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04.06.2024 12:34:46', Current time (UTC): '19.06.2024 20:23:41'.
+2024-06-19 23:23:41.631 +03:00 [INF] Executing endpoint 'HTTP: POST /user/authorize'
+2024-06-19 23:23:41.720 +03:00 [INF] Попытка авторизации DiplomScreenshot
+2024-06-19 23:23:42.011 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:23:42.169 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:23:42.175 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:23:42.176 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:23:42.179 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 1096.8494ms
+2024-06-19 23:23:42.627 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__inp_login_0='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[Login] = @__inp_login_0
+2024-06-19 23:23:42.633 +03:00 [INF] Создается JWT токен
+2024-06-19 23:23:42.801 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+2024-06-19 23:23:44.048 +03:00 [INF] Executed DbCommand (159ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime2), @p5='?' (DbType = Guid), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime2), @p8='?' (DbType = Guid), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime2), @p9='?' (DbType = Guid), @p10='?' (DbType = Boolean), @p11='?' (Size = 500), @p12='?' (Size = 300), @p13='?' (DbType = DateTime2), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Session] SET [IsValid] = @p0, [SessionEnd] = @p1
+OUTPUT 1
+WHERE [id] = @p2;
+UPDATE [Session] SET [IsValid] = @p3, [SessionEnd] = @p4
+OUTPUT 1
+WHERE [id] = @p5;
+UPDATE [Session] SET [IsValid] = @p6, [SessionEnd] = @p7
+OUTPUT 1
+WHERE [id] = @p8;
+INSERT INTO [Session] ([id], [IsValid], [JwtToken], [RefreshToken], [SessionEnd], [SessionStart])
+VALUES (@p9, @p10, @p11, @p12, @p13, @p14);
+2024-06-19 23:23:44.223 +03:00 [INF] Успешная авторизацияDiplomScreenshot
+2024-06-19 23:23:44.264 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 23:23:44.271 +03:00 [INF] Writing value of type 'ValueTuple`3' as Json.
+2024-06-19 23:23:44.281 +03:00 [INF] Executed endpoint 'HTTP: POST /user/authorize'
+2024-06-19 23:23:44.295 +03:00 [INF] Request finished HTTP/1.1 POST http://25.64.51.236:5132/user/authorize - 200 null application/json 2686.1716ms
+2024-06-19 23:24:25.935 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:24:26.092 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:24:26.250 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:24:26.254 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:24:26.255 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:24:26.256 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 320.8962ms
+2024-06-19 23:24:49.134 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/announcement - null null
+2024-06-19 23:24:49.295 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:24:49.452 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:24:49.458 +03:00 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=userClass and Claim.Value is one of the following values: (2|3)
+2024-06-19 23:24:49.461 +03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2024-06-19 23:24:49.463 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/announcement - 403 0 null 329.3165ms
+2024-06-19 23:26:21.559 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-19 23:27:04.327 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-19 23:27:05.200 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-06-19 23:27:05.214 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-19 23:27:05.310 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-19 23:27:05.322 +03:00 [INF] Hosting environment: Development
+2024-06-19 23:27:05.324 +03:00 [INF] Content root path: C:\Users\Lev\source\repos\ThreeMorons\ThreeMorons
+2024-06-19 23:27:05.831 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-06-19 23:27:06.582 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-19 23:27:06.585 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-06-19 23:27:06.606 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-19 23:27:06.612 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 null text/html 800.9252ms
+2024-06-19 23:27:06.684 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/_vs/browserLink - null null
+2024-06-19 23:27:06.684 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-19 23:27:06.707 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 23.1801ms
+2024-06-19 23:27:06.860 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/_vs/browserLink - 200 null text/javascript; charset=UTF-8 176.8206ms
+2024-06-19 23:27:15.323 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:27:17.790 +03:00 [INF] Executed DbCommand (204ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:27:18.057 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:27:18.084 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:27:18.086 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:27:18.089 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 2765.5988ms
+2024-06-19 23:27:23.750 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/announcement - null null
+2024-06-19 23:27:23.918 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:27:24.078 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:27:24.083 +03:00 [INF] Executing endpoint 'HTTP: GET /announcement'
+2024-06-19 23:27:24.274 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Author], [a].[Body], [a].[CreatedOn], [a].[ShortDescription], [a].[TargetAudience], [a].[Title]
+FROM [Announcement] AS [a]
+2024-06-19 23:27:24.299 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 23:27:24.302 +03:00 [INF] Writing value of type 'List`1' as Json.
+2024-06-19 23:27:24.309 +03:00 [INF] Executed endpoint 'HTTP: GET /announcement'
+2024-06-19 23:27:24.317 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/announcement - 200 null application/json 567.3386ms
+2024-06-19 23:29:28.070 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:29:28.227 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:29:28.384 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:29:28.391 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:29:28.392 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:29:28.394 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 323.957ms
+2024-06-19 23:29:40.738 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/announcement - null null
+2024-06-19 23:29:40.895 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:29:41.055 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:29:41.060 +03:00 [INF] Executing endpoint 'HTTP: GET /announcement'
+2024-06-19 23:29:41.078 +03:00 [INF] Writing value of type 'CacheValue`1' as Json.
+2024-06-19 23:29:41.080 +03:00 [INF] Executed endpoint 'HTTP: GET /announcement'
+2024-06-19 23:29:41.081 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/announcement - 200 null application/json; charset=utf-8 342.6085ms
+2024-06-19 23:42:33.036 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-19 23:42:33.719 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-06-19 23:42:33.733 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-19 23:42:33.821 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-19 23:42:33.822 +03:00 [INF] Hosting environment: Development
+2024-06-19 23:42:33.823 +03:00 [INF] Content root path: C:\Users\Lev\source\repos\ThreeMorons\ThreeMorons
+2024-06-19 23:42:34.303 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-06-19 23:42:34.916 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-19 23:42:34.922 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-06-19 23:42:34.951 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-19 23:42:34.957 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 null text/html 668.1942ms
+2024-06-19 23:42:34.996 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/_vs/browserLink - null null
+2024-06-19 23:42:34.996 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-19 23:42:35.036 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 40.2816ms
+2024-06-19 23:42:35.155 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/_vs/browserLink - 200 null text/javascript; charset=UTF-8 159.9662ms
+2024-06-19 23:42:59.478 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:43:02.299 +03:00 [INF] Executed DbCommand (213ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:43:02.581 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:43:02.604 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:43:02.605 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:43:02.608 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 3129.3002ms
+2024-06-19 23:43:12.737 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - null null
+2024-06-19 23:43:12.901 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:43:13.057 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:43:13.062 +03:00 [INF] Executing endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:43:13.119 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:43:13.123 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:43:15.223 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 23:43:15.232 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 23:43:15.236 +03:00 [INF] Executed endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:43:15.238 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - 500 null application/problem+json 2501.3571ms
+2024-06-19 23:43:33.499 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:43:33.655 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:43:33.811 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:43:33.817 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:43:33.818 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:43:33.820 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 320.2435ms
+2024-06-19 23:43:44.612 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/announcement - null null
+2024-06-19 23:43:44.768 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:43:44.926 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:43:44.936 +03:00 [INF] Executing endpoint 'HTTP: GET /announcement'
+2024-06-19 23:43:45.133 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Author], [a].[Body], [a].[CreatedOn], [a].[ShortDescription], [a].[TargetAudience], [a].[Title]
+FROM [Announcement] AS [a]
+2024-06-19 23:43:45.155 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 23:43:45.157 +03:00 [INF] Writing value of type 'List`1' as Json.
+2024-06-19 23:43:45.162 +03:00 [INF] Executed endpoint 'HTTP: GET /announcement'
+2024-06-19 23:43:45.170 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/announcement - 200 null application/json 557.5271ms
+2024-06-19 23:44:13.478 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:44:13.634 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:44:13.791 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:44:13.795 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:44:13.796 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:44:13.798 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 319.645ms
+2024-06-19 23:44:21.882 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/announcement - null null
+2024-06-19 23:44:22.037 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:44:22.193 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:44:22.197 +03:00 [INF] Executing endpoint 'HTTP: GET /announcement'
+2024-06-19 23:44:22.213 +03:00 [INF] Writing value of type 'CacheValue`1' as Json.
+2024-06-19 23:44:22.215 +03:00 [INF] Executed endpoint 'HTTP: GET /announcement'
+2024-06-19 23:44:22.217 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/announcement - 200 null application/json; charset=utf-8 335.2048ms
+2024-06-19 23:44:49.707 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:44:49.863 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:44:50.020 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:44:50.024 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:44:50.025 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:44:50.027 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 319.8786ms
+2024-06-19 23:44:56.492 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/announcement - null null
+2024-06-19 23:44:56.649 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:44:56.805 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:44:56.811 +03:00 [INF] Executing endpoint 'HTTP: GET /announcement'
+2024-06-19 23:44:56.813 +03:00 [INF] Writing value of type 'CacheValue`1' as Json.
+2024-06-19 23:44:56.815 +03:00 [INF] Executed endpoint 'HTTP: GET /announcement'
+2024-06-19 23:44:56.816 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/announcement - 200 null application/json; charset=utf-8 324.4641ms
+2024-06-19 23:46:35.426 +03:00 [INF] User profile is available. Using 'C:\Users\Lev\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-19 23:46:36.201 +03:00 [INF] Now listening on: http://25.64.51.236:5132
+2024-06-19 23:46:36.215 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-19 23:46:36.331 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-19 23:46:36.334 +03:00 [INF] Hosting environment: Development
+2024-06-19 23:46:36.335 +03:00 [INF] Content root path: C:\Users\Lev\source\repos\ThreeMorons\ThreeMorons
+2024-06-19 23:46:37.173 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/ - null null
+2024-06-19 23:46:38.166 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:46:38.171 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-19 23:46:38.183 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2024-06-19 23:46:38.290 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-19 23:46:38.330 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/ - 200 null text/html 1159.9967ms
+2024-06-19 23:46:38.431 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/_vs/browserLink - null null
+2024-06-19 23:46:38.431 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-19 23:46:38.497 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 65.4589ms
+2024-06-19 23:46:38.620 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/_vs/browserLink - 200 null text/javascript; charset=UTF-8 188.975ms
+2024-06-19 23:46:41.678 +03:00 [INF] Executed DbCommand (210ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:46:41.968 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:46:41.997 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:46:41.999 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:46:42.002 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 3837.1568ms
+2024-06-19 23:46:48.289 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - null null
+2024-06-19 23:46:48.455 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:46:48.613 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:46:48.617 +03:00 [INF] Executing endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:46:48.635 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:46:48.639 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:46:50.722 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 23:46:50.733 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 23:46:50.740 +03:00 [INF] Executed endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:46:50.742 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - 500 null application/problem+json 2452.7171ms
+2024-06-19 23:47:19.448 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:47:19.603 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:47:19.759 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:47:19.765 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:47:19.767 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:47:19.769 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 320.7907ms
+2024-06-19 23:47:31.867 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/announcement - null null
+2024-06-19 23:47:32.023 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:47:32.178 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:47:32.190 +03:00 [INF] Executing endpoint 'HTTP: GET /announcement'
+2024-06-19 23:47:32.373 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Author], [a].[Body], [a].[CreatedOn], [a].[ShortDescription], [a].[TargetAudience], [a].[Title]
+FROM [Announcement] AS [a]
+2024-06-19 23:47:32.397 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 23:47:32.399 +03:00 [INF] Writing value of type 'List`1' as Json.
+2024-06-19 23:47:32.403 +03:00 [INF] Executed endpoint 'HTTP: GET /announcement'
+2024-06-19 23:47:32.411 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/announcement - 200 null application/json 544.0193ms
+2024-06-19 23:50:32.746 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:50:32.901 +03:00 [INF] Executed DbCommand (150ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:50:33.056 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:50:33.060 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:50:33.061 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:50:33.063 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 317.2149ms
+2024-06-19 23:50:52.584 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/announcement - null null
+2024-06-19 23:50:52.739 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:50:52.894 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:50:52.899 +03:00 [INF] Executing endpoint 'HTTP: GET /announcement'
+2024-06-19 23:50:52.920 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 23:50:52.921 +03:00 [INF] Writing value of type 'List`1' as Json.
+2024-06-19 23:50:52.922 +03:00 [INF] Executed endpoint 'HTTP: GET /announcement'
+2024-06-19 23:50:52.924 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/announcement - 200 null applicaton/json 339.8014ms
+2024-06-19 23:52:03.783 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:52:03.938 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:52:04.100 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:52:04.104 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:52:04.106 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:52:04.107 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 323.8683ms
+2024-06-19 23:52:11.403 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/announcement - null null
+2024-06-19 23:52:11.559 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:52:11.715 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:52:11.719 +03:00 [INF] Executing endpoint 'HTTP: GET /announcement'
+2024-06-19 23:52:11.722 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 23:52:11.723 +03:00 [INF] Writing value of type 'List`1' as Json.
+2024-06-19 23:52:11.726 +03:00 [INF] Executed endpoint 'HTTP: GET /announcement'
+2024-06-19 23:52:11.728 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/announcement - 200 null applicaton/json 324.4426ms
+2024-06-19 23:52:57.731 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - null null
+2024-06-19 23:52:57.886 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:52:58.043 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:52:58.047 +03:00 [INF] Executing endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:52:58.049 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:52:58.050 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:53:00.102 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 23:53:00.104 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 23:53:00.108 +03:00 [INF] Executed endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:53:00.110 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - 500 null application/problem+json 2378.6133ms
+2024-06-19 23:53:32.571 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:53:32.725 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:53:32.881 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:53:32.885 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:53:32.886 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:53:32.887 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 316.8335ms
+2024-06-19 23:53:40.213 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/announcement - null null
+2024-06-19 23:53:40.369 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:53:40.525 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:53:40.530 +03:00 [INF] Executing endpoint 'HTTP: GET /announcement'
+2024-06-19 23:53:40.531 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 23:53:40.532 +03:00 [INF] Writing value of type 'List`1' as Json.
+2024-06-19 23:53:40.534 +03:00 [INF] Executed endpoint 'HTTP: GET /announcement'
+2024-06-19 23:53:40.535 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/announcement - 200 null applicaton/json 321.5913ms
+2024-06-19 23:54:30.022 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - null null
+2024-06-19 23:54:30.182 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:54:30.340 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:54:30.350 +03:00 [INF] Executing endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:54:30.351 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:54:30.352 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:54:32.389 +03:00 [INF] Setting HTTP status code 500.
+2024-06-19 23:54:32.391 +03:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-06-19 23:54:32.392 +03:00 [INF] Executed endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:54:32.394 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - 500 null application/problem+json 2371.259ms
+2024-06-19 23:56:34.098 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - null null
+2024-06-19 23:56:34.252 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:56:34.409 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:56:34.413 +03:00 [INF] Executing endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:56:34.414 +03:00 [INF] Executed endpoint 'HTTP: GET /checkAuth'
+2024-06-19 23:56:34.415 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/checkAuth - 200 null text/plain; charset=utf-8 316.8053ms
+2024-06-19 23:56:43.561 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - null null
+2024-06-19 23:56:43.715 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:56:43.871 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:56:43.876 +03:00 [INF] Executing endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:56:43.877 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:56:43.878 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/groups
+2024-06-19 23:56:49.838 +03:00 [INF] Received HTTP response headers after 5954.6805ms - 200
+2024-06-19 23:56:49.840 +03:00 [INF] End processing HTTP request after 5962.6946ms - 200
+2024-06-19 23:56:49.844 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 23:56:49.845 +03:00 [INF] Write content with HTTP Response ContentType of application/json; charset=utf-8
+2024-06-19 23:56:49.846 +03:00 [INF] Executed endpoint 'HTTP: GET /groupsParser'
+2024-06-19 23:56:49.848 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/groupsParser - 200 2236 application/json; charset=utf-8 6286.6906ms
+2024-06-19 23:56:50.600 +03:00 [INF] Request starting HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%BA - null null
+2024-06-19 23:56:50.753 +03:00 [INF] Executed DbCommand (150ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[id], [u].[DateOfBirth], [u].[DateOfRegistration], [u].[IsDeleted], [u].[Login], [u].[Name], [u].[Password], [u].[Patronymic], [u].[Salt], [u].[StudNumber], [u].[Surname], [u].[UserClassId]
+FROM [User] AS [u]
+WHERE [u].[id] = @__Parse_0
+2024-06-19 23:56:50.911 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[@__thisTokenString_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[id], [s].[IsValid], [s].[JwtToken], [s].[RefreshToken], [s].[SessionEnd], [s].[SessionStart]
+FROM [Session] AS [s]
+WHERE [s].[JwtToken] = @__thisTokenString_0
+2024-06-19 23:56:50.915 +03:00 [INF] Executing endpoint 'HTTP: GET /schedule'
+2024-06-19 23:56:50.924 +03:00 [INF] Start processing HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%BA
+2024-06-19 23:56:50.925 +03:00 [INF] Sending HTTP request GET http://25.64.51.236:7175/schedule/?forGroup=%D0%98%D0%A1-13%D0%BA
+2024-06-19 23:57:23.774 +03:00 [INF] Received HTTP response headers after 32845.6885ms - 200
+2024-06-19 23:57:23.779 +03:00 [INF] End processing HTTP request after 32855.432ms - 200
+2024-06-19 23:57:23.791 +03:00 [INF] Setting HTTP status code 200.
+2024-06-19 23:57:23.793 +03:00 [INF] Writing value of type 'ScheduleOfWeek' as Json.
+2024-06-19 23:57:23.798 +03:00 [INF] Executed endpoint 'HTTP: GET /schedule'
+2024-06-19 23:57:23.800 +03:00 [INF] Request finished HTTP/1.1 GET http://25.64.51.236:5132/schedule?group=%D0%98%D0%A1-13%D0%BA - 200 null application/json 33199.8526ms

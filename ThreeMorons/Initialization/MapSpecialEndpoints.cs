@@ -23,13 +23,31 @@ namespace ThreeMorons.Initialization
                 {
                     return Results.ValidationProblem((IDictionary<string, string[]>)valres.Errors);
                 }
+                string ta;
+                if (annc.targetAudience is null)
+                {
+                    ta = "all";
+                }
+                else
+                {
+                    ta = annc.targetAudience;
+                }
+                string shortdesc;
+                if (annc.shortDescription is null)
+                {
+                    shortdesc = annc.title;
+                }
+                else
+                {
+                    shortdesc = annc.shortDescription;
+                }
                 Announcement newAnnc = new Announcement()
                 {
                     Author = annc.author,
                     Body = annc.body,
                     CreatedOn = DateTime.Now,
-                    ShortDescription = annc.shortDescription,
-                    TargetAudience = annc.targetAudience,
+                    ShortDescription = shortdesc,
+                    TargetAudience = ta,
                     Title = annc.title,
                     Id = Guid.NewGuid()
                 };
@@ -48,7 +66,7 @@ namespace ThreeMorons.Initialization
                 //но этот процесс может занять несколько дней
                 //планирую побить темы уведомлений по группам.
                 string notifTopic = "";
-                if (string.IsNullOrEmpty(newAnnc.TargetAudience))
+                if (newAnnc.TargetAudience == "all")
                 {
                     notifTopic = "announcements";
                 }
@@ -91,16 +109,10 @@ namespace ThreeMorons.Initialization
             }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
             app.MapGet("/announcement", async (IWebHostEnvironment env, ThreeMoronsContext db, IEasyCachingProvider prov) =>
             {
-                if (await prov.ExistsAsync("allAnnouncements"))
-                {
-                    var cachedres = await prov.GetAsync<List<Announcement>>("allAnnouncements");
-                    return Results.Json(cachedres, _opt);
-                }
-                var allAnnouncements = await db.Announcements.ToListAsync();
-                await prov.SetAsync<List<Announcement>>(nameof(allAnnouncements), allAnnouncements, TimeSpan.FromMinutes(10));
 
+                var allAnnouncements = await db.Announcements.ToListAsync();
                 return Results.Json(allAnnouncements, options: _opt, contentType: "application/json", statusCode: 200);
-            }).RequireAuthorization(r => r.RequireClaim("userClass", ["2", "3"]));
+            }).RequireAuthorization();
             //ДАЛЬШЕ ДУМАТЬ О РАЗДЕЛЕНИИ ПО ГРУППАМ
             //РАЗДЕЛЕНИЕ ПО ГРУППАМ БУДЕМ ДЕЛАТЬ НА КЛИЕНТЕ. 
             //ПРОТЕСТИТЬ
@@ -157,31 +169,49 @@ namespace ThreeMorons.Initialization
             });
             app.MapGet("/schedule", async (IHttpClientFactory clientFactory, ILoggerFactory logfac, [FromQuery] string group) =>
             {
-                var client = clientFactory.CreateClient();
-                var res = await client.GetAsync($"{ParserHostAdress}/schedule/?forGroup={group}");
-                if (!res.IsSuccessStatusCode)
+                try
                 {
-                    return Results.Problem(detail: await res.Content.ReadAsStringAsync(), statusCode: (int)res.StatusCode);
+
+                    var client = clientFactory.CreateClient();
+                    var res = await client.GetAsync($"{ParserHostAdress}/schedule/?forGroup={group}");
+                    if (!res.IsSuccessStatusCode)
+                    {
+                        return Results.Problem(detail: await res.Content.ReadAsStringAsync(), statusCode: (int)res.StatusCode);
+                    }
+                    var deser = JsonSerializer.Deserialize<ScheduleOfWeek>(await res.Content.ReadAsStringAsync());
+                    return Results.Json(deser, statusCode: 200, options: _opt, contentType: "application/json");
                 }
-                var deser = JsonSerializer.Deserialize<ScheduleOfWeek>(await res.Content.ReadAsStringAsync());
-                return Results.Json(deser, statusCode: 200, options: _opt, contentType: "application/json");
+                catch (Exception ex)
+                {
+                    return Results.Problem("Парсер не найден, но всё ок");
+                }
             });
             app.MapGet("/groupsParser", async (IHttpClientFactory fac, IEasyCachingProvider prov) =>
             {
-                if (await prov.ExistsAsync("allGroups"))
+
+                try
                 {
-                    var cachedRes = await prov.GetAsync<string>("allGroups");
-                    return Results.Content(cachedRes.Value, contentType: "application/json", statusCode: 200, contentEncoding: Encoding.UTF8);
+
+                    if (await prov.ExistsAsync("allGroups"))
+                    {
+                        var cachedRes = await prov.GetAsync<string>("allGroups");
+                        return Results.Content(cachedRes.Value, contentType: "application/json", statusCode: 200, contentEncoding: Encoding.UTF8);
+                    }
+                    var client = fac.CreateClient();
+                    var res = await client.GetAsync($"{ParserHostAdress}/groups");
+                    var stringRes = await res.Content.ReadAsStringAsync();
+                    await prov.SetAsync<string>("allGroups", stringRes, TimeSpan.FromDays(7));
+                    if (!res.IsSuccessStatusCode)
+                    {
+                        return Results.Problem(await res.Content.ReadAsStringAsync(), statusCode: (int)res.StatusCode);
+                    }
+                    return Results.Content(stringRes, contentType: "application/json", statusCode: 200, contentEncoding: Encoding.UTF8);
                 }
-                var client = fac.CreateClient();
-                var res = await client.GetAsync($"{ParserHostAdress}/groups");
-                var stringRes = await res.Content.ReadAsStringAsync();
-                await prov.SetAsync<string>("allGroups", stringRes, TimeSpan.FromDays(7));
-                if (!res.IsSuccessStatusCode)
+                catch (Exception ex)
                 {
-                    return Results.Problem(await res.Content.ReadAsStringAsync(), statusCode: (int)res.StatusCode);
+
+                    return Results.Problem("парсеру плохо, но всё ок");
                 }
-                return Results.Content(stringRes, contentType: "application/json", statusCode: 200, contentEncoding: Encoding.UTF8);
             });
             app.MapGet("testnotif", async (IWebHostEnvironment env, INotificationService notifs, ILoggerFactory fac) =>
             {
