@@ -9,7 +9,7 @@ namespace ThreeMorons.Initialization
     public static partial class Initializer
     {
 
-        private static string DbServiceHostAdress = "http://25.64.54.15:8000";
+        private static string DbServiceHostAdress = "http://192.168.29.2:8000";
         /// <summary>
         /// Дефолтные настройки сериализации, которые используются и на клиенте, и на сервере.
         /// </summary>
@@ -31,7 +31,7 @@ namespace ThreeMorons.Initialization
                 flushToDiskInterval: TimeSpan.FromSeconds(10), shared: true, encoding: Encoding.UTF8)
                 .WriteTo.Console().CreateLogger();
             builder.Logging.AddSerilog(logger);
-            builder.Services.AddDbContext<ThreeMoronsContext>(o => o.UseSqlServer());
+            builder.Services.AddDbContext<ThreeMoronsContext>(o => o.UseSqlServer(), ServiceLifetime.Scoped);
 
             if (builder.Environment.IsDevelopment())
             {

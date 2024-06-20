@@ -2,6 +2,8 @@
 using FirebaseAdmin.Messaging;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+using System.Dynamic;
 using System.Text.Json;
 using ThreeMorons.DTOs;
 using ThreeMorons.Services;
@@ -10,7 +12,7 @@ namespace ThreeMorons.Initialization
 {
     public partial class Initializer
     {
-        private static string ParserHostAdress { get; set; } = "http://25.64.51.236:7175";
+        private static string ParserHostAdress { get; set; } = "http://192.168.29.1:7175";
 
         public static void MapSpecialEndpoints(WebApplication app)
         {
@@ -24,7 +26,7 @@ namespace ThreeMorons.Initialization
                     return Results.ValidationProblem((IDictionary<string, string[]>)valres.Errors);
                 }
                 string ta;
-                if (annc.targetAudience is null)
+                if (string.IsNullOrEmpty(annc.targetAudience))
                 {
                     ta = "all";
                 }
@@ -33,7 +35,7 @@ namespace ThreeMorons.Initialization
                     ta = annc.targetAudience;
                 }
                 string shortdesc;
-                if (annc.shortDescription is null)
+                if (string.IsNullOrEmpty(annc.shortDescription))
                 {
                     shortdesc = annc.title;
                 }
@@ -133,12 +135,12 @@ namespace ThreeMorons.Initialization
                     throw;
                 }
             });
-            app.MapPost("/getDbConnectionString", async (ThreeMoronsContext db, [FromBody] DbServiceUserDTO user, IHttpClientFactory clientFac, ILoggerFactory loggerFac) =>
+            app.MapPost("/getDbConnectionString", async (ThreeMoronsContext db, DbServiceUserDTO user, IHttpClientFactory clientFac, ILoggerFactory loggerFac) =>
             {
                 var logger = loggerFac.CreateLogger("GetDbConnectionString");
                 try
                 {
-                    var fullUser = await db.DbServiceUsers.FirstOrDefaultAsync(x => x.user_login == user.user_login && x.user_password == user.user_password && x.db_type == user.db_type);
+                    var fullUser = await db.DbServiceUsers.FirstOrDefaultAsync(x => x.user_login == user.user_login && x.user_password == user.user_password && x.db_name == user.db_name);
                     if (fullUser is null)
                     {
                         return Results.BadRequest("Пользователь бд не был найден");
@@ -187,8 +189,7 @@ namespace ThreeMorons.Initialization
                 }
             });
             app.MapGet("/groupsParser", async (IHttpClientFactory fac, IEasyCachingProvider prov) =>
-            {
-
+            { 
                 try
                 {
 
@@ -248,7 +249,56 @@ namespace ThreeMorons.Initialization
             app.MapPost("changeParserHostAdress", (string newAdress) => Initializer.ParserHostAdress = newAdress);
             app.MapPost("changeDbServiceHostAdress", (string newAdress) => Initializer.DbServiceHostAdress = newAdress);
 
-
+            app.MapPut("/editDbAccount", async (ThreeMoronsContext db, EditDbAccountDTO dto) =>
+            {
+                var userToEdit = await db.DbServiceUsers.FirstOrDefaultAsync(x=> x.user_login == dto.account_login && x.telegram_id == dto.user_telegram_id && x.db_type == dto.dbms_name);
+                if (userToEdit == null)
+                {
+                    return Results.NotFound("Такого пользователя не нашлось");
+                }
+                userToEdit.user_login = dto.new_account_login;
+                userToEdit.user_password = dto.new_account_password;
+                await db.SaveChangesAsync();
+                return Results.Ok();
+            });
+            app.MapPost("/logout", async (ThreeMoronsContext db, RefreshInput dto) =>
+            {
+                var thisSession = await db.Sessions.FirstOrDefaultAsync(x => x.JwtToken == dto.JwtToken && x.RefreshToken == dto.RefreshToken);
+                if (thisSession is null)
+                {
+                    return Results.NotFound("Сессия не найдена");
+                }
+                thisSession.IsValid = false;
+                thisSession.SessionEnd = DateTime.Now;
+                await db.SaveChangesAsync();
+                return Results.Ok();
+            });
+            app.MapPost("/getAllDbAccounts", async (ThreeMoronsContext db, DbServiceUserLoginDTO dto, IHttpClientFactory fac) =>
+            {
+                var thisUser = await db.DbServiceUsers.FirstOrDefaultAsync(x=> x.user_login == dto.user_login && x.user_password == dto.user_password);
+                if (thisUser is null)
+                {
+                    return Results.NotFound("Пользователь не найден");
+                }
+                var tgid = thisUser.telegram_id;
+                dbserviceabc abc = new() { user_telegram_id = tgid};
+                var sendContent = new StringContent(JsonSerializer.Serialize(abc, _opt), Encoding.UTF8, "application/json");
+                var client = fac.CreateClient();
+                var res = await client.PostAsync($"{DbServiceHostAdress}/get-accounts", sendContent);
+                if (!res.IsSuccessStatusCode)
+                {
+                    return Results.Problem("Я не знаю, что случилось. Звоните паше: 8-910-216-29-33");
+                }
+                var allAccounts = JsonSerializer.Deserialize<List<DbAccount>>(await res.Content.ReadAsStringAsync(), _opt);
+                return Results.Json(allAccounts, options: _opt, contentType:"application/json", statusCode: 200);
+            });
+            app.MapPost("/setDbName", async (ThreeMoronsContext db, SetDbNameDTO dto) =>
+                {
+                    var thisUser = db.DbServiceUsers.FirstOrDefault(x => x.db_type == dto.dbms_name && x.user_login == dto.account_login && x.user_password == dto.account_password && x.telegram_id == dto.user_telegram_id);
+                    thisUser.db_name = dto.database_name;
+                    await db.SaveChangesAsync();
+                    return Results.Ok();
+                });
         }
     }
 }
